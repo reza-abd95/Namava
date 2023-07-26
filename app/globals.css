@@ -1,4 +1,4 @@
-/* @tailwind base; */
+ /*@tailwind base;*/
 @tailwind components;
 @tailwind utilities;
 
@@ -8,6 +8,9 @@
   box-sizing: border-box;
   direction: rtl;
 }
+
+/*//////<--Typography-->///////*/
+
 
 /* @layer components{
 
