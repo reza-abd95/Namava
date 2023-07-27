@@ -1,4 +1,4 @@
-/* @tailwind base; */
+ /*@tailwind base;*/
 @tailwind components;
 @tailwind utilities;
 
@@ -9,6 +9,12 @@
   direction: rtl;
 }
 
-/* @layer components{
+/*//////<--Typography-->///////*/
 
-} */
+
+@layer components{
+
+}
+ .header_gradient{
+     background: linear-gradient(0.5turn, #000, rgba(255, 255, 255, 0.05));
+ }
