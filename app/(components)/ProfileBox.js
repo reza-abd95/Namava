@@ -9,7 +9,7 @@ export default function ProfileBox () {
     }
     return (
         <div>
-            <Image className="w-[30px] h-[31px] rounded-full mr-[8px]" src={Profile} alt="profile" onClick={onmouseover}/>
+            <Image className="cursor-pointer w-[30px] h-[31px] rounded-full mr-[8px] tab:h-[31px] des:w-[40px] des:h-[40px]" src={Profile} alt="profile" onClick={onmouseover}/>
         </div>
     )
 }
