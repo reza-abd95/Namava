@@ -8,10 +8,12 @@ import DownloadApp from './footer/DownloadApp'
 import ContactUs from './footer/ContactUs'
 export default function Footer() {
     return (
-          <div className="bg-[#1A1A1A] flex flex-col px-3 py-2">
-            <DownloadApp/>
-            <AboutUs/>
-            <ContactUs/>
+          <div className='Footer__container'>
+              <div className="Footer">
+                  <DownloadApp/>
+                  <AboutUs/>
+                  <ContactUs/>
+               </div>
           </div>
     )
 }

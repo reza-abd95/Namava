@@ -3,6 +3,12 @@ import Image from "next/image"
 export default function AppStore({icon,name}) {
     
     return (
-        <Link href='#' className='w-[48px] h-[48px] rounded-md bg-[#37383E] flex items-center justify-center mx-2'><Image src={icon}/></Link>
+        <Link href='#' className='AppStore'>
+            <Image src={icon}/>
+            <div className="AppStore__details">
+                <span className="AppStore__icon__text">دریافت از</span>
+                <h4 className="AppStore__name">{name}</h4>
+            </div>
+        </Link>
     )
 }

@@ -12,18 +12,18 @@ import AppStore from './AppStore'
 export default function DownloadApp() {
 
     return (
-        <div>
-            <div className='flex text-[#ffffff] py-2'>
-               <div href='#' className='bg-[#0F7EE1] w-[48px] h-[48px] rounded-md flex items-center justify-center mx-2'>
+        <div className='DA__container'>
+            <div className='DA__title'>
+               <div href='#' className='DA__title__logo'>
                   <Image src={NamavaSmalIcon}/>
                </div>
-               <h3 href='#' className='flex items-center text-xs mx-2 no-underline text-[#FFFFFF]'>دانلود اپلیکیشن</h3>
+               <h3 href='#' className='DA__title__text'>دانلود اپلیکیشن</h3>
             </div>
-            <div className='flex items-center py-2'>
+            <div className='AppStore__holder'>
               <AppStore icon={BazarIcon} name={'بازار'}/>
               <AppStore icon={SibAppIcon} name={'سیب اپ'}/>
               <AppStore icon={PlayStoreIcon} name={'پلی استور'}/>
-              <Link href='#' className='text-[#6eb8ff] text-sm flex items-center justify-center mx-2 font-iranyekanBold no-underline'>بیشتر</Link>
+              <Link href='#' className='AppStore__more'>بیشتر</Link>
             </div>
         </div>
     )

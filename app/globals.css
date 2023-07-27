@@ -1,4 +1,4 @@
-/* @tailwind base; */
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -27,3 +27,92 @@ h1, h2, h3, h4 {
   font-family: 'iranyekanBold';
 }
 
+@layer components {
+  .Footer {
+    @apply  flex flex-col px-5 py-2
+    tab:px-7 tab:max-w-[1144px]
+    des:py-5 des:px-0
+
+  }
+  .Footer__container {
+    @apply flex justify-center bg-[#1A1A1A]
+  }
+  .DA__container {
+    @apply block 
+    ml:flex ml:justify-between ml:py-3
+    des:w-[1144px] des:h-[104px] des:bg-[#222327] des:rounded des:px-[24px] des:py-[16px]
+  }
+  .DA__title {
+    @apply flex text-[#ffffff] py-2
+    des:py-0
+  }
+  .DA__title__logo {
+    /* background: linear-gradient(to bottom, rgba(25,147,255,1), rgba(0,95,180,1)) */
+    @apply bg-gradient-to-b from-[rgba(25,147,255,1)] to-[rgba(0,95,180,1)] w-[48px] h-[48px] rounded-md flex items-center justify-center mx-2
+    des:h-[72px] des:w-[72px]
+  } 
+  .DA__title__text {
+    @apply flex items-center text-sm mx-2 no-underline text-[#FFFFFF]
+    des:text-base
+  }
+  .AppStore__holder {
+    @apply flex items-center py-2
+    
+  }
+  .AppStore {
+    @apply w-[48px] h-[48px] rounded-md bg-[#37383E] flex items-center justify-center ml-4
+    des:w-[106px] des:justify-start des:px-1
+  }
+  .AppStore__more {
+    @apply text-[#6eb8ff] text-sm flex items-center justify-center font-iranyekanBold no-underline
+  }
+  .AppStore__details {
+    @apply flex-col pr-1 hidden des:flex
+  }
+  .AppStore__icon__text {
+    @apply text-[rgba(255,255,255,0.7)] text-[9px] pb-1
+  }
+  .AppStore__name {
+    @apply text-[#f2f2f2] text-xs pb-1
+  }
+  .AboutUs__container {
+    @apply
+    ml:flex ml:justify-between ml:pb-6 ml:border-b-[1px] ml:border-[#37383e]
+    tab:items-center
+    des:py-6
+  }
+  .AboutUs__title {
+    @apply text-[#FFFFFF] text-xs py-2 font-iranyekanBold
+  }
+  .AboutUs__description {
+    @apply text-[#aaaaaa] leading-6 text-[11px] py-2 font-iranyekanRegular
+  }
+  .TrustUs {
+    @apply flex py-3
+    ml:flex-col ml:pr-7
+    tab:flex-row
+    des:px-5
+  }
+  .TrustUs__container {
+    @apply w-[90px] h-[90px] bg-[#CCCCCC] rounded-md ml-6
+    ml:mb-6 ml:ml-0
+    tab:mb-0 tab:mr-7
+  }
+  .TrustUs__image {
+    @apply w-[90px] h-[90px]
+  }
+  .ContactUs__container {
+    @apply py-3
+    tab:flex tab:justify-between tab:flex-row-reverse
+  }
+  .ContactUs__SocialMedia {
+    @apply flex justify-center py-3
+  }
+  .SocialMedia {
+    @apply px-5
+    tab:px-0 tab:mr-10
+  }
+  .ContactUs__text {
+    @apply text-[#aaaaaa] text-[10px] leading-5 py-2 font-iranyekanRegular  
+  }
+}

@@ -7,13 +7,13 @@ import SocialMedia from './SocialMedia'
 export default function ContactUs() {
 
     return (
-        <div className='px-2 py-3'>
-            <div className='flex justify-center py-3'>
+        <div className='ContactUs__container'>
+            <div className='ContactUs__SocialMedia'>
                 <SocialMedia icon={TwitterIcon}/>
                 <SocialMedia icon={InstagramIcon}/>
                 <SocialMedia icon={TelegramIcon}/>
             </div>
-            <p className='text-[#aaaaaa] text-[10px] leading-5 py-2 font-iranyekanRegular'>خدمات ارایه شده در نماوا، دارای مجوز های لازم از مراجع مربوطه می باشد و هر گونه بهره برداری و سوء استفاده از محتوای نماوا، پیگرد قانونی دارد.</p>
+            <p className='ContactUs__text'>خدمات ارایه شده در نماوا، دارای مجوز های لازم از مراجع مربوطه می باشد و هر گونه بهره برداری و سوء استفاده از محتوای نماوا، پیگرد قانونی دارد.</p>
         </div>
     )
 }
