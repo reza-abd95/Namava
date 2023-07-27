@@ -12,13 +12,14 @@ const useScrollingUp = () => {
   // if (process.browser) {
   //   prevScroll = window.pageYOffset
   // }
-  let prevScroll=window.pageYOffset;
+  let prevScroll= document.documentElement.scrollTop;
   const [scrollingUp, setScrollingUp] = useState(false)
   const handleScroll = () => {
-    const currScroll = window.pageYOffset;
+    const currScroll = document.documentElement.scrollTop;
     const isScrolled = prevScroll > currScroll
     setScrollingUp(currScroll === 0 ? false : isScrolled)
     prevScroll = currScroll
+
   }
   useEffect(() => {
     on(window, 'scroll', handleScroll, { passive: true })

@@ -28,5 +28,8 @@
      left: 0;
      width: 100%;
      background-color: black;
+     transition: 0.1s;
+     animation-name: headeranime;
+     animation-duration: 1s;
  }
  /*--------------HeaderSticky-------------*/
