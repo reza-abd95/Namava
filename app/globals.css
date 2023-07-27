@@ -10,4 +10,20 @@
   box-sizing: border-box;
   direction: rtl;
 }
+@font-face {
+  font-family: iranyekanBold;
+  src: url("../public/fonts/iranyekanwebbold.woff") format("opentype");
+}
+@font-face {
+  font-family: iranyekanRegular;
+  src: url("../public/fonts/iranyekanwebregular.woff") format("opentype");
+}
+
+p, span, div, a {
+  font-family: 'iranyekanRegular';
+}
+
+h1, h2, h3, h4 {
+  font-family: 'iranyekanBold';
+}
 
