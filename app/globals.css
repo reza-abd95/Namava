@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 *{
   margin: 0;
   padding: 0;
@@ -9,6 +11,3 @@
   direction: rtl;
 }
 
-/* @layer components{
-
-} */
