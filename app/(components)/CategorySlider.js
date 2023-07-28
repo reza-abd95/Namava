@@ -55,40 +55,40 @@ export default function SubSlider() {
         className="mySwiper flex justify-center items-center w-full h-auto my-20"
 
       >
-          <SwiperSlide className="w-full h-full text-center text-18 bg-white flex justify-center items-center rounded-4 cursor-pointer"> 
-            <Image  className="block w-full h-full rounded-4"
+          <SwiperSlide className="text-white w-full h-full text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 
+            <Image  className="block w-full h-full rounded"
                     src={imager}
                     width={1000}
                     height={1000}
                     alt='mehmooni' />
           </SwiperSlide>
           
-          <SwiperSlide className="w-full h-full text-center text-18 bg-white flex justify-center items-center rounded-4 cursor-pointer"> 
-            <Image  className="block w-full h-full rounded-4"
+          <SwiperSlide className="w-full h-full text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 
+            <Image  className="block w-full h-full rounded"
                     src={imager}
                     width={1000}
                     height={1000}
                     alt='mehmooni' />
           </SwiperSlide>
           
-          <SwiperSlide className="w-full h-full text-center text-18 bg-white flex justify-center items-center rounded-4 cursor-pointer"> 
-            <Image  className="block w-full h-full rounded-4"
+          <SwiperSlide className="w-full h-full text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 
+            <Image  className="block w-full h-full rounded"
                     src={imager}
                     width={1000}
                     height={1000}
                     alt='mehmooni' />
           </SwiperSlide>
           
-          <SwiperSlide className="w-full h-full text-center text-18 bg-white flex justify-center items-center rounded-4 cursor-pointer"> 
-            <Image  className="block w-full h-full rounded-4"
+          <SwiperSlide className="w-full h-full text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 
+            <Image  className="block w-full h-full rounded"
                     src={imager}
                     width={1000}
                     height={1000}
                     alt='mehmooni' />
           </SwiperSlide>
           
-          <SwiperSlide className="w-full h-full text-center text-18 bg-white flex justify-center items-center rounded-4 cursor-pointer"> 
-            <Image  className="block w-full h-full rounded-4"
+          <SwiperSlide className="w-full h-full text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 
+            <Image  className="block w-full h-full rounded"
                     src={imager}
                     width={1000}
                     height={1000}
