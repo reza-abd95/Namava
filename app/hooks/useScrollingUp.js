@@ -1,4 +1,4 @@
-'use client'
+
 
 import { useEffect, useState } from 'react'
 import { off, on } from '../utils/index'
@@ -7,11 +7,6 @@ import { off, on } from '../utils/index'
  * @returns {boolean}
  */
 const useScrollingUp = () => {
-  //if it is SSR then check you are now on the client and window object is available
-  //let prevScroll;
-  // if (process.browser) {
-  //   prevScroll = window.pageYOffset
-  // }
   let prevScroll= document.documentElement.scrollTop;
   const [scrollingUp, setScrollingUp] = useState(false)
   const handleScroll = () => {
@@ -22,11 +17,12 @@ const useScrollingUp = () => {
 
   }
   useEffect(() => {
-    on(window, 'scroll', handleScroll, { passive: true })
+    on(document, 'scroll', handleScroll, { passive: true })
     return () => {
-      off(window, 'scroll', handleScroll, { passive: true })
+      off(document, 'scroll', handleScroll, { passive: true })
     }
   }, [])
+  console.log('sssssssss')
   return scrollingUp
 }
 
