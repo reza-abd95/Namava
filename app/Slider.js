@@ -17,9 +17,9 @@ export default function Slider() {
   return (
     <>
       <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
-        <SwiperSlide ><Test/></SwiperSlide> 
-        <SwiperSlide ><Test/></SwiperSlide> 
-        <SwiperSlide ><Test/></SwiperSlide> 
+        <SwiperSlide className='flex-col'><Test/></SwiperSlide> 
+        <SwiperSlide className='flex-col'><Test/></SwiperSlide> 
+        <SwiperSlide className='flex-col'><Test/></SwiperSlide> 
         <SwiperSlide><Test/></SwiperSlide> 
       </Swiper>
     </>
