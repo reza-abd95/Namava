@@ -26,7 +26,7 @@ export default  function Test(){
 <Link href='#' className='relative'><Image
   width={windowWidth > 500 ? 1000 :1000}
   height={windowWidth > 500 ? 1000:1000 }
-  src={windowWidth > 500 ? "/images/avatarDesktop.jpg":"/images/avatarMobile.jfif"}
+  src={windowWidth > 500 ? "/images/jang.jpg":"/images/avatarMobile.jfif"}
   alt="avatar"
 />
 </Link>
@@ -45,7 +45,7 @@ export default  function Test(){
 // <Link href='#'><Image
 //         width={1000}
 //         height={1000}
-//           src="/images/avatarMobile.jfif"
+//           src="/images/jang.jpg"
 //           alt="avatar"
 //         /></Link>
 //          <Logo /> 

@@ -11,24 +11,49 @@ import 'swiper/css/navigation';
 import './slider.css';
 
 // import required modules
-import { EffectFade, Navigation, Pagination } from 'swiper/modules'; 
+import { EffectFade, Autoplay, Pagination , Navigation} from 'swiper/modules'; 
 import Test from './Test';
-
+import Test2 from './Test2';
 
 export default function Slider() {
+  const swiperRef = useRef(null);
+
+  const goPrev = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
+  const goNext = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
   return (
     <>
-      <Swiper pagination={true}  spaceBetween={30}
+         <div className="custom-navigation">
+        <button onClick={goPrev}> prev</button>
+        <button onClick={goNext}>next</button>
+      </div>
+      <Swiper 
+      ref={swiperRef}
+      pagination={true}  autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        navigation={false}
+         spaceBetween={30}
         effect={'fade'}
-         modules={[EffectFade, Pagination]} className="mySwiper">
-        <SwiperSlide className='flex-col'><Test/></SwiperSlide> 
+         modules={[Autoplay,EffectFade, Pagination,Navigation]} className="mySwiper">
+        {/* <SwiperSlide className='flex-col'><Test2/></SwiperSlide>  */}
         
         <SwiperSlide className='flex-col'><Test/></SwiperSlide> 
        
-        <SwiperSlide className='flex-col'><Test/></SwiperSlide> 
+        {/* <SwiperSlide className='flex-col'><Test2/></SwiperSlide>  */}
        
         <SwiperSlide><Test/></SwiperSlide> 
-       
+        <SwiperSlide><Test/></SwiperSlide> 
+
       </Swiper>
     </>
   );
