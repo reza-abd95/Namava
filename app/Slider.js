@@ -11,7 +11,8 @@ import './slider.css';
 
 // import required modules
 import { Pagination } from 'swiper/modules';
-import Test from '@/Test';
+import Test from './Test';
+
 
 export default function Slider() {
   return (

@@ -1,8 +1,9 @@
 'use client'
-import Logo from '/Logo';
+import Logo from './Logo';
 import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect, useState } from 'react';
+
 export default  function Test(){
     const [windowWidth, setWindowWidth] = useState(0);
     useEffect(() => {
@@ -22,9 +23,9 @@ export default  function Test(){
       
     return(
         <>
-<Link href='#'><Image
-  width={windowWidth > 500 ? 1000 : 47}
-  height={windowWidth > 500 ? 1000 : 16}
+<Link href='#' className='relative'><Image
+  width={windowWidth > 500 ? 1000 :1000}
+  height={windowWidth > 500 ? 1000:1000 }
   src={windowWidth > 500 ? "/images/avatarDesktop.jpg":"/images/avatarMobile.jfif"}
   alt="avatar"
 />
