@@ -17,7 +17,7 @@ export default function Slider() {
   return (
     <>
       <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
-        <SwiperSlide>
+        <SwiperSlide >
         <div 
       style={{
         background: `url('./images/jang.jpg')`,
@@ -25,81 +25,12 @@ export default function Slider() {
         backgroundRepeat: 'no-repeat',
 
         width: '100%',
-        height: '360px',
-        position: 'relative',
+        height: '100%',
+    
       }}
-    >
-        <h2
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(100%, -90%)',
-          padding: '10px',
-          fontSize: '16px',
-          fontWeight: 'bold',
-          background: 'blue',
-          color: 'white',
-          border: 'none',
-          borderRadius: '5px',
-        }}
-      >
-        title
-      </h2>
-      <p
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(100%, -90%)',
-          padding: '10px',
-          fontSize: '16px',
-          fontWeight: 'bold',
-          background: 'blue',
-          color: 'white',
-          border: 'none',
-          borderRadius: '5px',
-        }}
-      >
-        description
-      </p>
-      <button
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          padding: '10px',
-          fontSize: '16px',
-          fontWeight: 'bold',
-          background: 'blue',
-          color: 'white',
-          border: 'none',
-          borderRadius: '5px',
-        }}
-      >
-       خرید بلیط
-      </button>
-      <button
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(20%, 20%)',
-          padding: '10px',
-          fontSize: '16px',
-          fontWeight: 'bold',
-          background: 'blue',
-          color: 'white',
-          border: 'none',
-          borderRadius: '5px',
-        }}
-      >
-        پیش نمایش
-      </button>
-    </div>
+  ></div>
         </SwiperSlide>
-        <SwiperSlide>
+        {/* <SwiperSlide>
         <div className='bg-red-500' 
       style={{
         background: `url('./images/jang.jpg')`,
@@ -180,9 +111,10 @@ export default function Slider() {
         پیش نمایش
       </button>
     </div>
-        </SwiperSlide>
+        </SwiperSlide> */}
+        <SwiperSlide className='flex-col'><Test/></SwiperSlide> 
 
-        <SwiperSlide className='flex-col'><Test/></SwiperSlide>
+        <SwiperSlide className='flex-col'><Test/></SwiperSlide> 
       </Swiper>
     </>
   );
