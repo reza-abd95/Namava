@@ -1,42 +1,48 @@
- /*@tailwind base;*/
+/*@tailwind base;*/
 @tailwind components;
 @tailwind utilities;
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  direction: rtl;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
 }
 
 /*//////<--Typography-->///////*/
 
 
-@layer components{
+@layer components {
 
 }
 
 
- /*-----------------Header-------------------*/
- .header_gradient{
-     background: linear-gradient(0.5turn, #000, rgba(255, 255, 255, 0.05));
+/*-----------------Header-------------------*/
+.header_gradient {
+    background-color: rgba(18, 18, 18, 0);
+    background-image: linear-gradient(to bottom, rgba(18, 18, 18, 1), rgba(18, 18, 18, 0));
+}
 
- }
- /*--------------HeaderSticky-------------*/
- .sticky-header {
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: 100%;
-     background-color: black;
-     box-shadow: rgba(0, 0, 0, 0.15) 0 3px 3px 0;
-     transition: all 1s ease-out;
- }
- .sticky-before{
-     width: 100%;
-     position: absolute;
-     top: -100px;
-     transition: all 1s ease-out;
+.active {
+    color: #6EB8FF;
+}
 
- }
- /*--------------HeaderSticky-------------*/
+/*--------------HeaderSticky-------------*/
+.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 3px 3px 0;
+    transition: all 0.5s ease-out;
+}
+
+.sticky-before {
+    width: 100%;
+    position: absolute;
+    top: -100px;
+    transition: box-shadow 2s, background-color 2s;
+}
+
+/*--------------HeaderSticky-------------*/
