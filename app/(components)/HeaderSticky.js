@@ -8,7 +8,6 @@ import HeaderNav from "@/app/(components)/HeaderNav";
 import SearchBox from "@/app/(components)/SearchBox";
 import ProfileBox from "@/app/(components)/ProfileBox";
 
-
 export default function HeaderSticky() {
     const scrolledUp = useScrollingUp();
     return (
