@@ -31,14 +31,16 @@ export default function Slider() {
   };
   return (
     <>
-         <div className="custom-navigation">
-        <button onClick={goPrev}> prev</button>
-        <button onClick={goNext}>next</button>
+         <div className=' min-[800px]:flex max-[799px]:hidden'>
+        <button className='opacity-50 w-10 h-10 rounded-full border-none bg-gray-300 ' onClick={goPrev}>
+           <img  className='w-full h-full p-1.5 opacity-50 hover:opacity-100'  src="/icons/ltr.svg" alt="prev"/></button>
+        <button className='opacity-50 w-10 h-10 rounded-full border-none bg-gray-300 mr-3' onClick={goNext}>
+          <img className='w-full h-full p-1.5 opacity-50 hover:opacity-100' src="/icons/rtl.svg" alt="next"/></button>
       </div>
-      <Swiper 
+      <Swiper
       ref={swiperRef}
       pagination={true}  autoplay={{
-          delay: 2500,
+          delay: 7000,
           disableOnInteraction: false,
         }}
         navigation={false}
@@ -47,7 +49,7 @@ export default function Slider() {
          modules={[Autoplay,EffectFade, Pagination,Navigation]} className="mySwiper">
         <SwiperSlide><Test2/></SwiperSlide> 
         
-        <SwiperSlide><Test/></SwiperSlide> 
+        <SwiperSlide><Test/></SwiperSlide>  
        
         <SwiperSlide ><Test2/></SwiperSlide> 
        
