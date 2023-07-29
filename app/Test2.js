@@ -26,7 +26,7 @@ export default  function Test(){
 <Link href='#' className='relative'><Image
   width={windowWidth > 500 ? 1000 :1000}
   height={windowWidth > 500 ? 1000:1000 }
-  src={windowWidth > 500 ? "/images/jang.jpg":"/images/avatarMobile.jfif"}
+  src={windowWidth > 500 ? "/images/extractd.jpg":"/images/extractm.jfif"}
   alt="avatar"
 />
 </Link>

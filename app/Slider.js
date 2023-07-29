@@ -45,14 +45,15 @@ export default function Slider() {
          spaceBetween={30}
         effect={'fade'}
          modules={[Autoplay,EffectFade, Pagination,Navigation]} className="mySwiper">
-        {/* <SwiperSlide className='flex-col'><Test2/></SwiperSlide>  */}
+        <SwiperSlide><Test2/></SwiperSlide> 
         
-        <SwiperSlide className='flex-col'><Test/></SwiperSlide> 
+        <SwiperSlide><Test/></SwiperSlide> 
        
-        {/* <SwiperSlide className='flex-col'><Test2/></SwiperSlide>  */}
+        <SwiperSlide ><Test2/></SwiperSlide> 
        
         <SwiperSlide><Test/></SwiperSlide> 
-        <SwiperSlide><Test/></SwiperSlide> 
+        <SwiperSlide><Test2/></SwiperSlide> 
+        <SwiperSlide><Test/></SwiperSlide>
 
       </Swiper>
     </>
