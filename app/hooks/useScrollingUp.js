@@ -14,6 +14,7 @@ const useScrollingUp = () => {
     const isScrolled = prevScroll > currScroll
     setScrollingUp(currScroll === 0 ? false : isScrolled)
     prevScroll = currScroll
+
   }
   useEffect(() => {
     on(document, 'scroll', handleScroll, { passive: true })

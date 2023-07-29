@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Profile from "@/public/icons/profile-icon.png";
+
 export default function ProfileBox () {
     const mouseOverHandler = () => {
         console.log("sssssssssss")

@@ -74,6 +74,7 @@ export default function Category() {
                     <h2 className="absolute mt-[30px] mr-[20px]">هندی</h2>
                 </div>
             </Link>
+
         </div>
 
     );
