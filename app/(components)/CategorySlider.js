@@ -36,7 +36,7 @@ export default function SubSlider() {
         setImage("/images/mehmooni-sm.jpg");
         break;
       default:
-        setSlidePer(1.2);
+        setSlidePer(1.15);
         setCentered(true);
         setImage("/images/mehmooni-sm.jpg");
     }

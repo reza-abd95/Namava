@@ -13,6 +13,8 @@ html{
   direction: rtl;
 }
 
-/* @layer components{
-
-} */
+@layer components{
+  .movie-slide {
+    @apply text-white w-full h-full text-center text-lg flex justify-center items-center rounded cursor-pointer;
+  }
+}

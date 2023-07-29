@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../styles.css';
 import { Navigation } from 'swiper/modules';
+import MovieForSlider from './MovieForSlider';
 
 export default function MovieSlider() {
   const  windowWidth  = windowDimensions();
@@ -39,7 +40,9 @@ export default function MovieSlider() {
   }, [windowWidth]);
 
   return (
+    
     <div>
+      <p className=" text-white text-right mr-14 text-lg "> اکشن </p>
       <Swiper
         initialSlide = {3}
         slidesPerView={slidesPer}
@@ -47,81 +50,33 @@ export default function MovieSlider() {
         spaceBetween={15}
         navigation={true}
         modules={[Navigation]}
-        className="mySwiper flex justify-center items-center w-full h-auto my-20"
+        className="mySwiper flex justify-center items-center w-full h-auto mb-20 mt-5"
 
       >
-          <SwiperSlide className="text-white w-full h-full text-center text-18  flex justify-center items-center rounded cursor-pointer"> 
-            <Image  className="block w-full h-full rounded"
-                    src={"/images/GOTG.jpg"}
-                    width={1000}
-                    height={1000}
-                    alt='mehmooni' />
-                    <p className="text-right pt-3 text-xs">نگهبانان کهکشان 3 </p>
+          <SwiperSlide className="movie-slide"> 
+            <MovieForSlider/>
+          </SwiperSlide>
+          
+          <SwiperSlide className="movie-slide"> 
+            <MovieForSlider/>
+          </SwiperSlide>
+          <SwiperSlide className="movie-slide"> 
+            <MovieForSlider/>
+          </SwiperSlide>
+          <SwiperSlide className="movie-slide"> 
+            <MovieForSlider/>
+          </SwiperSlide>
+          <SwiperSlide className="movie-slide"> 
+            <MovieForSlider/>
+          </SwiperSlide>
+          <SwiperSlide className="movie-slide"> 
+            <MovieForSlider/>
+          </SwiperSlide>
+          <SwiperSlide className="movie-slide"> 
+            <MovieForSlider/>
           </SwiperSlide>
 
-          <SwiperSlide className=" w-full h-full text-center text-18 flex justify-center items-center rounded cursor-pointer"> 
-            <Image  className="block w-full h-full rounded"
-                    src={"/images/GOTG.jpg"}
-                    width={1000}
-                    height={1000}
-                    alt='mehmooni' />
-          </SwiperSlide>
-          
-          <SwiperSlide className="w-full h-full text-center text-18 flex justify-center items-center rounded cursor-pointer"> 
-            <Image  className="block w-full h-full rounded"
-                    src={"/images/GOTG.jpg"}
-                    width={1000}
-                    height={1000}
-                    alt='mehmooni' />
-          </SwiperSlide>
-          
-          <SwiperSlide className="w-full h-full text-center text-18  flex justify-center items-center rounded cursor-pointer"> 
-            <Image  className="block w-full h-full rounded"
-                    src={"/images/GOTG.jpg"}
-                    width={1000}
-                    height={1000}
-                    alt='mehmooni' />
-          </SwiperSlide>
-          
-          <SwiperSlide className="w-full h-full text-center text-18  flex justify-center items-center rounded cursor-pointer"> 
-            <Image  className="block w-full h-full rounded"
-                    src={"/images/GOTG.jpg"}
-                    width={1000}
-                    height={1000}
-                    alt='mehmooni' />
-          </SwiperSlide>
-          
-          <SwiperSlide className="w-full h-full text-center text-18  flex justify-center items-center rounded cursor-pointer"> 
-            <Image  className="block w-full h-full rounded"
-                    src={"/images/GOTG.jpg"}
-                    width={1000}
-                    height={1000}
-                    alt='mehmooni' />
-          </SwiperSlide>
-          
-          <SwiperSlide className="w-full h-full text-center text-18  flex justify-center items-center rounded cursor-pointer"> 
-            <Image  className="block w-full h-full rounded"
-                    src={"/images/GOTG.jpg"}
-                    width={1000}
-                    height={1000}
-                    alt='mehmooni' />
-          </SwiperSlide>
-          
-          <SwiperSlide className="w-full h-full text-center text-18  flex justify-center items-center rounded cursor-pointer"> 
-            <Image  className="block w-full h-full rounded"
-                    src={"/images/GOTG.jpg"}
-                    width={1000}
-                    height={1000}
-                    alt='mehmooni' />
-          </SwiperSlide>
-          
-          <SwiperSlide className="w-full h-full text-center text-18  flex justify-center items-center rounded cursor-pointer"> 
-            <Image  className="block w-full h-full rounded"
-                    src={"/images/GOTG.jpg"}
-                    width={1000}
-                    height={1000}
-                    alt='mehmooni' />
-          </SwiperSlide>
+
           
           
         </Swiper>
