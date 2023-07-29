@@ -5,7 +5,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from 'react';
 
 export default  function Test(){
-    const [windowWidth, setWindowWidth] = useState(0);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     useEffect(() => {
       
         const handleResize = () => {
@@ -23,9 +23,10 @@ export default  function Test(){
       
     return(
         <>
-<Link href='#' className='relative'><Image
-  width={windowWidth > 500 ? 1000 :1000}
-  height={windowWidth > 500 ? 1000:1000 }
+<Link href='#' className='relative'>
+  <Image
+  width={1000}
+  height={1000 }
   src={windowWidth > 500 ? "/images/avatarDesktop.jpg":"/images/avatarMobile.jfif"}
   alt="avatar"
 />
