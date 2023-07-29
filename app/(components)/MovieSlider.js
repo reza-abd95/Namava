@@ -24,15 +24,15 @@ export default function MovieSlider() {
         setCentered(true);
         break;
       case windowWidth > 799:
-        setSlidePer(2);
-        setCentered(false);
+        setSlidePer(5.3);
+        setCentered(true);
         break;
       case windowWidth> 499:
-        setSlidePer(2);
+        setSlidePer(4.2);
         setCentered(false);
         break;
       default:
-        setSlidePer(1.2);
+        setSlidePer(3.3);
         setCentered(true);
     }
     
@@ -44,7 +44,7 @@ export default function MovieSlider() {
         initialSlide = {3}
         slidesPerView={slidesPer}
         centeredSlides={centered}
-        spaceBetween={20}
+        spaceBetween={15}
         navigation={true}
         modules={[Navigation]}
         className="mySwiper flex justify-center items-center w-full h-auto my-20"
