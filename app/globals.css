@@ -20,6 +20,13 @@ html{
 }
 
 
+@layer components{
+    .mobile__menu-list {
+        @apply w-full h-[40px] flex items-center hover:text-[#6eb8ff] cursor-pointer
+    }
+    .mobile__menu-list p{
+        @apply pr-[15px]
+    }
 /*-----------------Header-------------------*/
 .header_gradient {
     background-color: rgba(18, 18, 18, 0);
