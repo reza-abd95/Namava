@@ -1,6 +1,5 @@
 "use client";
 import Logo from "./Logo";
-import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
@@ -20,8 +19,9 @@ export default function Test() {
 
   return (
     <>
-    <div className="relative">
+      {/* <div className="relative">
     <Image
+    className="w-full h-full "
         width={1000}
         height={1000}
         src={
@@ -31,11 +31,18 @@ export default function Test() {
         }
         alt="avatar"
       />
-    </div>
+   
       
-      <div className="absolute top:0 left:0 no-underline" href="#">
-        <div className="flex-col">
-          <Logo />
+    
+        <div > */}
+      {/* <div  className="h-3">
+   <img
+          
+          src="/images/avatarLogo.png"
+          alt="avatar"
+        />
+    </div> */}
+      {/* <div className="absolute">
           <h2>آواتار</h2>
           <div className=" flex flex-row max-[500px]:hidden">
             <div className="bg-yellow-500 w-12 h-9 flex items-center justify-center rounded-md">
@@ -75,6 +82,32 @@ export default function Test() {
             </p>
           </div>
           <p>با دوبله اختصاصی نماوا</p>
+        </div>
+        </div></div> */}
+      <div>
+        <div className="w-full h-full relative flex flex-col">
+          <Image
+            className="w-full h-full "
+            width={1000}
+            height={1000}
+            src={
+              windowWidth > 500
+                ? "/images/avatarDesktop.jpg"
+                : "/images/avatarMobile.jfif"
+            }
+            alt="avatar"
+          />
+          <div className="ms:mt-10 absolute top-1/4 left-1/3 ml:top-0 ml:left-0 ml:right-5 w-1/3 ml:w-1/6 ">
+            <Logo/>
+          </div>
+          <div className="ml:hidden absolute top-2/3 left-5 right-5 flex flex-col justify-center items-center">
+            <h2 className="mb-5">آواتار</h2>
+           <p>به زودی با دوبله اختصاصی نماوا به زودی با دوبله اختصاصی نماوا</p>
+            </div>
+          {/* <div className="absolute top-2/3">
+          <p >jcbjdbscjxb</p>
+          </div> */}
+         
         </div>
       </div>
     </>
