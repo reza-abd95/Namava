@@ -1,4 +1,4 @@
-'use client'
+
 
 import "../globals.css"
 import HeaderNav from "@/app/(components)/HeaderNav";
@@ -6,7 +6,6 @@ import Logo from "@/app/(components)/Logo";
 import Menu from "@/app/(components)/Menu";
 import SearchBox from "@/app/(components)/SearchBox";
 import ProfileBox from "@/app/(components)/ProfileBox";
-import MobileMenu from "./MobileMenu";
 
 
 export default function Header() {
