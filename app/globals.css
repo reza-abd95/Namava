@@ -14,10 +14,10 @@
 
 @layer components{
     .mobile__menu-list {
-        @apply w-full h-[40px] flex items-center
+        @apply w-full h-[40px] flex items-center hover:text-[#6eb8ff] cursor-pointer
     }
-    .mobile__menu-list span{
-        @apply pr-[15px] text-white
+    .mobile__menu-list p{
+        @apply pr-[15px]
     }
 }
 
