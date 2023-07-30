@@ -23,14 +23,17 @@ export default  function Test(){
       
     return(
         <>
-<Link href='#' className='relative'><Image
+<Image
+className='relative'
   width={1000}
   height={1000 }
   src={windowWidth > 500 ? "/images/extractd.jpg":"/images/extractm.jfif"}
   alt="avatar"
 />
+<Link className='absolute'  href='#'>
+  
+<Logo /> 
 </Link>
-         <Logo /> 
         </>
     )
 }
