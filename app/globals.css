@@ -40,9 +40,9 @@
 
 .sticky-before {
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: -100px;
-    transition: box-shadow 2s, background-color 2s;
+    transition: top 0.5s,box-shadow 2s, background-color 2s;
 }
 
 /*--------------HeaderSticky-------------*/
