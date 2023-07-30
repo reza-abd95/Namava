@@ -97,12 +97,15 @@ export default function Test() {
             }
             alt="avatar"
           />
-          <div className="ms:mt-10 absolute top-1/4 left-1/3 ml:top-0 ml:left-0 ml:right-5 w-1/3 ml:w-1/6 ">
+          
+
+          <div className="ms:mt-10 absolute top-1/4 left-1/3 ml:top-5 ml:left-0 ml:right-5 w-1/3 ml:w-1/5 ">
             <Logo/>
           </div>
-          <div className="ml:hidden absolute top-2/3 left-5 right-5 flex flex-col justify-center items-center">
-            <h2 className="mb-5">آواتار</h2>
-           <p>به زودی با دوبله اختصاصی نماوا به زودی با دوبله اختصاصی نماوا</p>
+          <div className="ml:block ml:top-3/4 ml:bottom-1/2 absolute top-2/3 left-5 right-5 flex flex-col justify-center items-center">
+            <h2 className="mb-5 ml:mb-3  text-white">آواتار</h2>
+           <p className="text-white">به زودی با دوبله اختصاصی نماوا به زودی با دوبله اختصاصی نماوا</p>
+           <p className="max-[500px]:hidden text-white mt-3">ستارگان:Chris Pine-Michelle Rodriguez-Regé-Jean Page-Justice Smith</p>
             </div>
           {/* <div className="absolute top-2/3">
           <p >jcbjdbscjxb</p>
