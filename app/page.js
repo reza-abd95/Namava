@@ -1,4 +1,5 @@
 import CategorySlider from './(components)/CategorySlider'
+import FilmCrewSlider from './(components)/FilmCrewSlider'
 import MovieSlider from './(components)/MovieSlider'
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
         <div>
             <CategorySlider/> 
             <MovieSlider/>
+            <FilmCrewSlider/>
         </div>
   )
 }

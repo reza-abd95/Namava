@@ -15,7 +15,7 @@ export default function SubSlider() {
   const  windowWidth  = windowDimensions();
   const [slidesPer, setSlidePer] = useState(1.1);
   const [centered, setCentered] = useState(true);
-  const [imager, setImage] = useState("");
+  const [imager, setImage] = useState("/images/mehmooni.jpg");
 
 
   useEffect(() => {

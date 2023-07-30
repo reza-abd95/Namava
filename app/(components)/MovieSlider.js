@@ -3,7 +3,6 @@
 
 import React , { useState, useEffect } from 'react';
 import windowDimensions from '../hooks/useWindowDimensions';
-import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -51,7 +50,6 @@ export default function MovieSlider() {
         navigation={true}
         modules={[Navigation]}
         className="mySwiper flex justify-center items-center w-full h-auto mb-20 mt-5"
-
       >
           <SwiperSlide className="movie-slide"> 
             <MovieForSlider/>
@@ -60,18 +58,32 @@ export default function MovieSlider() {
           <SwiperSlide className="movie-slide"> 
             <MovieForSlider/>
           </SwiperSlide>
+
           <SwiperSlide className="movie-slide"> 
             <MovieForSlider/>
           </SwiperSlide>
+          
           <SwiperSlide className="movie-slide"> 
             <MovieForSlider/>
           </SwiperSlide>
+
           <SwiperSlide className="movie-slide"> 
             <MovieForSlider/>
           </SwiperSlide>
+
           <SwiperSlide className="movie-slide"> 
             <MovieForSlider/>
           </SwiperSlide>
+          
+
+          <SwiperSlide className="movie-slide"> 
+            <MovieForSlider/>
+          </SwiperSlide>
+
+          <SwiperSlide className="movie-slide"> 
+            <MovieForSlider/>
+          </SwiperSlide>
+
           <SwiperSlide className="movie-slide"> 
             <MovieForSlider/>
           </SwiperSlide>
