@@ -59,7 +59,10 @@ export default function Slider() {
         autoplay={{
           delay: 7000,
           disableOnInteraction: false,
-        }}
+         
+        }
+      }
+      loop={true}
         navigation={false}
         spaceBetween={30}
         effect={"fade"}

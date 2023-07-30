@@ -5,11 +5,9 @@ import Image from "next/image";
 export default function Logo() {
   return (
     
-        <Image
+        <img className="max-[500px]:p-16 "
           src="/images/avatarLogo.png"
           alt="avatar"
-          width={100}
-        height={100}
         />
       
   )};
