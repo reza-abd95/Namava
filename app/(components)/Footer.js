@@ -2,7 +2,9 @@
 
 export default function Footer() {
     return (
-          <div className="h-[500px] bg-black">
+
+          <div className=" bg-red-500 w-full h-5 ">
+
             Footer
           </div>
     )

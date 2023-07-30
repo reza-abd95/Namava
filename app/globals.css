@@ -2,18 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    direction: rtl;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+html{
+  background-color: #121212;
+  direction: rtl;
 }
 
-/*//////<--Typography-->///////*/
-
-
-@layer components {
-
+@layer components{
+  .movie-slide {
+    @apply text-white w-full h-full text-center text-lg flex justify-center items-center rounded cursor-pointer;
+  }
 }
 
 

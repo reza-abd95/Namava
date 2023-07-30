@@ -1,11 +1,15 @@
-
-import Image from 'next/image'
+import CategorySlider from './(components)/CategorySlider'
+import FilmCrewSlider from './(components)/FilmCrewSlider'
+import MovieSlider from './(components)/MovieSlider'
 
 
 export default function Home() {
   return (
-        <div className="bg-blue-500 w-full h-screen">
-          Home
+        <div>
+            <CategorySlider/> 
+            <MovieSlider/>
+            <FilmCrewSlider/>
+
         </div>
   )
 }
