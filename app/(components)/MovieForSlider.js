@@ -7,8 +7,8 @@ export default function MovieForSlider() {
       console.log("miad")
     }
     return (
-      <div onClick={clickHandler}>              
-        <div className='relative inline-block'>
+      <div onClick={clickHandler} className=" cursor-pointer">              
+        <div className='relative inline-block text-white'>
           <Image  className="block max-w-full h-auto rounded "
                   src={"/images/GOTG.jpg"}
                   width={1000}

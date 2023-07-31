@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
           <Header/>
           <HeaderSticky/>
         </nav>
+        
         <main>
           {children}
         </main>
