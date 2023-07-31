@@ -9,7 +9,6 @@ export default function Home() {
             <CategorySlider/> 
             <MovieSlider/>
             <FilmCrewSlider/>
-
         </div>
   )
 }

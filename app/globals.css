@@ -20,13 +20,15 @@ html{
 }
 
 
-@layer components{
+@layer components {
     .mobile__menu-list {
         @apply w-full h-[40px] flex items-center hover:text-[#6eb8ff] cursor-pointer
     }
-    .mobile__menu-list p{
+
+    .mobile__menu-list p {
         @apply pr-[15px]
     }
+}
 /*-----------------Header-------------------*/
 .header_gradient {
     background-color: rgba(18, 18, 18, 0);
@@ -44,7 +46,7 @@ html{
     left: 0;
     width: 100%;
     background-color: black;
-    box-shadow: rgba(0, 0, 0, 0.15) 0 3px 3px 0;
+    background-image: linear-gradient(to bottom, rgba(18, 18, 18, 1), rgba(18, 18, 18, 0));
     transition: all 0.5s ease-out;
 }
 
