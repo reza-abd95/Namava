@@ -8,14 +8,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
-import "./slider.css";
+import "./mainslider.css";
 
 // import required modules
 import { EffectFade, Autoplay, Pagination, Navigation } from "swiper/modules";
 import Test from "./Test";
 import Test2 from "./Test2";
 
-export default function Slider() {
+export default function MainSlider() {
   const swiperRef = useRef(null);
 
   const goPrev = () => {

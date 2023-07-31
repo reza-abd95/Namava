@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import Slider from './Slider'
+import MainSlider from './MainSlider'
 import Test from './Test'
 export default function Home() {
   return (
         <div>
-          {/* <Slider/> */}
+          {/* <MainSlider/> */}
           <Test/>
           Home
         </div>
