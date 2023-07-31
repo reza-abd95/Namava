@@ -4,8 +4,8 @@ import Test from './Test'
 export default function Home() {
   return (
         <div>
-          <Slider/>
-          {/* <Test/> */}
+          {/* <Slider/> */}
+          <Test/>
           Home
         </div>
   )

@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState,useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -29,9 +29,23 @@ export default function Slider() {
       swiperRef.current.swiper.slideNext();
     }
   };
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
-      <div className=" min-[800px]:flex max-[799px]:hidden">
+      <div className=" min-[800px]:flex max-[799px]:hidden ">
         <button
           className="opacity-50 w-10 h-10 rounded-full border-none bg-gray-300 "
           onClick={goPrev}
@@ -55,7 +69,9 @@ export default function Slider() {
       </div>
       <Swiper
         ref={swiperRef}
-        pagination={true}
+        pagination={windowWidth > 800
+                ? false
+                : true}
         autoplay={{
           delay: 7000,
           disableOnInteraction: false,
@@ -74,7 +90,7 @@ export default function Slider() {
         </SwiperSlide> */}
 
         <SwiperSlide>
-          <Test />
+          <Test className='relative' />
         </SwiperSlide>
 
         {/* <SwiperSlide>
@@ -82,14 +98,12 @@ export default function Slider() {
         </SwiperSlide> */}
 
         <SwiperSlide>
-          <Test />
-        </SwiperSlide>
+        <Test className='relative' />        </SwiperSlide>
         {/* <SwiperSlide>
           <Test2 />
         </SwiperSlide> */}
         <SwiperSlide>
-          <Test />
-        </SwiperSlide>
+        <Test className='relative' />        </SwiperSlide>
       </Swiper>
     </>
   );
