@@ -2,19 +2,24 @@
 
 import Image from "next/image";
 import Profile from "@/public/icons/profile-icon.png";
+import { useState } from "react";
 
 export default function ProfileBox () {
+    const [profileState , setprofileState] = useState("hidden");
     const mouseOverHandler = () => {
-        console.log("sssssssssss")
-
+        setprofileState("flex")
+    }
+    const closeProfile = () => {
+        setprofileState("hidden")
     }
     return (
         <div>
+            {/* <div className={`w-[1000px] h-[1000px] bg-green-400 absolute top-0 right-0 ${(profileState == "flex") ? "flex" : "hidden"}`}></div> */}
             <div>
-                <Image className="cursor-pointer w-[30px] h-[31px] rounded-full mt-[1px] mr-[8px] tab:h-[30px] tab:w-[31px] des:w-[40px] des:h-[40px]" src={Profile} alt="profile" onMouseOver={mouseOverHandler}/>
+                <Image className="cursor-pointer w-[30px] h-[31px] rounded-full mt-[1px] mr-[8px] tab:h-[30px] tab:w-[31px] des:w-[40px] des:h-[40px]" src={Profile} alt="profile" onClick={mouseOverHandler} onMouseOver={mouseOverHandler}/>
             </div>
-            <div className="w-[400px] flex justify-end items-start absolute top-[100px] left-[2%] z-100">
-                <div className="w-[272px] rounded-lg overflow-hidden">
+            <div className={"w-[600px] h-[500px] transition ease-in-out justify-end items-start absolute top-[20px] left-[2%] z-100" + " " + profileState} onMouseLeave={closeProfile} onClick={closeProfile}>
+                <div className="w-[272px] rounded-lg mt-[80px] overflow-hidden">
                     <div className="w-full h-[93px] p-[16px] bg-[#D95c5c] flex flex-col justify-center items-stretch">
                         <div className="w-full h-[20px] mb-[10px] text-[14px] text-white flex justify-center items-center text-center">اشتراک فعال ندارید</div>
                         <button className="shadow-lg shadow-[#1616163e] rounded-md bg-slate-50 cursor-pointer border-[0px] w-full px-[20px] h-[30px] text-center hover:bg-[#1993ff] text-black hover:text-white flex justify-center items-center text-[13px]">خرید اشتراک</button>
