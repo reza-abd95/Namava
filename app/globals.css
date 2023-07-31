@@ -27,13 +27,15 @@ p, div {
 h1, h2, h3, h4, span, a {
   font-family: 'iranyekanBold';
 }
-
+body {
+  position: relative;
+}
 @layer components {
   .Footer__container {
-    @apply w-full flex items-center bg-[#1A1A1A] flex-col
+    @apply w-full flex items-center bg-[#1A1A1A] flex-col absolute bottom-0
   }
   .Footer {
-    @apply  flex flex-col px-5 py-2 w-full bg-inherit relative 
+    @apply  flex flex-col px-5 py-2 w-full bg-inherit
     tab:px-7 tab:max-w-[1144px]
     des:py-5 des:px-0
   }
@@ -114,14 +116,14 @@ h1, h2, h3, h4, span, a {
     @apply px-5
     tab:px-0 tab:mr-10
   }
-  /* .SocialMedia__icon {
-    @apply hover:fill-[ #005fb4]
-  } */
+  .SocialMedia__icon {
+    @apply hover:fill-[#005fb4]
+  }
   .ContactUs__text {
     @apply text-[#aaaaaa] text-[10px] leading-5 py-2 font-iranyekanRegular  
   }
   .FooterNavbar{
-    @apply w-full h-10 z-10
+    @apply w-full h-10 z-10 overflow-hidden
   }
   .FooterNavbar__menu {
     @apply bg-[#222327] px-4 flex items-center justify-between h-full ml:justify-evenly
@@ -137,14 +139,14 @@ h1, h2, h3, h4, span, a {
   }
   .DropdownMenu__menu {
     background-color: #222327; position: absolute; top:0; left: 0; z-index: -1;
-    transform: translate(0,0); transition: transform 0.5s ease; padding: 16px 0; width: 100vw;
+    transform: translate(0,0); transition: transform 0.5s ease;  width: 100vw; padding: 16px 0;
     
     @apply ml:w-[360px] ml:left-[32px] tab:left-[60px]
     des:w-[180px] des:left-[52px]
     
   }
   .DropdownMenu__menu-open {
-    transform: translate(0,-100%);
+    transform: translate(0,-100%); 
     
   }
   .DropdownMenu__items {
@@ -156,5 +158,5 @@ h1, h2, h3, h4, span, a {
   
   .DropdownMenu__menu-close {
     @apply flex justify-between items-center cursor-pointer
-  }  
+  } 
 }
