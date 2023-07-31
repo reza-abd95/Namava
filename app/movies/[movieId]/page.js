@@ -13,4 +13,5 @@ const MovieItems = () => {
     );
 };
 
+
 export default MovieItems;
