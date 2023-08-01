@@ -13,6 +13,8 @@
 html{
   background-color: #121212;
   direction: rtl;
+  font-family: 'iranyekanRegular';
+
 
 }
 @font-face {
@@ -36,7 +38,7 @@ body {
 }
 @layer components {
   .Footer__container {
-    @apply w-full flex items-center bg-[#1A1A1A] flex-col absolute bottom-0
+    @apply w-full flex items-center bg-[#1A1A1A] flex-col 
   }
   .Footer {
     @apply  flex flex-col px-5 py-2 w-full bg-inherit
