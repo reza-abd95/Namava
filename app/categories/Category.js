@@ -19,6 +19,12 @@ export default function Category() {
                     <h5 className="absolute mr-[25px]">پردیس نماوا</h5>
                 </div>
             </Link>
+            <Link className="no-underline text-white w-[43%] ml:w-[44%] tab:w-[29.5%] des:w-[22.4%]" href="#">
+                <div className="flex  w-[100%] h-[100%]  align-middle items-center justify-start">
+                    <Image className="relative w-[100%] h-[100%] rounded-[3px] des:rounded-[5px]" src={image1} alt="action"/>
+                    <h5 className="absolute mr-[25px]">پردیس نماوا</h5>
+                </div>
+            </Link>
             <Link className="no-underline text-white w-[43%]  ml:w-[44%] tab:w-[29.5%] des:w-[22.4%]" href="#">
                 <div className="flex w-[100%] h-[100%]  align-middle items-center justify-start">
                     <Image className="relative w-[100%] h-[100%] rounded-[3px] des:rounded-[5px]" src={image2} alt="action"/>

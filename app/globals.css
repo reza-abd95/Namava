@@ -1,6 +1,8 @@
-/*@tailwind base;*/
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 *{
   margin: 0;
@@ -11,6 +13,158 @@
 html{
   background-color: #121212;
   direction: rtl;
+  font-family: 'iranyekanRegular';
+
+
+}
+@font-face {
+  font-family: iranyekanBold;
+  src: url("../public/fonts/iranyekanwebbold.woff") format("opentype");
+}
+@font-face {
+  font-family: iranyekanRegular;
+  src: url("../public/fonts/iranyekanwebregular.woff") format("opentype");
+}
+
+p, div {
+  font-family: 'iranyekanRegular';
+}
+
+h1, h2, h3, h4, span, a {
+  font-family: 'iranyekanBold';
+}
+body {
+  position: relative;
+}
+@layer components {
+  .Footer__container {
+    @apply w-full flex items-center bg-[#1A1A1A] flex-col 
+  }
+  .Footer {
+    @apply  flex flex-col px-5 py-2 w-full bg-inherit
+    tab:px-7 tab:max-w-[1144px]
+    des:py-5 des:px-0
+  }
+  .Footer__holder {
+    @apply flex justify-center bg-inherit z-20 w-full
+  }
+  .DA__container {
+    @apply block
+    ml:flex ml:justify-between ml:py-3
+    des:w-[1144px] des:h-[104px] des:bg-[#222327] des:rounded des:px-[24px] des:py-[16px]
+  }
+  .DA__title {
+    @apply flex text-[#ffffff] py-2
+    des:py-0
+  }
+  .DA__title__logo {
+    @apply bg-gradient-to-b from-[rgba(25,147,255,1)] to-[rgba(0,95,180,1)] w-[48px] h-[48px] rounded-md flex items-center justify-center ml-2
+    des:h-[72px] des:w-[72px]
+  } 
+  .DA__title__text {
+    @apply flex items-center text-sm mx-2 no-underline text-[#FFFFFF]
+    des:text-base
+  }
+  .AppStore__holder {
+    @apply flex items-center py-2
+    
+  }
+  .AppStore {
+    @apply w-[48px] h-[48px] rounded-md bg-[#37383E] flex items-center justify-center ml-4
+    des:w-[106px] des:justify-start des:px-1
+  }
+  .AppStore__more {
+    @apply text-[#6eb8ff] text-sm flex items-center justify-center font-iranyekanBold no-underline
+  }
+  .AppStore__details {
+    @apply flex-col pr-1 hidden des:flex
+  }
+  .AppStore__icon__text {
+    @apply text-[rgba(255,255,255,0.7)] text-[9px] pb-1
+  }
+  .AppStore__name {
+    @apply text-[#f2f2f2] text-xs pb-1
+  }
+  .AboutUs__container {
+    @apply
+    ml:flex ml:justify-between ml:pb-6 ml:border-b-[1px] ml:border-[#37383e]
+    tab:items-center
+    des:py-6
+  }
+  .AboutUs__title {
+    @apply text-[#FFFFFF] text-xs py-2 font-iranyekanBold
+  }
+  .AboutUs__description {
+    @apply text-[#aaaaaa] leading-6 text-[11px] py-2 font-iranyekanRegular
+  }
+  .TrustUs {
+    @apply flex py-3
+    ml:flex-col ml:pr-7
+    tab:flex-row
+    des:px-5
+  }
+  .TrustUs__container {
+    @apply w-[90px] h-[90px] bg-[#CCCCCC] rounded-md ml-6
+    ml:mb-6 ml:ml-0
+    tab:mb-0 tab:mr-7
+  }
+  .TrustUs__image {
+    @apply w-[90px] h-[90px]
+  }
+  .ContactUs__container {
+    @apply py-3
+    tab:flex tab:justify-between tab:flex-row-reverse
+  }
+  .ContactUs__SocialMedia {
+    @apply flex justify-center py-3
+  }
+  .SocialMedia {
+    @apply px-5
+    tab:px-0 tab:mr-10
+  }
+  .SocialMedia__icon {
+    @apply hover:fill-[#005fb4]
+  }
+  .ContactUs__text {
+    @apply text-[#aaaaaa] text-[10px] leading-5 py-2 font-iranyekanRegular  
+  }
+  .FooterNavbar{
+    @apply w-full h-10 z-10 overflow-hidden
+  }
+  .FooterNavbar__menu {
+    @apply bg-[#222327] px-4 flex items-center justify-between h-full ml:justify-evenly
+  }
+  .DropdownMenu {
+    @apply h-full w-fit flex items-center text-[#cccccc] text-xs ml:justify-center 
+  }
+  .Dropdown__button {
+    @apply flex items-center justify-center
+  }
+  .Dropdown__button__text {
+    @apply ml-2 hover:text-[#ffffff]
+  }
+  .DropdownMenu__menu {
+    background-color: #222327; position: absolute; top:0; left: 0; z-index: -1;
+    transform: translate(0,0); transition: transform 0.5s ease;  width: 100vw; padding: 16px 0;
+    
+    @apply ml:w-[360px] ml:left-[32px] tab:left-[60px]
+    des:w-[180px] des:left-[52px]
+    
+  }
+  .DropdownMenu__menu-open {
+    transform: translate(0,-100%); 
+    
+  }
+  .DropdownMenu__items {
+    @apply text-xs text-[#cccccc] block py-3 px-6 hover:text-[#ffffff]
+  }
+  .NavbarMenu__items {
+    @apply text-xs text-[#cccccc] hover:text-[#ffffff]
+  }
+  
+  .DropdownMenu__menu-close {
+    @apply flex justify-between items-center cursor-pointer
+  } 
 }
 
 @layer components{
@@ -34,6 +188,7 @@ html{
         @apply pr-[15px]
     }
   }
+
 /*-----------------Header-------------------*/
 .header_gradient {
     background-color: rgba(18, 18, 18, 0);
