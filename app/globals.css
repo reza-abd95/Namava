@@ -171,14 +171,23 @@ body {
   .movie-slide {
     @apply text-white w-full h-full text-center text-lg flex justify-center items-center rounded cursor-pointer;
   }
-  .mobile__menu-list {
-    @apply w-full h-[40px] flex items-center hover:text-[#6eb8ff] cursor-pointer
-}
-.mobile__menu-list p{
-    @apply pr-[15px]
-}
+  .profileBox__list {
+    @apply w-full h-[21px] mb-[15px] text-zinc-900 hover:text-[#1993ff] fill-[#bdbec0] hover:fill-[#1993ff] flex flex-row items-center justify-start cursor-pointer list-none
+  }
+  .profileBox__list-text {
+    @apply text-[12px] mr-[8px]
+  }
 }
 
+
+@layer components{
+    .mobile__menu-list {
+        @apply w-full h-[40px] flex items-center hover:text-[#6eb8ff] cursor-pointer
+    }
+    .mobile__menu-list p{
+        @apply pr-[15px]
+    }
+  }
 
 /*-----------------Header-------------------*/
 .header_gradient {

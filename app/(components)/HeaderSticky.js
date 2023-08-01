@@ -6,8 +6,8 @@ import "../globals.css";
 import Logo from "@/app/(components)/Logo";
 import HeaderNav from "@/app/(components)/HeaderNav";
 import SearchBox from "@/app/(components)/SearchBox";
-import ProfileBox from "@/app/(components)/ProfileBox";
 import MenuSteacky from "./MenuSteacky";
+import ProfileBoxSteaky from "./ProfileBoxSteaky";
 
 
 export default function HeaderSticky() {
@@ -23,7 +23,7 @@ export default function HeaderSticky() {
                     </div>
                     <div className="flex">
                         <SearchBox/>
-                        <ProfileBox/>
+                        <ProfileBoxSteaky />
                     </div>
 
 

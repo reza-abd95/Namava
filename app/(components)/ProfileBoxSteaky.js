@@ -4,7 +4,7 @@ import Image from "next/image";
 import Profile from "@/public/icons/profile-icon.png";
 import { useState } from "react";
 
-export default function ProfileBox () {
+export default function ProfileBoxSteaky () {
     const [profileState , setprofileState] = useState("hidden");
     const mouseOverHandler = () => {
         setprofileState("flex")
