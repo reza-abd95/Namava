@@ -1,9 +1,17 @@
-import Image from 'next/image'
+import CategorySlider from './(components)/CategorySlider'
+import FilmCrewSlider from './(components)/FilmCrewSlider'
+import MovieSlider from './(components)/MovieSlider'
+
 
 export default function Home() {
   return (
-        <div className='h-[2000px]'>
-          Home
+        
+
+        <div>
+            <CategorySlider/> 
+            <MovieSlider/>
+            <FilmCrewSlider/>
+
         </div>
   )
 }
