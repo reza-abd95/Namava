@@ -3,10 +3,12 @@
 
 import Image from "next/image";
 import Search from "@/public/icons/search-line.svg";
+import {useRouter} from "next/navigation";
 
 export default function SearchBox () {
+    const router = useRouter();
     const clickHandler = () =>{
-       console.log('sssss')
+        router.push('/search')
     }
     return (
         <div>
