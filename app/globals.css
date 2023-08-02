@@ -13,7 +13,7 @@
 html{
   background-color: #121212;
   direction: rtl;
-  font-family: 'iranyekanRegular';
+  font-family: 'iranyekanRegular', serif;
 
 
 }
@@ -27,11 +27,11 @@ html{
 }
 
 p, div {
-  font-family: 'iranyekanRegular';
+  font-family: 'iranyekanRegular', serif;
 }
 
 h1, h2, h3, h4, span, a {
-  font-family: 'iranyekanBold';
+  font-family: 'iranyekanBold', serif;
 }
 body {
   position: relative;
