@@ -1,7 +1,10 @@
 import React from 'react'
+import Comments from "@/app/(components)/Comments";
 
 export default function MoiveId() {
   return (
-    <div>MoiveId</div>
+    <div className="">
+      <Comments/>
+    </div>
   )
 }

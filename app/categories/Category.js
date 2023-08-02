@@ -12,7 +12,7 @@ import image6 from "../../public/images/7.jpg"
 
 export default function Category() {
     return (
-        <div className="w-full mt-[48px] flex flex-wrap justify-center items-center gap-[10px] ml:mt-[58px] ml:gap-[12px] tab:mt-[38px] tab:gap-[14px] des:mt-[58px] des:gap-[16px]  ">
+        <div className="w-full mt-[48px] flex flex-wrap justify-center gap-[10px] ml:mt-[58px] ml:gap-[12px] tab:mt-[38px] tab:gap-[14px] des:mt-[58px] des:gap-[16px]  ">
             <Link className="no-underline text-white w-[43%] ml:w-[44%] tab:w-[29.5%] des:w-[22.4%]" href="#">
                 <div className="flex  w-[100%] h-[100%]  align-middle items-center justify-start">
                     <Image className="relative w-[100%] h-[100%] rounded-[3px] des:rounded-[5px]" src={image1} alt="action"/>
