@@ -1,0 +1,12 @@
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    top: 110%;
+    opacity: 0;
+    transition: opacity 1s ;
+  }

@@ -1,11 +1,13 @@
-import Image from 'next/image'
-import Slider from './Slider'
-import Test from './Test'
+'use client'
+
+import MovieHeader from './MovieHeader'
+
+
 export default function Home() {
   return (
         <div>
-          {/* <Slider/> */}
-          <Test/>
+          <MovieHeader/>
+          
           Home
         </div>
   )

@@ -7,7 +7,7 @@ export default function Logo() {
     
    <img 
    className='h-full w-full'
-          src="/images/logoj.png"
+          src="/images/avatarlogo.png"
           alt="avatar"
         />
    
