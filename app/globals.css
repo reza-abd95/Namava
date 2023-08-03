@@ -36,7 +36,7 @@ body {
 }
 @layer components {
   .Footer__container {
-    @apply w-full flex items-center bg-[#1A1A1A] flex-col absolute bottom-0
+    @apply w-full flex items-center bg-[#1A1A1A] flex-col
   }
   .Footer {
     @apply  flex flex-col px-5 py-2 w-full bg-inherit
@@ -117,8 +117,8 @@ body {
     @apply flex justify-center py-3
   }
   .SocialMedia {
-    @apply px-5
-    tab:px-0 tab:mr-10
+    @apply px-4
+    tab:px-0 tab:mr-8
   }
   .SocialMedia__icon {
     @apply hover:fill-[#005fb4]
@@ -127,7 +127,7 @@ body {
     @apply text-[#aaaaaa] text-[10px] leading-5 py-2 font-iranyekanRegular  
   }
   .FooterNavbar{
-    @apply w-full h-10 z-10 overflow-hidden
+    @apply w-full h-10 z-10 sticky bottom-0
   }
   .FooterNavbar__menu {
     @apply bg-[#222327] px-4 flex items-center justify-between h-full ml:justify-evenly
@@ -142,15 +142,15 @@ body {
     @apply ml-2 hover:text-[#ffffff]
   }
   .DropdownMenu__menu {
-    background-color: #222327; position: absolute; top:0; left: 0; z-index: -1;
-    transform: translate(0,0); transition: transform 0.5s ease;  width: 100vw; padding: 16px 0;
+    background-color: #222327; position: absolute; bottom: 40px; z-index: -1;
+    width: 100vw; padding-bottom: 0; max-height: 0; overflow: hidden; transition: max-height 0.8s;
     
     @apply ml:w-[360px] ml:left-[32px] tab:left-[60px]
     des:w-[180px] des:left-[52px]
-    
+
   }
   .DropdownMenu__menu-open {
-    transform: translate(0,-100%); 
+  max-height: 500px; padding-bottom: 16px;
     
   }
   .DropdownMenu__items {
@@ -161,7 +161,7 @@ body {
   }
   
   .DropdownMenu__menu-close {
-    @apply flex justify-between items-center cursor-pointer
+    @apply flex justify-between items-center cursor-pointer pt-6
   } 
 }
 
@@ -179,6 +179,7 @@ body {
     .mobile__menu-list p{
         @apply pr-[15px]
     }
+  }
 /*-----------------Header-------------------*/
 .header_gradient {
     background-color: rgba(18, 18, 18, 0);

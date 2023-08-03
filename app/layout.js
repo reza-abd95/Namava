@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import HeaderSticky from "@/app/(components)/HeaderSticky";
 import Header from "@/app/(components)/Header";
 import Footer from "@/app/(components)/Footer";
-
+import FooterNavbar from './(components)/FooterNavbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -23,7 +23,9 @@ export default function RootLayout({ children }) {
         <main>
           {children}
         </main>
+        <FooterNavbar /*isFixed={!isIntersecting}*//>
         <footer>
+
           <Footer/>
         </footer>
       </body>
