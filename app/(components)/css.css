@@ -12,9 +12,9 @@
   position: absolute;
   z-index: 1;
   opacity: 0;
-margin-right: 30px;
-top:130%;
-  left: 1px;
+top: 50px;
+right: -36px;
+  
   transition: opacity 3s;
 }
 

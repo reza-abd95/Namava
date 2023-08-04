@@ -14,19 +14,36 @@ export default function MovieHeader() {
     //handling button's icon
     const [showFirstSvg, setShowFirstSvg] = useState(true);
 
-    const handleClick = () => {
+    const handleClickAdd = () => {
       setShowFirstSvg(!showFirstSvg);
     };
     const [showFirstSvg2, setShowFirstSvg2] = useState(true);
+    const [showFirstSvg3, setShowFirstSvg3] = useState(true);
+    const handleClickLike = () => {
+      if(showFirstSvg2===false){
+          setShowFirstSvg2(true)
+      }
+      else {
+        setShowFirstSvg2(false);
+        setShowFirstSvg3(true)
+    }
 
-    const handleClick2 = () => {
-      setShowFirstSvg2(!showFirstSvg2);
+     
+     
     };
     
-    const [showFirstSvg3, setShowFirstSvg3] = useState(true);
+   
 
-    const handleClick3 = () => {
-      setShowFirstSvg3(!showFirstSvg3);
+    const handleClickDisLike = () => {
+      if(showFirstSvg3===false){
+        setShowFirstSvg3(true)
+    }
+    else {
+      setShowFirstSvg3(false);
+      setShowFirstSvg2(true)
+  }
+
+   
     };
  
 
@@ -130,7 +147,7 @@ export default function MovieHeader() {
               </div>
               <div className="flex flex-col justify-center items-center text-center ml-11 tab:ml-4">
               <div
-               onClick={handleClick}
+               onClick={handleClickAdd}
                 className="text-[20px] relative flex  items-center justify-center bg-[#414141]  opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
         
                  <Add showFirstSvg={showFirstSvg} />
@@ -142,7 +159,7 @@ export default function MovieHeader() {
              
               <div className="flex flex-col justify-center items-center text-center ml-11 tab:ml-4">
               <div
-               onClick={handleClick2}
+               onClick={handleClickLike}
                 className="text-[20px] relative tooltip flex  items-center justify-center bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
               
         <div className=" flex items-center justify-center absolute  tooltip_text text-[14px] rounded-[4px] h-[48px] w-[110px] left-1">
@@ -157,7 +174,7 @@ export default function MovieHeader() {
                
               <div className="flex flex-col justify-center items-center text-center ">
               <div
-              onClick={handleClick3}
+              onClick={handleClickDisLike}
                 className="text-[21px] relative flex  items-center justify-center bg-[#414141] opacity-[70%] hover:opacity-[100%]  hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
            
                 <DisLike  showFirstSvg3={showFirstSvg3}/>
