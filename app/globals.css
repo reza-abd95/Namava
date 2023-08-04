@@ -33,15 +33,13 @@ p, div {
 h1, h2, h3, h4, span, a {
   font-family: 'iranyekanBold', serif;
 }
-body {
-  position: relative;
-}
+/*-------------------Footer-------------------*/
 @layer components {
   .Footer__container {
     @apply w-full flex items-center bg-[#1A1A1A] flex-col
   }
   .Footer {
-    @apply  flex flex-col px-5 py-2 w-full bg-inherit
+    @apply  flex flex-col px-5 py-2 w-full bg-inherit 
     tab:px-7 tab:max-w-[1144px]
     des:py-5 des:px-0
   }
@@ -166,6 +164,7 @@ body {
     @apply flex justify-between items-center cursor-pointer
   }
 }
+/*-------------------Footer-------------------*/
 
 @layer components{
   .movie-slide {
@@ -218,3 +217,92 @@ body {
 }
 
 /*--------------HeaderSticky-------------*/
+
+
+/*----------------MovieDetails-----------*/
+
+@layer components {
+  
+  .MoviePictures__container {
+    @apply px-4 flex flex-col 
+    ml:px-[18px]
+    tab:px-[25px]
+    des:px-9
+  }
+  .MoviePictures__text {
+    @apply px-1 text-base text-[#ffffff] pb-1
+    ml:px-[6px]
+    tab:px-[7px]
+    des:px-[8px]
+  }
+  .MoviePictures__box {
+    @apply flex flex-wrap mb-1
+    ml:mb-3
+    
+  }
+  .MoviePictures__pictureHolder {
+    @apply w-1/3 px-1 my-[12px] 
+    ml:w-1/4 ml:px-[6px]
+    tab:w-1/5 tab:px-[7px]
+    des:w-[14.28%] des:px-2
+  }
+  .MoviePictures__pictureStyle {
+    @apply h-full w-full rounded-md cursor-pointer
+
+  }
+  .AboutMovie__container {
+    @apply px-5 flex flex-col
+    ml:px-6
+    tab:px-8
+    des:px-11
+  }
+  .AboutMovie__movieName {
+    @apply text-[#ffffff] text-xs mb-6
+    tab:text-sm
+  }
+  .AboutMovie__title {
+    @apply text-[#ffffff] text-base font-iranyekanBold mb-4
+    ml:mb-4
+  }
+  .AboutMovie__description {
+    @apply pb-7
+  }
+  .AboutMovie__descriptionParagraph {
+    @apply text-[#aaaaaa] text-xs leading-7
+    tab:text-sm tab:leading-8
+  }
+  .AboutMovie__additionalDetails {
+    @apply mb-10 tab:mb-11 des:pb-12
+  }
+  .AboutMovie__category {
+    @apply text-[#ffffff] text-xs mb-3
+    tab:text-sm
+  }
+  .AboutMovie__voice {
+    @apply text-[#ffffff] text-xs
+    tab:text-sm
+  }
+  .SlideShow__background {
+    @apply fixed top-0 left-0 w-full h-full bg-[#121212cc] flex items-center z-30
+  }
+  .SlideShow__container {
+    @apply w-full h-auto flex relative
+  }
+  .SlideShow__buttons {
+    @apply w-[10%] h-auto flex justify-center items-center des:w-[19%] cursor-pointer
+  }
+  .SlideShow__imageHolder {
+    @apply w-[80%] h-auto des:w-[62%] rounded-lg overflow-hidden
+  }
+  .SlideShow__imageStyle {
+    @apply rounded-lg
+  }
+  .SlideShow__closeButton {
+    @apply absolute left-[10%] top-[-32px] cursor-pointer ml:top-[-40px] tab:top-[-52px] des:left-[19%]
+  }
+}
+
+
+/*----------------MovieDetails-----------*/
+
+
