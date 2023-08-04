@@ -1,0 +1,87 @@
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltip_text {
+  visibility: hidden;
+  font-size: 15px;
+  padding: 5px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+margin-right: 30px;
+top:130%;
+  left: 1px;
+  transition: opacity 3s;
+}
+
+.tooltip .tooltip_text::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-width: 8px;
+  border: 4px solid;
+  border-color: transparent transparent white transparent;
+}
+
+.tooltip:hover .tooltip_text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.box{
+  
+   animation: animName 0.5s linear;
+    border-radius: 50%;
+    animation-fill-mode: forwards;
+}
+@keyframes animName {
+  0%{
+     transform: rotate(0deg);
+    }
+ 50%{
+     transform: rotate(30deg);
+    }
+   100%{
+      transform: rotate(0deg)
+   }
+ }
+ 
+ 
+ .dis {
+  position: relative;
+  animation: myfirst 0.5s ;
+  animation-direction: alternate;
+}
+
+@keyframes myfirst {
+  0%   {background: none; left: 0px; top: 0px;}
+  30% {background: none; left: 0px; top: 4px;}
+  100% {background: none; left: 0px; top: 0px;}
+}
+
+
+.fade-in-out {
+  opacity: 0;
+  animation: fade-in 1s ease-in forwards, fade-out 4s 1s ease-out forwards;
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

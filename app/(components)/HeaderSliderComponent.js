@@ -4,7 +4,7 @@ import Logo from "./Logo";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-export default function Test() {
+export default function HeaderSliderComponent() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => {
@@ -20,7 +20,7 @@ export default function Test() {
 
   return (
     <>
-      <div>
+      <div className="text-[#fff]">
         <div className="w-full h-full relative flex flex-col ">
           <div className="relative mb-[12px] ml:mb-[32%] min-[600px]:mb-[20%] min-[700px]:mb-[11%] tab:mb-[64px] min-[900px]:mb-2 min-[1050px]:mb-0" >
             <Image

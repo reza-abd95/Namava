@@ -1,11 +1,12 @@
 "use client";
-import "./test.css";
+
 import Add from "./Add";
 import Logo from "./Logo";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Like from "./Like";
 import DisLike from "./DisLike";
+import './css.css'
 
 export default function MovieHeader() {
    //isAdd handling
@@ -46,7 +47,7 @@ export default function MovieHeader() {
   return (
     <>
     
-      <div>
+      <div className="text-[#fff]">
         <div className="w-full h-full relative flex flex-col ml:max-h-[534px] tab:max-h-none justify-center tab:justify-start items-center tab:items-stretch ">
           <div className="relative mb-[168px] ms:mb-[118px]  ml:mb-[298px]  tab:mb-[100px] des:mb-0  " >
             <Image
@@ -130,7 +131,7 @@ export default function MovieHeader() {
               <div className="flex flex-col justify-center items-center text-center ml-11 tab:ml-4">
               <div
                onClick={handleClick}
-                className="relative flex  items-center justify-center bg-[#414141]  opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
+                className="text-[20px] relative flex  items-center justify-center bg-[#414141]  opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
         
                  <Add showFirstSvg={showFirstSvg} />
               </div> 
@@ -142,18 +143,22 @@ export default function MovieHeader() {
               <div className="flex flex-col justify-center items-center text-center ml-11 tab:ml-4">
               <div
                onClick={handleClick2}
-                className="tooltip relative flex  items-center justify-center bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
-             
+                className="text-[20px] relative tooltip flex  items-center justify-center bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
+              
+        <div className=" flex items-center justify-center absolute  tooltip_text text-[14px] rounded-[4px] h-[48px] w-[110px] left-1">
+            دوست داشتم
+        </div>
+    
                 <Like showFirstSvg2={showFirstSvg2}/>
-                <div className="tooltiptext top-[120%] z-1 absolute bg-white border-solid border-gray-600 border-[1px] py-2 text-black text-center rounded-[6px] w-[110px] opacity-0 hover:opacity-[100%]"> دوست داشتم</div>
               </div> 
+              
               <p className=" text-[10px] text-center max-w-full text-[#9699A6] mt-1 tab:hidden ">دوست داشتم</p>
               </div>
                
               <div className="flex flex-col justify-center items-center text-center ">
               <div
               onClick={handleClick3}
-                className="relative flex  items-center justify-center bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
+                className="text-[21px] relative flex  items-center justify-center bg-[#414141] opacity-[70%] hover:opacity-[100%]  hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
            
                 <DisLike  showFirstSvg3={showFirstSvg3}/>
               </div> 

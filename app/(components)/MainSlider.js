@@ -9,10 +9,10 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "./mainslider.css";
-import Image from "next/image";
+
 // import required modules
 import { EffectFade, Autoplay, Pagination, Navigation } from "swiper/modules";
-import Test from "./Test";
+import HeaderSliderComponent from "./HeaderSliderComponent";
 
 
 export default function MainSlider() {
@@ -72,7 +72,7 @@ export default function MainSlider() {
       
 
         <SwiperSlide className="w-full h-full">
-          <Test className='object-cover w-full h-full block' />
+          <HeaderSliderComponent className='object-cover w-full h-full block' />
         </SwiperSlide>
 
         <SwiperSlide className="w-full h-full">
@@ -84,10 +84,10 @@ export default function MainSlider() {
         </SwiperSlide>
 
         <SwiperSlide className="w-full h-full">
-        <Test className='object-cover w-full h-full block' />        </SwiperSlide>
+        <HeaderSliderComponent className='object-cover w-full h-full block' />        </SwiperSlide>
         
         <SwiperSlide className="w-full h-full">
-        <Test className='object-cover w-full h-full block' />        </SwiperSlide>
+        <HeaderSliderComponent className='object-cover w-full h-full block' />        </SwiperSlide>
         <div id="button" className=" min-[800px]:flex max-[799px]:hidden bottom-[6px] left-8 absolute z-20 min-[1050px]:bottom-[18%] des:left-10 des:bottom-[21%]">
         <button
           className="opacity-70 w-10 h-10 rounded-full border-none bg-[#414141] "
