@@ -34,36 +34,8 @@ right: -36px;
   opacity: 1;
 }
 
-.box{
-  
-   animation: animName 0.5s linear;
-    border-radius: 50%;
-    animation-fill-mode: forwards;
-}
-@keyframes animName {
-  0%{
-     transform: rotate(0deg);
-    }
- 50%{
-     transform: rotate(30deg);
-    }
-   100%{
-      transform: rotate(0deg)
-   }
- }
- 
- 
- .dis {
-  position: relative;
-  animation: myfirst 0.5s ;
-  animation-direction: alternate;
-}
 
-@keyframes myfirst {
-  0%   {background: none; left: 0px; top: 0px;}
-  30% {background: none; left: 0px; top: 4px;}
-  100% {background: none; left: 0px; top: 0px;}
-}
+
 
 
 .fade-in-out {
