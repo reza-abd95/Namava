@@ -22,24 +22,27 @@ export default function FooterNavbar({isFixed}) {
         {title: 'شرایط مصرف اینترنت',show: false},
        
     ]
-    const deviceWidth = window.outerWidth
     useEffect(() => {
         
         window.addEventListener('resize',() => {setWidth(window.outerWidth)})
-    },[deviceWidth])
-    if (deviceWidth >= 360) {
+    },[width])
+    let n = 1
+    if (width >= 360) {
+
         links[0]['show'] = true
         links[1]['show'] = true
         links.push({title: 'ارسال فیلمنامه',show: false})
         links.push({title: 'دانلودها',show: false})
-    } if (deviceWidth >= 500) {
+        n = 3
+    } if (width >= 500) {
         links[2]['show'] = true
-
-    } if (deviceWidth >= 800) {
+        n =4
+    } if (width >= 800) {
         links[3]['show'] = true
         links[4]['show'] = true
-      
-    } if (deviceWidth >= 1280) {
+        n =6
+    } if (width >= 1280) {
+
         links[5]['show'] = true
         links[6]['show'] = true
         links[7]['show'] = true
