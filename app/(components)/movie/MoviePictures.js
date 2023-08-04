@@ -16,7 +16,7 @@ export default function MoviePicturs({images,isVisible,setIsVisible}) {
                 
                 {
                 images.map((image,index) => {
-                    return <div className="MoviePictures__pictureHolder"> <Image onClick={handleOnClick} id={index+1} className="MoviePictures__pictureStyle" src={image}/> </div>
+                    return <div key={index+1} className="MoviePictures__pictureHolder"> <Image onClick={handleOnClick} id={index+1} className="MoviePictures__pictureStyle" src={image} alt="movieId"/> </div>
                 })
                 }
             </div>
