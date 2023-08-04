@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname , useRouter } from "next/navigation"
 import { useState , useRef } from "react";
 
+// for Desctop
 export default function Menu () {
     const [movieFill , setmovieFill] = useState("fill-white");
     const darkDivRef = useRef(null);
