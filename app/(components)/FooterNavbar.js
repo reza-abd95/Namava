@@ -20,32 +20,33 @@ export default function FooterNavbar({isFixed}) {
         {title: 'قوانین',show: false},
         {title: 'درباره نماوا',show: false},
         {title: 'شرایط مصرف اینترنت',show: false},
-        {title: 'تماس با ما',show: false},
+       
     ]
-    const deviceWidth = window.outerWidth
     useEffect(() => {
         
         window.addEventListener('resize',() => {setWidth(window.outerWidth)})
-    },[deviceWidth])
+    },[width])
     let n = 1
-    if (deviceWidth >= 360) {
+    if (width >= 360) {
+
         links[0]['show'] = true
         links[1]['show'] = true
         links.push({title: 'ارسال فیلمنامه',show: false})
         links.push({title: 'دانلودها',show: false})
         n = 3
-    } if (deviceWidth >= 500) {
+    } if (width >= 500) {
         links[2]['show'] = true
         n =4
-    } if (deviceWidth >= 800) {
+    } if (width >= 800) {
         links[3]['show'] = true
         links[4]['show'] = true
         n =6
-    } if (deviceWidth >= 1280) {
+    } if (width >= 1280) {
+
         links[5]['show'] = true
         links[6]['show'] = true
         links[7]['show'] = true
-        n = 9
+      
     }
     
     const visibleLinks = []
@@ -65,7 +66,7 @@ export default function FooterNavbar({isFixed}) {
     const [open, setOpen] = useState(false);
     
     return (
-        <div ref={closed} className={`FooterNavbar ${isFixed? 'fixed bottom-0':'relative'}`}>
+        <div ref={closed} className={`FooterNavbar`}>
             <div className="FooterNavbar__menu">
                 {
                     visibleLinks.map(item => {
@@ -83,22 +84,18 @@ export default function FooterNavbar({isFixed}) {
             </div>
             
             <ul className={`DropdownMenu__menu ${open? 'DropdownMenu__menu-open':''}`}>
-                <li 
+                <li
                  onClick={() => {
                     
                     setOpen(!open)
-                    if (open) {
-                        setOpen(!open)
-                        if (open) {
-                            setTimeout(() => {
-                                closed.current['className'] =  + ' overflow-hidden'
-                            },500)
-                        }
+                    // closed.current.classList.remove("oveflow-hidden")
+                    // closed.current.classList.add("overflow-visible")
+
                         
-                    }
+                    
                     
                 }}
-            className={`DropdownMenu__items DropdownMenu__menu-close  ${open? 'py-3':''}`}>
+            className={`DropdownMenu__items DropdownMenu__menu-close`}>
                     <span>سایر لینک‌ها</span>
                     <Image src={ArrowDown}/>
                 </li>

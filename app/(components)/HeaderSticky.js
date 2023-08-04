@@ -15,7 +15,7 @@ export default function HeaderSticky() {
     return (
         <>
             <div className={` z-10 ${scrolledUp ? "sticky-header" : "sticky-before"}`} >
-                <div className="header_gradient  flex justify-between items-center flex-row w-full h-[70px] px-[20px]  pt-1 tab:h-[60px] tab:px-[32px] tab:py-0 tab:pt-[4px] des:h-[80px] des:px-[43px]">
+                <div className="header_gradient text-[12px]  flex justify-between items-center flex-row w-full h-[70px] px-[20px]  pt-1 tab:h-[60px] tab:px-[32px] tab:py-0 tab:pt-[4px] des:h-[80px] des:px-[43px]">
                     <div className="flex items-center justify-center flex-row">
                         <MenuSteacky />
                         <Logo/>
@@ -25,8 +25,6 @@ export default function HeaderSticky() {
                         <SearchBox/>
                         <ProfileBoxSteaky />
                     </div>
-
-
                 </div>
             </div>
         </>
