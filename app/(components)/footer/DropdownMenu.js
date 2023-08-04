@@ -11,21 +11,10 @@ export default function DropdownMenu({elementClosed,closed,isFixed,items,open,se
             <button
             onClick={() => {
                 setOpen(!open)
-                // if (open) {
-                //     setTimeout(() => {
-                //         closed.current.classList.add("overflow-hidden")
-                //     },500)
-                // }
-                // if(!open) {
-
-                //     closed.current.classList.remove("oveflow-hidden")
-                //     closed.current.classList.add("overflow-visible")
-                // }
-
             }}
             className='Dropdown__button'>
                 <h4 className={`Dropdown__button__text`}>سایر لینک‌ها</h4>
-                <Image src={ArrowUp}/>
+                <Image src={ArrowUp} alt='arrow'/>
             </button>
         </div>
 

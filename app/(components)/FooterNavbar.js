@@ -66,8 +66,8 @@ export default function FooterNavbar({isFixed}) {
         <div ref={closed} className={`FooterNavbar`}>
             <div className="FooterNavbar__menu">
                 {
-                    visibleLinks.map(item => {
-                        return <Link href='#' className={`NavbarMenu__items`}>{item}</Link>
+                    visibleLinks.map((item,index) => {
+                        return <Link key={index+1} href='#' className={`NavbarMenu__items`}>{item}</Link>
                     })
                 }
                 <DropdownMenu
@@ -83,22 +83,15 @@ export default function FooterNavbar({isFixed}) {
             <ul className={`DropdownMenu__menu ${open? 'DropdownMenu__menu-open':''}`}>
                 <li
                  onClick={() => {
-                    
                     setOpen(!open)
-                    // closed.current.classList.remove("oveflow-hidden")
-                    // closed.current.classList.add("overflow-visible")
-
-                        
-                    
-                    
                 }}
             className={`DropdownMenu__items DropdownMenu__menu-close`}>
                     <span>سایر لینک‌ها</span>
-                    <Image src={ArrowDown}/>
+                    <Image src={ArrowDown} alt="arrow"/>
                 </li>
                 {   
-                    hiddenLinks.map(item => {
-                        return <li><Link ref={elementClosed} href='#' className={`DropdownMenu__items ${open? 'py-3':''}`}>{item}</Link></li>
+                    hiddenLinks.map((item,index) => {
+                        return <li><Link key={index+1} ref={elementClosed} href='#' className={`DropdownMenu__items ${open? 'py-3':''}`}>{item}</Link></li>
                     })
                 }
             </ul>
