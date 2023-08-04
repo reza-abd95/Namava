@@ -189,6 +189,16 @@ body {
     }
   }
 
+
+@layer components{
+    .header__active-bookmarks {
+        @apply bg-white text-black py-3 px-6 rounded-md
+    }
+    .header__non-active-bookmarks {
+      @apply text-white py-3 px-6 rounded-md
+  }
+  }
+
 /*-----------------Header-------------------*/
 .header_gradient {
     background-color: rgba(18, 18, 18, 0);
