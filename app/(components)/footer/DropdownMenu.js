@@ -11,14 +11,16 @@ export default function DropdownMenu({elementClosed,closed,isFixed,items,open,se
             <button
             onClick={() => {
                 setOpen(!open)
-                if (open) {
-                    setTimeout(() => {
-                        closed.current['className'] = `FooterNavbar ${isFixed? 'fixed bottom-0':'relative'}` + ' overflow-hidden'
-                    },500)
-                }
-                if(!open) {
-                    closed.current['className'] = closed.current.className + ' overflow-visible'
-                }
+                // if (open) {
+                //     setTimeout(() => {
+                //         closed.current.classList.add("overflow-hidden")
+                //     },500)
+                // }
+                // if(!open) {
+
+                //     closed.current.classList.remove("oveflow-hidden")
+                //     closed.current.classList.add("overflow-visible")
+                // }
 
             }}
             className='Dropdown__button'>
