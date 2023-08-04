@@ -88,17 +88,17 @@ export default function MovieHeader() {
              <div className=" flex flex-row justify-between items-center w-full max-w-[90%] ml:max-w-[350px] my-2">
                
                 <div className="bg-yellow-500 px-2 rounded-[4px] py-[3px] flex items-center text-center ml:px-3 ml:py-[5px]">
-                <p className="text-[10.5px] ml:text-[12px] text-center large:text-[17px]">+۱۲</p>
+                <p className="text-[10.5px] ml:text-[12px] text-center des:text-[14px] large:text-[17px]">+۱۲</p>
               </div>
-              <p className="text-[10.5px] ml:text-[12px] large:text-[17px]">۲۰۲۲</p>
-              <p className='text-[10.5px] ml:text-[12px]'>۱۲۰ دقیقه</p> 
+              <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">۲۰۲۲</p>
+              <p className='text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]'>۱۲۰ دقیقه</p> 
               <div className=" h-3 flex flex-row items-center">
                 <img
                 className="ml-1 h-3 ml:h-[14px]"
                   src="./icons/imdb.png"
                   alt="imdb"
                 /> 
-                   <p className="text-[10.5px] ml:text-[12px] large:text-[17px]">6.7</p>
+                   <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">6.7</p>
               </div>
                
               <div className=" w-7 h-7 ml-2 p-0.5  flex flex-row items-center">
@@ -109,7 +109,7 @@ export default function MovieHeader() {
                   src="./icons/like.svg"
                   alt="like"
                 />
-                <p className="text-[10.5px] ml:text-[12px] large:text-[17px]">۹۱٪</p>
+                <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">۹۱٪</p>
               </div>
               <div className=" w-7 h-6 ml-2 p-0.5  flex flex-row items-center">
               <Image
@@ -119,7 +119,7 @@ export default function MovieHeader() {
                   src="./icons/subtitle.svg"
                   alt="subtitle"
                 />
-                <p className="text-[10.5px] ml:text-[12px] large:text-[17px]">زیرنویس</p>
+                <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">زیرنویس</p>
               </div>  
             </div> 
              
@@ -133,7 +133,7 @@ export default function MovieHeader() {
               به زودیsا دوبله اختصاصی نماوا نماوا
             </p> 
             <div className=" my-[21px] max-w-[100px] tab:hidden flex items-center justify-center h-[42px] bg-[#414141] opacity-[80%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]">
-                <p className="text-[12px] px-4 " >پیش‌ نمایش</p>
+                <p className="text-[12px] px-4 cursor-pointer" >پیش‌ نمایش</p>
               </div>
               <p className="max-[499px]:hidden tab:hidden mb-2 text-[12px] large:text-[14px]" >
               ستارگان:Chris Pine-Michelle Rodriguez-Regé-Jean Page-Justice Smith
@@ -143,12 +143,12 @@ export default function MovieHeader() {
             </p> 
              <div className="flex flex-row items-center mb-4 tab:mb-2 tab:mt-3 ">
                <div className=" my-[21px] tab:my-0 max-[799px]:hidden flex items-center justify-center ml-4 h-[42px] bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]">
-                <p className="text-[12px] px-5" >پیش‌ نمایش</p>
+                <p className="text-[12px] px-5 cursor-pointer" >پیش‌ نمایش</p>
               </div>
               <div className="flex flex-col justify-center items-center text-center ml-11 tab:ml-4">
               <div
                onClick={handleClickAdd}
-                className="text-[20px] relative flex  items-center justify-center bg-[#414141]  opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
+                className="text-[20px] relative flex  items-center justify-center cursor-pointer bg-[#414141]  opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
         
                  <Add showFirstSvg={showFirstSvg} />
               </div> 
@@ -160,7 +160,7 @@ export default function MovieHeader() {
               <div className="flex flex-col justify-center items-center text-center ml-11 tab:ml-4">
               <div
                onClick={handleClickLike}
-                className="text-[20px] relative tooltip flex  items-center justify-center bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
+                className="text-[20px] relative tooltip flex  items-center justify-center cursor-pointer bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
               
         <div className=" flex items-center justify-center absolute  tooltip_text text-[14px] rounded-[4px] h-[48px] w-[110px] left-1">
             دوست داشتم
@@ -175,7 +175,7 @@ export default function MovieHeader() {
               <div className="flex flex-col justify-center items-center text-center ">
               <div
               onClick={handleClickDisLike}
-                className="text-[21px] relative flex  items-center justify-center bg-[#414141] opacity-[70%] hover:opacity-[100%]  hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
+                className="text-[21px] relative flex  items-center justify-center bg-[#414141] cursor-pointer opacity-[70%] hover:opacity-[100%]  hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
            
                 <DisLike  showFirstSvg3={showFirstSvg3}/>
               </div> 

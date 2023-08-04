@@ -12,10 +12,10 @@
   position: absolute;
   z-index: 1;
   opacity: 0;
-top: 50px;
+top: 52px;
 right: -36px;
   
-  transition: opacity 3s;
+  transition: opacity 1s;
 }
 
 .tooltip .tooltip_text::after {
