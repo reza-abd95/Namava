@@ -60,14 +60,14 @@ body {
   .DA__title__logo {
     @apply bg-gradient-to-b from-[rgba(25,147,255,1)] to-[rgba(0,95,180,1)] w-[48px] h-[48px] rounded-md flex items-center justify-center ml-2
     des:h-[72px] des:w-[72px]
-  } 
+  }
   .DA__title__text {
     @apply flex items-center text-sm mx-2 no-underline text-[#FFFFFF]
     des:text-base
   }
   .AppStore__holder {
     @apply flex items-center py-2
-    
+
   }
   .AppStore {
     @apply w-[48px] h-[48px] rounded-md bg-[#37383E] flex items-center justify-center ml-4
@@ -126,7 +126,7 @@ body {
     @apply hover:fill-[#005fb4]
   }
   .ContactUs__text {
-    @apply text-[#aaaaaa] text-[10px] leading-5 py-2 font-iranyekanRegular  
+    @apply text-[#aaaaaa] text-[10px] leading-5 py-2 font-iranyekanRegular
   }
   .FooterNavbar{
     @apply w-full h-10 z-10 overflow-hidden
@@ -135,7 +135,7 @@ body {
     @apply bg-[#222327] px-4 flex items-center justify-between h-full ml:justify-evenly
   }
   .DropdownMenu {
-    @apply h-full w-fit flex items-center text-[#cccccc] text-xs ml:justify-center 
+    @apply h-full w-fit flex items-center text-[#cccccc] text-xs ml:justify-center
   }
   .Dropdown__button {
     @apply flex items-center justify-center
@@ -146,14 +146,14 @@ body {
   .DropdownMenu__menu {
     background-color: #222327; position: absolute; top:0; left: 0; z-index: -1;
     transform: translate(0,0); transition: transform 0.5s ease;  width: 100vw; padding: 16px 0;
-    
+
     @apply ml:w-[360px] ml:left-[32px] tab:left-[60px]
     des:w-[180px] des:left-[52px]
-    
+
   }
   .DropdownMenu__menu-open {
-    transform: translate(0,-100%); 
-    
+    transform: translate(0,-100%);
+
   }
   .DropdownMenu__items {
     @apply text-xs text-[#cccccc] block py-3 px-6 hover:text-[#ffffff]
@@ -161,10 +161,10 @@ body {
   .NavbarMenu__items {
     @apply text-xs text-[#cccccc] hover:text-[#ffffff]
   }
-  
+
   .DropdownMenu__menu-close {
     @apply flex justify-between items-center cursor-pointer
-  } 
+  }
 }
 
 @layer components{

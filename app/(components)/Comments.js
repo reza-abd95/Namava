@@ -5,7 +5,7 @@ import UsersComments from "@/app/(components)/UsersComments";
 
 const Comments = () => {
     return (
-        <div className='w-full flex flex-col justify-center items-center mb-[100px]'>
+        <div className="w-full flex flex-col justify-center items-center mb-[100px]">
             <CommentsInput/>
             <UsersComments/>
             <UsersComments/>
