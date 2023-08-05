@@ -1,7 +1,7 @@
 "use client";
 
 
-import Logo from "../mainSlider/Logo";
+import MovieLogo from "../mainSlider/MovieLogo";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Like from "./Like";
@@ -83,7 +83,7 @@ export default function MovieHeader() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent"></div>
           </div>
           <div className="absolute flex flex-col justify-center items-center top-[36%] ms:top-[40%] tab:justify-start tab:items-stretch ml:top-[120px] tab:top-[75px]">
-            <div className="max-[799px]:hidden tab:w-[20%] tab:mr-8 tab:mb-6 des:mr-11 des:w-[22%]"><Logo/></div>
+            <div className="max-[799px]:hidden tab:w-[20%] tab:mr-8 tab:mb-6 des:mr-11 des:w-[22%]"><MovieLogo/></div>
            <div className="flex flex-col justify-center items-center px-[14px] tab:justify-start tab:items-stretch text-center ml:text-start ml:px-[20px] tab:px-8 des:px-11">
             <h2 className='text-[14px] ml:text-[16px] mb-2 ml:mb-0 tab:text-[19px] tab:mb-3 des:text-[21px] large:text-[24px]'>آواتار</h2>
              <div className=" flex flex-row justify-between items-center w-full max-w-[90%] ml:max-w-[350px] my-2">
@@ -147,12 +147,7 @@ export default function MovieHeader() {
                 <p className="text-[12px] px-5 cursor-pointer" >پیش‌ نمایش</p>
               </div>
               <div className="flex flex-col justify-center items-center text-center ml-11 tab:ml-4">
-              {/* <div
-               onClick={handleClickAdd}
-                className="text-[20px] relative flex  items-center justify-center cursor-pointer bg-[#414141]  opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
-        
-                 <Add showFirstSvg={showFirstSvg} />
-              </div>  */}
+             
               <WishlistButton/>
               <p className="text-[10px] text-center max-w-full text-[#9699A6] mt-1 tab:hidden">لیست من</p>
               </div>

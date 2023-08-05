@@ -1,6 +1,6 @@
 "use client";
 
-import Logo from "./Logo";
+import MovieLogo from "./MovieLogo";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
@@ -39,7 +39,7 @@ export default function HeaderSliderComponent() {
           </div>
           <div className="absolute flex flex-col justify-center items-center top-[26%] ml:block ml:top-[60px] tab:top-[85px]">
           <div className="w-[45%] mb-[44px] ml:w-[28%]  ml:mr-[20px] ml:mb[50px] tab:w-[20%] tab:mr-8 tab:mb-6 cursor-pointer des:mr-11 des:w-[22%]">
-            <Logo />
+            <MovieLogo />
           </div>
            <div className="flex flex-col justify-center items-center px-[14px]  text-center ml:block ml:text-start ml:px-[20px] tab:px-8 des:px-11">
             <h2 className='mb-6 ml:mb-4 tab:text-[19px] tab:mb-3 des:text-[21px] large:text-[24px] cursor-pointer'>آواتار</h2>

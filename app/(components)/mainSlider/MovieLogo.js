@@ -2,7 +2,7 @@
 
 
 
-export default function Logo() {
+export default function MovieLogo() {
   return (
     
    <img 
