@@ -1,12 +1,13 @@
 "use client";
 
-import Add from "./Add";
+
 import Logo from "./Logo";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Like from "./Like";
 import DisLike from "./DisLike";
 import './css.css'
+import WishlistButton from "./WishlistButton"
 
 export default function MovieHeader() {
    //isAdd handling
@@ -146,12 +147,13 @@ export default function MovieHeader() {
                 <p className="text-[12px] px-5 cursor-pointer" >پیش‌ نمایش</p>
               </div>
               <div className="flex flex-col justify-center items-center text-center ml-11 tab:ml-4">
-              <div
+              {/* <div
                onClick={handleClickAdd}
                 className="text-[20px] relative flex  items-center justify-center cursor-pointer bg-[#414141]  opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full">
         
                  <Add showFirstSvg={showFirstSvg} />
-              </div> 
+              </div>  */}
+              <WishlistButton/>
               <p className="text-[10px] text-center max-w-full text-[#9699A6] mt-1 tab:hidden">لیست من</p>
               </div>
                
@@ -179,7 +181,7 @@ export default function MovieHeader() {
 
               <div className="flex flex-col justify-center items-center text-center ">
               <div
-               onClick={handleClickLike}
+               onClick={handleClickDisLike}
                 className="text-[20px] relative tooltip flex  items-center justify-center cursor-pointer bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full"
                 >
               
