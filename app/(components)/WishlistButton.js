@@ -60,7 +60,7 @@ export default function WishlistButton() {
 
          }
       </div>
-      <div className='bg-white fixed left-[40%] rounded-md top-[120px] w-[190px]'>{userMessage}</div>
+      <div className='bg-white fixed left-[42%] rounded-md top-[120px] w-[190px]'>{userMessage}</div>
     </div>
   );
 }
