@@ -19,7 +19,6 @@ const useScrollingUp = () => {
       off(window, 'scroll', handleScroll, { passive: true })
     }
   }, [])
-//   return scrollingUp
   return scrollingUp
 
 }
