@@ -1,7 +1,7 @@
 "use client";
 
 
-import Logo from "./Logo";
+import Logo from "../mainSlider/Logo";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Like from "./Like";

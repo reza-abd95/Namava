@@ -1,6 +1,6 @@
 'use client'
 
-import MovieHeader from './(components)/MovieHeader'
+import MovieHeader from './(components)/movieCover/MovieHeader'
 
 
 export default function Home() {
