@@ -28,9 +28,6 @@ export default function MovieHeader() {
         setShowFirstSvg2(false);
         setShowFirstSvg3(true)
     }
-
-     
-     
     };
     
    
@@ -43,8 +40,6 @@ export default function MovieHeader() {
       setShowFirstSvg3(false);
       setShowFirstSvg2(true)
   }
-
-   
     };
  
 

@@ -89,16 +89,17 @@ export default function HeaderSliderComponent() {
             <p className="text-[13px] leading-loose cursor-pointer ml:mb-[48px] tab:mb-9 tab:mt-3 des:text-[15px] large:text-[17px]">
               به زودی با دوبله اختصاصی نماوا به زودی با دوبله اختصاصی نماوا
             </p> 
-             <div className="flex flex-row items-center mt-5 mb-4 max-[799px]:hidden ">
-              <div className=" w-7 h-7 ml-2 p-0.5">
+             <div className="cursor-pointer  hover:text-blue-500 flex flex-row items-center mt-5 mb-4 max-[799px]:hidden ">
+              <div className=" ml-2 p-0.5 ">
                 <Image
-                  width={10}
-                  height={10}
+                
+                  width={22}
+                  height={22}
                   src="./icons/info-circle.svg"
                   alt="more"
                 />
               </div>
-              <p className="text-[13px] des:text-[15px] cursor-pointer hover:text-blue-800">توضیحات بیشتر</p>
+              <p className="text-[13px] des:text-[15px]">توضیحات بیشتر</p>
             </div> 
              <p className="max-[499px]:hidden text-[12px] large:text-[14px]" >
               ستارگان:Chris Pine-Michelle Rodriguez-Regé-Jean Page-Justice Smith
