@@ -8,6 +8,7 @@ const useScrollingUp = () => {
   const [scrollingUp, setScrollingUp] = useState(false)
   const prevScrollRef = useRef(0)
 
+
   const handleScroll = () => {
     const currScroll = window.scrollY
     const isScrolled = prevScrollRef.current > currScroll

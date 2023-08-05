@@ -221,7 +221,6 @@ h1, h2, h3, h4, span, a {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.24);
     transition: all 0.5s ease-out;
 }
-
 .sticky-before {
     width: 100%;
     position: fixed;
