@@ -1,0 +1,16 @@
+.tooltip .tooltip_text::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-width: 8px;
+  border: 4px solid;
+  border-color: transparent transparent white transparent;
+}
+.tooltip:hover .tooltip_text {
+  visibility: visible;
+  opacity: 1;
+}
+
+

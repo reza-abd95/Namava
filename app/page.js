@@ -1,6 +1,7 @@
 import CategorySlider from './(components)/CategorySlider'
 import FilmCrewSlider from './(components)/FilmCrewSlider'
 import MovieSlider from './(components)/MovieSlider'
+import MainSlider from './(components)/mainSlider/MainSlider'
 
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
         
 
         <div>
+            <MainSlider/>
             <CategorySlider/> 
             <MovieSlider/>
             <FilmCrewSlider/>
