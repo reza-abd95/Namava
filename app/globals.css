@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 *{
   margin: 0;
   padding: 0;
@@ -11,6 +13,9 @@
 html{
   background-color: #121212;
   direction: rtl;
+  font-family: 'iranyekanRegular', serif;
+
+
 }
 @font-face {
   font-family: iranyekanBold;
@@ -19,6 +24,30 @@ html{
 @font-face {
   font-family: iranyekanRegular;
   src: url("../public/fonts/iranyekanwebregular.woff") format("opentype");
+}
+
+p, div {
+  font-family: 'iranyekanRegular', serif;
+}
+
+@layer components{
+  .movie-slide {
+    @apply text-white w-full h-full text-center text-lg flex justify-center items-center rounded cursor-pointer;
+  }
+}
+
+
+@layer components{
+    .mobile__menu-list {
+        @apply w-full h-[40px] flex items-center hover:text-[#6eb8ff] cursor-pointer
+    }
+    .mobile__menu-list p{
+        @apply pr-[15px]
+    }
+/*-----------------Header-------------------*/
+.header_gradient {
+    background-color: rgba(18, 18, 18, 0);
+    background-image: linear-gradient(to bottom, rgba(18, 18, 18, 1), rgba(18, 18, 18, 0));
 }
 p, div {
   font-family: 'iranyekanRegular';
@@ -30,4 +59,11 @@ h1, h2, h3, h4, span, a {
 }
 /* @layer components{
 
-} */
+.sticky-before {
+    width: 100%;
+    position: fixed;
+    top: -100px;
+    transition: top 0.5s,box-shadow 2s, background-color 2s;
+}
+
+/*--------------HeaderSticky-------------*/
