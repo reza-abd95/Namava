@@ -2,13 +2,13 @@
 import React, { useRef, useState,useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import './css.css'
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
-import "./mainslider.css";
+
 
 // import required modules
 import { EffectFade, Autoplay, Pagination, Navigation } from "swiper/modules";
