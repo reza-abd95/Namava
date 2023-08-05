@@ -1,28 +1,28 @@
 
 
-import { useEffect, useState } from 'react'
 import { off, on } from '../utils/index'
-/**
- * useScrollingUp
- * @returns {boolean}
- */
-const useScrollingUp = () => {
-  let prevScroll= document.documentElement.scrollTop;
-  const [scrollingUp, setScrollingUp] = useState(false)
-  const handleScroll = () => {
-    const currScroll = document.documentElement.scrollTop;
-    const isScrolled = prevScroll > currScroll
-    setScrollingUp(currScroll === 0 ? false : isScrolled)
-    prevScroll = currScroll
+import { useEffect, useState, useRef } from 'react'
 
+
+const useScrollingUp = () => {
+  const [scrollingUp, setScrollingUp] = useState(false)
+  const prevScrollRef = useRef(0)
+
+
+  const handleScroll = () => {
+    const currScroll = window.scrollY
+    const isScrolled = prevScrollRef.current > currScroll
+    setScrollingUp(currScroll === 0 ? false : isScrolled)
+    prevScrollRef.current = currScroll
   }
   useEffect(() => {
-    on(document, 'scroll', handleScroll, { passive: true })
+    on(window, 'scroll', handleScroll, { passive: true })
     return () => {
-      off(document, 'scroll', handleScroll, { passive: true })
+      off(window, 'scroll', handleScroll, { passive: true })
     }
   }, [])
   return scrollingUp
+
 }
 
 export default useScrollingUp
