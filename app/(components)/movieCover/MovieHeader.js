@@ -91,7 +91,7 @@ export default function MovieHeader() {
               <div className=" h-3 flex flex-row items-center">
                 <img
                 className="ml-1 h-3 ml:h-[14px]"
-                  src="./icons/imdb.png"
+                  src="./images/imdb.png"
                   alt="imdb"
                 /> 
                    <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">6.7</p>
@@ -119,7 +119,7 @@ export default function MovieHeader() {
               </div>  
             </div> 
              
-             <p className="text-[12px] text-center ml:leading-5 max-w-[317px] ml:max-w-[452px] tab:text-start tab:max-w-[525px] des:text-[15px] des:w-[550px] large:text-[17px] large:w-[700px]">
+             <p className="text-[12px] text-center ml:leading-5 max-w-[317px] ml:max-w-[452px] tab:text-start tab:max-w-[525px] des:max-w-none des:text-[15px] des:w-[550px] large:text-[17px] large:w-[700px]">
               یک افسر نیروی دریایی به نام جیک سالی برای انجام ماموریتی خاص به
               سیاره پاندورا فرستاده می شود، اما زمانی که جیک با اهالی و بومیان
               آنجا ارتباط برقرار می کند، تصمیم می گیرد برای محافظت از آنها و لغو
@@ -157,7 +157,7 @@ export default function MovieHeader() {
                 className="text-[20px] relative tooltip flex  items-center justify-center cursor-pointer bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full"
                 >
               
-        <div className=" flex items-center justify-center absolute top-[53px] right-[-36px] tooltip_text text-[15px] invisible opacity-0 rounded-[4px] h-[48px] w-[110px] left-1 bg-white text-black transition-opacity duration-1000">
+        <div className="max-[799px]-hidden  flex items-center justify-center absolute top-[53px] right-[-36px] tooltip_text text-[15px] invisible opacity-0 rounded-[4px] h-[48px] w-[110px] left-1 bg-white text-black transition-opacity duration-1000">
             دوست داشتم
         </div>
     
@@ -175,7 +175,7 @@ export default function MovieHeader() {
                 className="text-[20px] relative tooltip flex  items-center justify-center cursor-pointer bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full"
                 >
               
-        <div className=" flex items-center justify-center absolute top-[53px] right-[-36px] tooltip_text text-[15px] invisible opacity-0 rounded-[4px] h-[48px] w-[110px] left-1 bg-white text-black transition-opacity duration-1000">
+        <div className="max-[799px]-hidden flex items-center justify-center absolute top-[53px] right-[-36px] tooltip_text text-[15px] invisible opacity-0 rounded-[4px] h-[48px] w-[110px] left-1 bg-white text-black transition-opacity duration-1000">
             دوست نداشتم
         </div>
                 <DisLike  showFirstSvg3={showFirstSvg3}/>

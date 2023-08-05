@@ -52,7 +52,7 @@ export default function HeaderSliderComponent() {
               <div className=" h-4 flex flex-row items-center">
                 <img
                 className="ml-1 h-3 ml:h-[14px]"
-                  src="./icons/imdb.png"
+                  src="./images/imdb.png"
                   alt="imdb"
                 /> 
                    <p className="text-[15px] des:text-[14px] large:text-[17px]">6.7</p>
