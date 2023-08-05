@@ -7,7 +7,7 @@ import React from "react";
 export default function CategoryItem() {
     return (
 
-        <Link className="no-underline text-white w-[48%] ml:w-[48.5%] tab:w-[32%] des:w-[23.97%] large:w-[19.28%]" href="#">
+        <Link className="no-underline text-white w-[48%] ml:w-[48.5%] tab:w-[32%] des:w-[23.97%] large:w-[19.28%]" href="/categories/1">
             <div className="flex  w-[100%] h-[100%]  align-middle items-center justify-start">
                 <Image className="relative w-[100%] h-[100%] rounded-[3px] des:rounded-[5px]" src={image1}
                        alt="action"/>

@@ -84,10 +84,15 @@ export default function MainSlider() {
         </SwiperSlide>
 
         <SwiperSlide className="w-full h-full">
-        <HeaderSliderComponent className='object-cover w-full h-full block' />        </SwiperSlide>
+           <HeaderSliderComponent className='object-cover w-full h-full block' />        
+        </SwiperSlide>
         
         <SwiperSlide className="w-full h-full">
-        <HeaderSliderComponent className='object-cover w-full h-full block' />        </SwiperSlide>
+           <HeaderSliderComponent className='object-cover w-full h-full block' />        
+        </SwiperSlide>
+
+
+
         <div id="button" className=" min-[800px]:flex max-[799px]:hidden bottom-[6px] left-8 absolute z-20 min-[1050px]:bottom-[18%] des:left-10 des:bottom-[21%]">
         <button
           className="opacity-70 w-10 h-10 rounded-full border-none bg-[#414141] "
@@ -99,6 +104,7 @@ export default function MainSlider() {
             alt="prev"
           />
         </button>
+
         <button
           className=" opacity-70 w-10 h-10 rounded-full border-none bg-[#414141] mr-3"
           onClick={goNext}

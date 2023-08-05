@@ -52,7 +52,7 @@ export default function SubSlider() {
         spaceBetween={20}
         navigation={true}
         modules={[Navigation]}
-        className="mySwiper flex justify-center items-center w-full "
+        className="mySwiper flex justify-center items-center w-full"
 
       >
           <SwiperSlide className=" w-full h-full text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 

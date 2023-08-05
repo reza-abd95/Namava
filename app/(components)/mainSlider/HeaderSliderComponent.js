@@ -52,7 +52,7 @@ export default function HeaderSliderComponent() {
               <div className=" h-4 flex flex-row items-center">
                 <img
                 className="ml-1 h-3 ml:h-[14px]"
-                  src="./images/imdb.png"
+                  src="../images/imdb.png"
                   alt="imdb"
                 /> 
                    <p className="text-[15px] des:text-[14px] large:text-[17px]">6.7</p>
@@ -63,7 +63,7 @@ export default function HeaderSliderComponent() {
               className="ml-1 mb-1"
                   width={10}
                   height={10}
-                  src="./icons/like.svg"
+                  src="../icons/like.svg"
                   alt="like"
                 />
                 <p className="text-[15px] des:text-[14px] large:text-[17px]">۹۱٪</p>
@@ -73,7 +73,7 @@ export default function HeaderSliderComponent() {
               className="ml-1"
                   width={10}
                   height={10}
-                  src="./icons/subtitle.svg"
+                  src="../icons/subtitle.svg"
                   alt="subtitle"
                 />
                 <p className="text-[15px] des:text-[14px] large:text-[17px]">زیرنویس</p>
