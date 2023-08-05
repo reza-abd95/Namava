@@ -1,16 +1,5 @@
 import React, { useState } from 'react';
 
-{/* <div
-               onClick={handleClickDisLike}
-                className="text-[20px] relative tooltip flex  items-center justify-center cursor-pointer bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full"
-                >
-              
-        <div className=" flex items-center justify-center absolute top-[53px] right-[-36px] tooltip_text text-[15px] invisible opacity-0 rounded-[4px] h-[48px] w-[110px] left-1 bg-white text-black transition-opacity duration-1000">
-            دوست نداشتم
-        </div>
-                <DisLike  showFirstSvg3={showFirstSvg3}/>
-              </div>  */}
-
 
 export default function WishlistButton() {
   const [isWishlist, setIsWishlist] = useState(false);
