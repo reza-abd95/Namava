@@ -91,10 +91,10 @@ export default function MovieHeader() {
               <div className=" h-3 flex flex-row items-center">
                 <img
                 className="ml-1 h-3 ml:h-[14px]"
-                  src="./images/imdb.png"
+                  src="../images/imdb.png"
                   alt="imdb"
                 /> 
-                   <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">6.7</p>
+                   <p className="text-[10.5px] ml:text-[12px] des:text-[14px] font-bold large:text-[17px]">6.7</p>
               </div>
                
               <div className=" w-7 h-7 ml-2 p-0.5  flex flex-row items-center">
@@ -102,7 +102,7 @@ export default function MovieHeader() {
               className="ml-1 mb-1 ml:w-5 ml:h-5"
                   width={10}
                   height={10}
-                  src="./icons/like.svg"
+                  src="../icons/like.svg"
                   alt="like"
                 />
                 <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">۹۱٪</p>
@@ -112,7 +112,7 @@ export default function MovieHeader() {
               className="ml-1 ml:w-5 ml:h-5"
                   width={10}
                   height={10}
-                  src="./icons/subtitle.svg"
+                  src="../icons/subtitle.svg"
                   alt="subtitle"
                 />
                 <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">زیرنویس</p>
