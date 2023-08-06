@@ -2,19 +2,9 @@ import DoSearchMsg from "../(components)/DoSearchMsg";
 import MovieForSlider from "../(components)/MovieForSlider";
 import NotFoundSearch from "../(components)/NotFoundSearch";
 import SearchArea from "../(components)/SearchArea";
-import { getMoviesData } from "../utils/getdata";
-
-
-async function getMovies(){
-    const movies = await getMoviesData() 
-    console.log(movies.record)
-}
-
-getMovies()
-
 
 export default function Search() {
-
+    
     return (
         <div className="min-h-[710px] pb-20">
             <div className=' pt-20'></div>

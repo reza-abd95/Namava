@@ -1,6 +1,5 @@
 'use client'
 
-
 import React , { useState, useEffect } from 'react';
 import windowDimensions from '../hooks/useWindowDimensions';
 import Image from 'next/image';
@@ -11,7 +10,8 @@ import 'swiper/css/navigation';
 import '../styles.css';
 import { Navigation } from 'swiper/modules';
 
-export default function SubSlider() {
+export default function CategorySlider({data}) {
+
   const  windowWidth  = windowDimensions();
   const [slidesPer, setSlidePer] = useState(1.1);
   const [centered, setCentered] = useState(true);
@@ -43,8 +43,12 @@ export default function SubSlider() {
     
   }, [windowWidth]);
 
+  console.log("ho")
+
+
   return (
     <div>
+      
       <Swiper
         initialSlide = {1}
         slidesPerView={slidesPer}
@@ -98,7 +102,7 @@ export default function SubSlider() {
 
         </Swiper>
   
-        </div>
+      </div>
         
       
     );
