@@ -13,7 +13,7 @@ export default function windowDimensions() {
     return () => {
       window.removeEventListener('resize', handleWindowResize);
     };
-  });
+  },[windowWidth]);
 
   return (windowWidth);
 }

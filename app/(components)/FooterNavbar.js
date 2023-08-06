@@ -6,8 +6,10 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ArrowDown from '../../public/icons/ArrowDown-footer.svg'
 import Image from "next/image";
+import windowDimensions from "../hooks/useWindowDimensions";
+
 export default function FooterNavbar({isFixed}) {
-    const [width,setWidth] = useState(window.outerWidth)
+    
     const links = [
         {title: 'اپلیکیشن‌ها',show: false},
         {title: 'فرصت‌های شغلی',show: false},
@@ -22,24 +24,20 @@ export default function FooterNavbar({isFixed}) {
         {title: 'شرایط مصرف اینترنت',show: false},
        
     ]
-    const deviceWidth = window.outerWidth
-    useEffect(() => {
-        
-        window.addEventListener('resize',() => {setWidth(window.outerWidth)})
-    },[deviceWidth])
-    if (deviceWidth >= 360) {
+    if (windowDimensions() >= 360) {
+
         links[0]['show'] = true
         links[1]['show'] = true
         links.push({title: 'ارسال فیلمنامه',show: false})
         links.push({title: 'دانلودها',show: false})
-    } if (deviceWidth >= 500) {
+    } if (windowDimensions() >= 500) {
         links[2]['show'] = true
 
-    } if (deviceWidth >= 800) {
+    } if (windowDimensions() >= 800) {
         links[3]['show'] = true
         links[4]['show'] = true
       
-    } if (deviceWidth >= 1280) {
+    } if (windowDimensions() >= 1280) {
         links[5]['show'] = true
         links[6]['show'] = true
         links[7]['show'] = true
@@ -55,9 +53,7 @@ export default function FooterNavbar({isFixed}) {
             hiddenLinks.push(item.title)
         }
     }
-    setTimeout(() => {
-        return 'hidden'
-    }, 500)
+    windowDimensions()
     const closed = useRef()
     const elementClosed = useRef()
     const [open, setOpen] = useState(false);
@@ -83,6 +79,7 @@ export default function FooterNavbar({isFixed}) {
             <ul className={`DropdownMenu__menu ${open? 'DropdownMenu__menu-open':''}`}>
                 <li
                  onClick={() => {
+                    
                     setOpen(!open)
                 }}
             className={`DropdownMenu__items DropdownMenu__menu-close`}>
@@ -95,6 +92,7 @@ export default function FooterNavbar({isFixed}) {
                     })
                 }
             </ul>
+            <div onClick={() => setOpen(false)} className={`FooterNavbar__backgroundOpen ${open? '': 'hidden'}`}></div>
             
         </div>
     )

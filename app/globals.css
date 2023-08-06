@@ -134,6 +134,9 @@ body {
   .FooterNavbar__menu {
     @apply bg-[#222327] px-4 flex items-center justify-between h-full ml:justify-evenly
   }
+  .FooterNavbar__backgroundOpen {
+    @apply fixed bottom-[40px] left-0 h-screen w-screen bg-[#000000cc] z-[-2]
+  }
   .DropdownMenu {
     @apply h-full w-fit flex items-center text-[#cccccc] text-xs ml:justify-center
   }
@@ -231,3 +234,4 @@ body {
 }
 
 /*--------------HeaderSticky-------------*/
+
