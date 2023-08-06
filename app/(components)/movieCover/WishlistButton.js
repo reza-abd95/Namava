@@ -21,7 +21,7 @@ export default function WishlistButton() {
         </div>
         );
       const updatehoverText = isWishlist
-      ? 'حذف کردن از لیست من'
+      ? 'حذف از لیست من'
       : 'افزوردن به لیست من';
     
     setUserMessage(updatedMessage);
