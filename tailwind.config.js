@@ -10,7 +10,7 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+            'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
         iranyekanBold: "iranyekanBold",
@@ -34,12 +34,12 @@ module.exports = {
         animName:{
           '0%':{
             transform: 'rotate(0deg)'
-           },
-        '50%':{
+          },
+          '50%':{
             transform: 'rotate(30deg)'
-           },
+          },
           '100%':{
-             transform: 'rotate(0deg)'}
+            transform: 'rotate(0deg)'}
         },
         myfirst: {
           '0%': { backgroundColor: 'transparent', left: '0', top: '0' },
@@ -58,6 +58,3 @@ module.exports = {
   },
   plugins: [],
 }
-
-
-
