@@ -83,7 +83,7 @@ export default function MovieHeader() {
             <h2 className='text-[14px] ml:text-[16px] mb-2 ml:mb-0 tab:text-[19px] tab:mb-3 des:text-[21px] large:text-[24px]'>آواتار</h2>
              <div className=" flex flex-row justify-between items-center w-full max-w-[90%] ml:max-w-[350px] my-2">
                
-                <div className="bg-yellow-500 px-2 rounded-[4px] py-[3px] flex items-center text-center ml:px-3 ml:py-[5px]">
+                <div className="bg-yellow-500 px-2 rounded-[4px] py-[3px] flex items-center text-center ml:px-3 ml:py-[5px] tab:px-[14px] tab:py-[6px]">
                 <p className="text-[10.5px] ml:text-[12px] text-center des:text-[14px] large:text-[17px]">+۱۲</p>
               </div>
               <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">۲۰۲۲</p>
