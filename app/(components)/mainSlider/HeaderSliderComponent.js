@@ -2,21 +2,10 @@
 
 import MovieLogo from "./MovieLogo";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import windowDimensions from "@/app/hooks/useWindowDimensions";
 
 export default function HeaderSliderComponent() {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const  windowWidth  = windowDimensions();
 
   return (
     <>
