@@ -217,11 +217,10 @@ h1, h2, h3, h4, span, a {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: black;
-    box-shadow: rgba(0, 0, 0, 0.15) 0 3px 3px 0;
+    background-color: rgba(18,18,18,1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.24);
     transition: all 0.5s ease-out;
 }
-
 .sticky-before {
     width: 100%;
     position: fixed;
@@ -230,6 +229,8 @@ h1, h2, h3, h4, span, a {
 }
 
 /*--------------HeaderSticky-------------*/
+
+
 
 
 /*----------------MovieDetails-----------*/
@@ -318,4 +319,19 @@ h1, h2, h3, h4, span, a {
 
 /*----------------MovieDetails-----------*/
 
+.triangle-up {
+
+  height: 0;
+ 
+  width: 0;
+ 
+  border-top: 10px solid transparent;
+ 
+  border-right: 10px solid transparent;
+ 
+  border-bottom: 20px solid #D95c5c;
+ 
+  border-left: 10px solid transparent;
+ 
+ }
 

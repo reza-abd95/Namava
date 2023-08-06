@@ -1,7 +1,21 @@
-import React from 'react'
+import MovieSlider from "../(components)/MovieSlider";
+import MainSlider from "../(components)/mainSlider/MainSlider";
 
-export default function Movies() {
+
+export default function Home() {
   return (
-    <div className="w-full h-screen ">Movies</div>
+        
+
+        <div>
+            <MainSlider/>
+            <MovieSlider/>
+            <MovieSlider/>
+            <MovieSlider/>
+            <MovieSlider/>
+            <MovieSlider/>
+            <MovieSlider/>
+            <MovieSlider/>
+            
+        </div>
   )
 }
