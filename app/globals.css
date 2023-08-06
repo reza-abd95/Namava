@@ -144,7 +144,7 @@ h1, h2, h3, h4, span, a {
   .DropdownMenu__menu {
     background-color: #222327; position: absolute; bottom: 40px; z-index: -1;
     width: 100vw; padding-bottom: 0; max-height: 0; overflow: hidden; transition: max-height 0.8s;
-    
+  
 
     @apply ml:w-[360px] ml:left-[32px] tab:left-[60px]
     des:w-[180px] des:left-[52px]
