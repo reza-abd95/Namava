@@ -63,12 +63,12 @@ export default function MenuSteacky () {
                 <Image className="w-[32px] h-[27px] ml-[8px] tab:hidden " src={MenuIcon} alt="menu" onClick={openMenuMobile}/>
             </div>
             <div>
-                <div className={"absolute hidden w-screen h-screen bg-zinc-800 opacity-30 right-0" + " " + "top-[100px]"} onClick={closeMenu_handller} ref={darkDivRef} ></div>
+                <div className={"absolute hidden w-screen h-screen tab:hidden bg-zinc-800 opacity-30 right-0" + " " + "top-[100px]"} onClick={closeMenu_handller} ref={darkDivRef} ></div>
                 <div className={"w-[250px] hidden bg-[#222327] z-100 transition duration-[20s] ease-linear absolute h-screen tab:hidden right-0"+ " " + "top-[100px]"} ref={MenuRef}>
                     <div className="w-full h-[80px]">
                         <div className="w-[97px] ml:w-[80px] ml:mx[14px] mx-[24px] flex justify-center items-center h-full">
-                            <div className="flex items-center">
-                                <svg className="ml-[10px]" xmlns="http://www.w3.org/2000/svg" width={30} height={30} onClick={closeMenu_handller}>
+                            <div className="w-full flex items-center">
+                                <svg className="w-[30px] h-[30px] ml-[10px]" xmlns="http://www.w3.org/2000/svg" onClick={closeMenu_handller}>
                                     <path className="fill-white" d="M23.7 21.122H6.98a.98.98 0 1 0 0 1.961H23.7a.98.98 0 1 0 0-1.961zm0-7.562H6.98a.981.981 0 1 0 0 1.961H23.7a.981.981 0 1 0 0-1.961zM6.98 7.96H23.7a.981.981 0 1 0 0-1.961H6.98a.981.981 0 1 0 0 1.961z"></path>
                                 </svg>
                                 <Link href="/" >
@@ -90,9 +90,9 @@ export default function MenuSteacky () {
                             </li>
                             <li className={(pathName == "/movies") ? "mobile__menu-list fill-[#6eb8ff] text-[#6eb8ff]" : "mobile__menu-list text-white fill-white" } onMouseOver={ChangeFill} onMouseLeave={ChangeFilloff} onClick={()=>{route.push("/movies");closeMenu_handller()}}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none">
-                                    <g clip-path="url(#A)">
+                                    <g clipPath="url(#A)">
                                         <path className={movieFill} d="M16.032 11.86a3.43 3.43 0 0 0 0-6.86 3.43 3.43 0 0 0 0 6.86zm-7.402 0a3.43 3.43 0 0 0 0-6.86 3.43 3.43 0 0 0 0 6.86z"></path>
-                                        <g fill-rule="evenodd">
+                                        <g>
                                             <path className="fill-white" d="M18.3 24.45H6c-1.66 0-3-1.34-3-3v-5.47c0-1.66 1.34-3 3-3h12.3c1.66 0 3 1.34 3 3v5.47a3.01 3.01 0 0 1-3 3z"></path>
                                     <path className="fill-white" d="M19.678 19.58l4.97 2.87c.67.38 1.5-.1 1.5-.87v-5.74c0-.77-.83-1.25-1.5-.87l-4.97 2.87c-.67.39-.67 1.36 0 1.74z"></path></g></g>
                                     <clipPath id="A">

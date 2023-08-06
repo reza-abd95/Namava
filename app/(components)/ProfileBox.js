@@ -17,14 +17,15 @@ export default function ProfileBox () {
             <div>
                 <Image className="cursor-pointer w-[30px] h-[31px] rounded-full mt-[1px] mr-[8px] tab:h-[30px] tab:w-[31px] des:w-[40px] des:h-[40px]" src={Profile} alt="profile" onClick={mouseOverHandler} onMouseOver={mouseOverHandler}/>
             </div>
-            <div className={"w-[600px] h-[500px] transition ease-in-out justify-end items-start absolute top-[20px] left-[2%] z-100" + " " + profileState} onMouseLeave={closeProfile} onClick={closeProfile}>
-                <div className="w-[272px] rounded-lg mt-[40px] overflow-hidden">
+            <div className={"w-[600px] h-[500px] transition ease-in-out justify-end items-start absolute top-[20px] left-[1%] z-100" + " " + profileState} onMouseLeave={closeProfile} onClick={closeProfile}>
+                <div className="w-[272px] rounded-lg mt-[45px] ml:mt-[50px] tab:mt-[44px] des:mt-[57px] overflow-hidden">
+                    <div className="triangle-up absolute top-[24px] ml:top-[28px] des:top-[36px] des:left-[6.2%] tab:top-[23px] tab:left-[4.5%]  ml:left-[4%] left-[3.5%]"></div>
                     <div className="w-full h-[93px] p-[16px] bg-[#D95c5c] flex flex-col justify-center items-stretch">
                         <div className="w-full h-[20px] mb-[10px] text-[14px] text-white flex justify-center items-center text-center">اشتراک فعال ندارید</div>
-                        <button className="shadow-lg shadow-[#1616163e] rounded-md bg-slate-50 cursor-pointer border-[0px] w-full px-[20px] h-[30px] text-center hover:bg-[#1993ff] text-black hover:text-white flex justify-center items-center text-[13px]">خرید اشتراک</button>
+                        <button className="shadow-lg shadow-[#645f5f3e] rounded-md bg-slate-50 cursor-pointer border-[0px] w-full px-[20px] h-[30px] text-center hover:bg-[#1993ff] text-black hover:text-white flex justify-center items-center text-[13px]">خرید اشتراک</button>
                     </div>
                     <div className="w-full pt-[12px] pr-[12px] pl-[12px] bg-slate-50">
-                        <div className="w-full h-[30px] mb-[10px] pb-[10px] border-b-[1px] border-b-[#00000078] flex justify-center items-center text-zinc-900 hover:text-[#1993ff] fill-white hover:fill-[#1993ff]">
+                        <div className="w-full cursor-pointer h-[30px] mb-[10px] pb-[10px] border-b-[1px] border-[#cac5c539] flex justify-center items-center text-zinc-900 hover:text-[#1993ff] fill-white hover:fill-[#1993ff]">
                             <div className="flex justify-center items-center">
                                 <img src={"https://static.namava.ir/Content/Upload/Images/e9b409a9-88d8-4ee5-a81e-6cddc50782b0.png"} className="rounded-full" width={30} height={30} alt="profile2" />
                                 <p className="text-[12px] w-[132px] mr-[8px]">بزرگسال</p>
@@ -34,7 +35,7 @@ export default function ProfileBox () {
                                 <p className="text-[12px] w-[45px] mr-[4px]">تنظیمات</p>
                             </div>
                         </div>
-                        <div className="w-full h-[30px] flex justify-center items-center mb-[10px] pb-[10px] border-b-[1px] border-b-[#0000001f] text-zinc-900 hover:text-[#1993ff] fill-white hover:fill-[#1993ff]">
+                        <div className="w-full cursor-pointer h-[30px] flex justify-center items-center mb-[10px] pb-[10px] border-b-[1px] border-[#aea8a830] text-zinc-900 hover:text-[#1993ff] fill-white hover:fill-[#1993ff]">
                             <img src={"https://static.namava.ir/Content/Upload/Images/bc44135c-bd14-44e9-9970-a33bacee3613.png"} alt="kidProfile" width={"30px"} height={"30px"} className="rounded-full" />
                             <p className="w-[202px] mr-[8px] text-[12px]">کودک</p>
                         </div>
@@ -49,8 +50,8 @@ export default function ProfileBox () {
                                 <li className="profileBox__list">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" >
                                         <g id="ic_menu_subscription" transform="translate(-330.723 -1342.097)">
-                                            <rect id="Rectangle_370" dataName="Rectangle 370" width="20" height="20" transform="translate(330.722 1342.097)" fill="none"></rect>
-                                            <path id="Path_4802" data-name="Path 4802" d="M341.488,1361.379l-3.162,1.663a1.643,1.643,0,0,1-2.384-1.732l.6-3.521a1.644,1.644,0,0,0-.472-1.454l-2.558-2.494a1.643,1.643,0,0,1,.91-2.8l3.536-.514a1.642,1.642,0,0,0,1.237-.9l1.581-3.2a1.643,1.643,0,0,1,2.946,0l1.581,3.2a1.643,1.643,0,0,0,1.237.9l3.535.514a1.643,1.643,0,0,1,.911,2.8l-2.558,2.494a1.643,1.643,0,0,0-.473,1.454l.6,3.521a1.643,1.643,0,0,1-2.383,1.732l-3.162-1.663A1.642,1.642,0,0,0,341.488,1361.379Z" transform="translate(-1.53 -2.273)"></path>
+                                            <rect id="Rectangle_370" width="20" height="20" transform="translate(330.722 1342.097)" fill="none"></rect>
+                                            <path id="Path_4802" d="M341.488,1361.379l-3.162,1.663a1.643,1.643,0,0,1-2.384-1.732l.6-3.521a1.644,1.644,0,0,0-.472-1.454l-2.558-2.494a1.643,1.643,0,0,1,.91-2.8l3.536-.514a1.642,1.642,0,0,0,1.237-.9l1.581-3.2a1.643,1.643,0,0,1,2.946,0l1.581,3.2a1.643,1.643,0,0,0,1.237.9l3.535.514a1.643,1.643,0,0,1,.911,2.8l-2.558,2.494a1.643,1.643,0,0,0-.473,1.454l.6,3.521a1.643,1.643,0,0,1-2.383,1.732l-3.162-1.663A1.642,1.642,0,0,0,341.488,1361.379Z" transform="translate(-1.53 -2.273)"></path>
                                         </g>
                                     </svg>
                                     <p className="profileBox__list-text">خرید اشتراک</p>
@@ -60,7 +61,7 @@ export default function ProfileBox () {
                                     <p className="profileBox__list-text">گردونه شانس</p>
                                 </li>
                                 <li className="profileBox__list">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" ><g id="Group_2228" dataName="Group 2228" transform="translate(-7475 8663)"><rect id="Rectangle_1497" data-name="Rectangle 1497" width="20" height="20" transform="translate(7475 -8663)" fill="none"></rect><g id="Group_2227" dataName="Group 2227" transform="translate(6247.712 -9984.1)"><path id="Path_5350" dataName="Path 5350" d="M1317.021,1408.693h4.589a1.738,1.738,0,0,0,1.738-1.738v-7.872h-6.327Z" transform="translate(-78.848 -69.187)"></path><path id="Path_5349" dataName="Path 5349" d="M1238.843,1406.955a1.738,1.738,0,0,0,1.738,1.738h4.589v-9.61h-6.327Z" transform="translate(-8.587 -69.187)"></path><path id="Path_5351" dataName="Path 5351" d="M1243.729,1325.07h-2.151a2.181,2.181,0,0,0-.786-2.57h0a2.187,2.187,0,0,0-3.4,1.36l-.011.054-.011-.054a2.187,2.187,0,0,0-3.4-1.36h0a2.18,2.18,0,0,0-.786,2.57h-2.151a1.738,1.738,0,0,0-1.738,1.738v1.5h16.179v-1.5A1.738,1.738,0,0,0,1243.729,1325.07Zm-5.026-.763a.771.771,0,1,1,1.224.763h-1.376s0-.007,0-.011Zm-3.851-.479a.771.771,0,0,1,1.2.479l.15.752s0,.008,0,.011h-1.376A.771.771,0,0,1,1234.853,1323.827Z"></path></g></g></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" ><g id="Group_2228" transform="translate(-7475 8663)"><rect id="Rectangle_1497"  width="20" height="20" transform="translate(7475 -8663)" fill="none"></rect><g id="Group_2227" transform="translate(6247.712 -9984.1)"><path id="Path_5350" d="M1317.021,1408.693h4.589a1.738,1.738,0,0,0,1.738-1.738v-7.872h-6.327Z" transform="translate(-78.848 -69.187)"></path><path id="Path_5349" d="M1238.843,1406.955a1.738,1.738,0,0,0,1.738,1.738h4.589v-9.61h-6.327Z" transform="translate(-8.587 -69.187)"></path><path id="Path_5351" d="M1243.729,1325.07h-2.151a2.181,2.181,0,0,0-.786-2.57h0a2.187,2.187,0,0,0-3.4,1.36l-.011.054-.011-.054a2.187,2.187,0,0,0-3.4-1.36h0a2.18,2.18,0,0,0-.786,2.57h-2.151a1.738,1.738,0,0,0-1.738,1.738v1.5h16.179v-1.5A1.738,1.738,0,0,0,1243.729,1325.07Zm-5.026-.763a.771.771,0,1,1,1.224.763h-1.376s0-.007,0-.011Zm-3.851-.479a.771.771,0,0,1,1.2.479l.15.752s0,.008,0,.011h-1.376A.771.771,0,0,1,1234.853,1323.827Z"></path></g></g></svg>
                                     <p className="profileBox__list-text">کارت هدیه</p>
                                 </li>
                                 <li className="profileBox__list">
