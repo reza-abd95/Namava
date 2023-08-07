@@ -22,7 +22,6 @@ export default function windowDimensions() {
       }
     };
   },[windowWidth]);
-=======
 
   return windowWidth;
 }
