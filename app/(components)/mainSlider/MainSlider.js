@@ -67,13 +67,13 @@ export default function MainSlider({dataActor , dataMovie} ) {
           <HeaderSliderComponent className='object-cover w-full h-full block' />
         </SwiperSlide>
 
-        <SwiperSlide className="w-full h-full">
-        <img
-              className='object-cover w-full h-full block'
-                  src="./images/extractd.jpg"
-                  alt="more"
-                />
-        </SwiperSlide>
+        {/*<SwiperSlide className="w-full h-full">*/}
+        {/*<img*/}
+        {/*      className='object-cover w-full h-full block'*/}
+        {/*          src="./images/extractd.jpg"*/}
+        {/*          alt="more"*/}
+        {/*        />*/}
+        {/*</SwiperSlide>*/}
 
         <SwiperSlide className="w-full h-full">
            <HeaderSliderComponent className='object-cover w-full h-full block' />        

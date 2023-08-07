@@ -14,8 +14,8 @@ export default function HeaderSliderComponent() {
           <div className="relative mb-[12px] ml:mb-[32%] min-[600px]:mb-[20%] min-[700px]:mb-[11%] tab:mb-[64px] min-[900px]:mb-2 min-[1050px]:mb-0" >
             <Image
               className="w-full h-full"
-              width={1000}
-              height={1000}
+              width={999}
+              height={468}
               src={
                 windowWidth > 499
                   ? "/images/avatarDesktop.jpg"
