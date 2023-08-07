@@ -23,7 +23,6 @@ export default function MoiveId() {
       <div className="h-[400px]"></div>
       <MoviePicturs images={images}/>
       <AboutMovie/>
-      <SlideShow images={images} isVisible={isVisible} setIsVisible={setIsVisible}/>
 
       <Comments/>
     </div>
