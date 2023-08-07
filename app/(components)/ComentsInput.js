@@ -1,3 +1,4 @@
+'use client'
 import {useState} from "react";
 
 
@@ -20,7 +21,7 @@ export default function  CommentsInput () {
                         </svg>
                     </div>
                     <input className=" w-[70%] ml:w-[82%] tab:w-[83%] des:w-[86.5%] mt-[1px] h-[40px] rounded-[6px] font-iranyekanRegular placeholder:text-[12px] placeholder:text-[#666666] align-middle placeholder:align-middle py-[11px] ml:py-[9px] px-[12px] ml:px-[16px]  mr-[16px] ml:mr-[13px] ml-[8px] border-0 outline-0 ml:pb-[12px] tab:p-[26px] tab:mr-[15px] " onChange={handleChange} value={message} id="message" name="message" type="text" placeholder="نظرتان درباره این فیلم چیست؟"/>
-                    <svg onClick={() => setMessage("")}  className="mt-[4px] tab:w-[40px] tab:h-[40px] tab:mr-[15px]  " xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 40 40">
+                    <svg onClick={() => setMessage("")}  className=" cursor-pointer mt-[4px] tab:w-[40px] tab:h-[40px] tab:mr-[15px]  " xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 40 40">
                         <defs></defs>
                         <g className="fill-[#666666]" id="Group_2312" data-name="Group 2312" transform="translate(-188.002 -426)">
                             <path className="text-white bg-white " id="Subtraction_3"
