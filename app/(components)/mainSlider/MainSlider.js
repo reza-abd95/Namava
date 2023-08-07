@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState,useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -9,16 +9,14 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 
-
 // import required modules
 import { EffectFade, Autoplay, Pagination, Navigation } from "swiper/modules";
 import HeaderSliderComponent from "./HeaderSliderComponent";
 import windowDimensions from "@/app/hooks/useWindowDimensions";
 
-
-export default function MainSlider({data,actors}) {
+export default function MainSlider({ data, actors }) {
   const swiperRef = useRef(null);
-  
+
   const goPrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slidePrev();
@@ -31,85 +29,69 @@ export default function MainSlider({data,actors}) {
     }
   };
 
-  const  windowWidth  = windowDimensions()
-  console.log(actors)
+  const windowWidth = windowDimensions();
+
   return (
     <>
-
       <Swiper
-      
-      style={{
-        "--swiper-pagination-color": "#fff",
-        "--swiper-pagination-bullet-inactive-color": "#5a5a5a",
-      }}
+        style={{
+          "--swiper-pagination-color": "#fff",
+          "--swiper-pagination-bullet-inactive-color": "#5a5a5a",
+        }}
         ref={swiperRef}
-        pagination={windowWidth > 799
-                ? false
-                : true}
+        pagination={windowWidth > 799 ? false : true}
         autoplay={{
           delay: 7000,
           disableOnInteraction: false,
-         
-        }
-      }
-      loop={true}
+        }}
+        loop={true}
         navigation={false}
         spaceBetween={30}
         effect={"fade"}
         modules={[Autoplay, EffectFade, Pagination, Navigation]}
         className="mySwiper w-full h-auto flex items-center justify-center relative"
       >
-      
+        {data.map((item, key) => {
+          if (key <4) {
+            return (
+              <SwiperSlide key={item.id} className="w-full h-full">
+                <HeaderSliderComponent
+                  key={item.id}
+                  data={item}
+                  actors={actors}
+                  className="object-cover w-full h-full block"
+                />
+              </SwiperSlide>
+            );
+          }
+        })}
 
-     
-  {data.map((item,key)=> {
-    if (key<12) {
-      return(
-        <SwiperSlide key={item.id} className="w-full h-full">
-        <HeaderSliderComponent
-          key={item.id}
-          id={item.id}
-          title={item.title}
-          age={item.age}
-          year={item.year}
-          movieTime={item.movieTime}
-           imdb={item.imdb}
-           like={item.like}
-           description={item.description}
-           imageUrl ={item.imageUrl}
-           imageMobileUrl ={item.imageMobileUrl}
-           actors={actors}
-          className='object-cover w-full h-full block' 
-        />
-        </SwiperSlide>
-         )
-         }
-         })}
-        
-        <div id="button" className=" min-[800px]:flex max-[799px]:hidden bottom-[6px] left-8 absolute z-20 min-[1050px]:bottom-[14%] des:left-10 large:left-14 large:bottom-[20%] ">
-
-        <button
-          className="opacity-70 w-10 h-10 large:w-[60px] large:h-[60px] rounded-full border-none bg-[#414141] "
-          onClick={goPrev}
+        <div
+          id="button"
+          className=" min-[800px]:flex max-[799px]:hidden bottom-[6px] left-8 absolute z-20 min-[1050px]:bottom-[14%] des:left-10 large:left-14 large:bottom-[20%] "
         >
-          <img
-            className="w-full h-full p-1.5 large:p-2 opacity-50 hover:opacity-100"
-            src="/icons/ltr.svg"
-            alt="prev"
-          />
-        </button>
+          <button
+            className="opacity-70 w-10 h-10 large:w-[60px] large:h-[60px] rounded-full border-none bg-[#414141] "
+            onClick={goPrev}
+          >
+            <img
+              className="w-full h-full p-1.5 large:p-2 opacity-50 hover:opacity-100"
+              src="/icons/ltr.svg"
+              alt="prev"
+            />
+          </button>
 
-        <button
-          className=" opacity-70 w-10 h-10 large:w-[60px] large:h-[60px] rounded-full border-none bg-[#414141] mr-3 large:mr-5"
-          onClick={goNext}
-        >
-          <img
-            className="w-full h-full p-1.5 large:p-2 opacity-50 hover:opacity-100"
-            src="/icons/rtl.svg"
-            alt="next"
-          />
-        </button>
-      </div>
+          <button
+            className=" opacity-70 w-10 h-10 large:w-[60px] large:h-[60px] rounded-full border-none bg-[#414141] mr-3 large:mr-5"
+            onClick={goNext}
+          >
+            <img
+              className="w-full h-full p-1.5 large:p-2 opacity-50 hover:opacity-100"
+              src="/icons/rtl.svg"
+              alt="next"
+            />
+          </button>
+        </div>
       </Swiper>
     </>
   );
