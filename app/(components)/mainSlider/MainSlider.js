@@ -16,9 +16,9 @@ import HeaderSliderComponent from "./HeaderSliderComponent";
 import windowDimensions from "@/app/hooks/useWindowDimensions";
 
 
-export default function MainSlider() {
+export default function MainSlider({data,actors}) {
   const swiperRef = useRef(null);
-
+  
   const goPrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slidePrev();
@@ -32,7 +32,7 @@ export default function MainSlider() {
   };
 
   const  windowWidth  = windowDimensions()
-
+  console.log(actors)
   return (
     <>
 
@@ -61,24 +61,31 @@ export default function MainSlider() {
       >
       
 
-        <SwiperSlide className="w-full h-full">
-          <HeaderSliderComponent className='object-cover w-full h-full block' />
+     
+  {data.map((item,key)=> {
+    if (key<12) {
+      return(
+        <SwiperSlide key={item.id} className="w-full h-full">
+        <HeaderSliderComponent
+          key={item.id}
+          id={item.id}
+          title={item.title}
+          age={item.age}
+          year={item.year}
+          movieTime={item.movieTime}
+           imdb={item.imdb}
+           like={item.like}
+           description={item.description}
+           imageUrl ={item.imageUrl}
+           imageMobileUrl ={item.imageMobileUrl}
+           actors={actors}
+          className='object-cover w-full h-full block' 
+        />
         </SwiperSlide>
-
-        <SwiperSlide className="w-full h-full">
-        <img
-              className='object-cover w-full h-full block'
-                  src="./images/extractd.jpg"
-                  alt="more"
-                />
-        </SwiperSlide>
-
-        <SwiperSlide className="w-full h-full">
-           <HeaderSliderComponent className='object-cover w-full h-full block' />        
-        </SwiperSlide>
+         )
+         }
+         })}
         
-        <SwiperSlide className="w-full h-full">
-        <HeaderSliderComponent className='object-cover w-full h-full block' />        </SwiperSlide>
         <div id="button" className=" min-[800px]:flex max-[799px]:hidden bottom-[6px] left-8 absolute z-20 min-[1050px]:bottom-[14%] des:left-10 large:left-14 large:bottom-[20%] ">
 
         <button
