@@ -8,22 +8,27 @@ import CloseButtonMd from '../../../public/icons/ShowSlideCloseButton-md.svg'
 import CloseButtonLg from '../../../public/icons/ShowSliderCloseButton-lg.svg'
 import { useEffect, useState } from "react"
 export default function SlideShow({images,isVisible,setIsVisible}) {
-    let index = isVisible.imageId
     const [width,setWidth] = useState(window.outerWidth)
     const handleOnNext = (e) => {
         e.stopPropagation()
-        if (index === images.length) {
-            index = 0
+        if (isVisible.imageId === images.length) {
+            setIsVisible({...isVisible,['imageId']: 1})
+        } else {
+            setIsVisible({...isVisible,['imageId']: isVisible.imageId + 1})
         }
-        setIsVisible({...isVisible,['imageId']: index+1})
+        
     }
     const handleOnPrev = (e) => {
         e.stopPropagation()
-        if (index === 1) {
-            index = images.length + 1
+        if (isVisible.imageId === 1) {
+            setIsVisible({...isVisible,['imageId']: 6})
+        } else{
+            setIsVisible({...isVisible,['imageId']: isVisible.imageId-1})
         }
-        setIsVisible({...isVisible,['imageId']: index-1})
+        
     }
+
+    console.log(isVisible.imageId)
     useEffect(() => {
         window.addEventListener('resize',() => {
             setWidth(window.outerWidth)
@@ -36,20 +41,21 @@ export default function SlideShow({images,isVisible,setIsVisible}) {
     }else {
         var button = CloseButtonLg
     }
+    const index = isVisible.imageId - 1
     return (
         <div onClick={() => 
-        setIsVisible({...isVisible,['visible']:false,['initialIndex']:null})}
+        setIsVisible({...isVisible,['visible']:false,['imageId']:null})}
         className={`SlideShow__background ${isVisible.visible? '':'hidden'}`}>
             <div className="SlideShow__container">
             <Image className="SlideShow__closeButton" src={button}/>
                 <div onClick={handleOnPrev} className="SlideShow__buttons">
-                    <Image src={ArrowRight}/>
+                    <Image src={ArrowRight} alt="arrow"/>
                 </div>
                 <div className="SlideShow__imageHolder">
-                    <Image className="SlideShow__imageStyle" src={images[index - 1]}/>
+                    <Image className="SlideShow__imageStyle" src={(images[index]? images[index]: images[1])} alt="movieImages"/>
                 </div>
                 <div onClick={handleOnNext} className="SlideShow__buttons">
-                    <Image src={ArrowLeft}/>
+                    <Image src={ArrowLeft} alt="arrow"/>
                 </div>
             </div>
         </div>
