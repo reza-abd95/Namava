@@ -3,21 +3,18 @@
 
 import MovieLogo from "../mainSlider/MovieLogo";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Like from "./Like";
 import DisLike from "./DisLike";
 import './css.css'
 import WishlistButton from "./WishlistButton"
+import windowDimensions from "@/app/hooks/useWindowDimensions";
 
 export default function MovieHeader() {
-   //isAdd handling
+  
    
     //handling button's icon
-    const [showFirstSvg, setShowFirstSvg] = useState(true);
 
-    const handleClickAdd = () => {
-      setShowFirstSvg(!showFirstSvg);
-    };
     const [showFirstSvg2, setShowFirstSvg2] = useState(true);
     const [showFirstSvg3, setShowFirstSvg3] = useState(true);
     const handleClickLike = () => {
@@ -44,18 +41,7 @@ export default function MovieHeader() {
  
 
     //handling background change
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+    const  windowWidth  = windowDimensions()
 
   return (
     <>

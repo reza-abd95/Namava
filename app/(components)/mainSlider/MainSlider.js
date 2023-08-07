@@ -13,6 +13,7 @@ import "swiper/css/navigation";
 // import required modules
 import { EffectFade, Autoplay, Pagination, Navigation } from "swiper/modules";
 import HeaderSliderComponent from "./HeaderSliderComponent";
+import windowDimensions from "@/app/hooks/useWindowDimensions";
 
 
 export default function MainSlider({dataActor , dataMovie} ) {
@@ -32,18 +33,7 @@ export default function MainSlider({dataActor , dataMovie} ) {
     }
   };
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const  windowWidth  = windowDimensions()
 
   return (
     <>

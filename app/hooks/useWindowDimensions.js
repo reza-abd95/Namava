@@ -21,7 +21,7 @@ export default function windowDimensions() {
         window.removeEventListener('resize', handleWindowResize);
       }
     };
-  }, []);
+  },[windowWidth]);
 
   return windowWidth;
 }
