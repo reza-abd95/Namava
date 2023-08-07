@@ -87,8 +87,8 @@ body {
   }
   .AboutUs__container {
     @apply
-    ml:flex ml:justify-between ml:pb-6 ml:border-b-[1px] ml:border-[#37383e]
-    tab:items-center
+    ml:flex ml:justify-between ml:border-b-[1px] ml:border-[#37383e]
+    tab:items-center tab:pb-3
     des:py-6
   }
   .AboutUs__title {
@@ -98,7 +98,7 @@ body {
     @apply text-[#aaaaaa] leading-6 text-[11px] py-2 font-iranyekanRegular
   }
   .TrustUs {
-    @apply flex py-3
+    @apply flex pt-3
     ml:flex-col ml:pr-7
     tab:flex-row
     des:px-5

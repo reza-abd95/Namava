@@ -6,10 +6,9 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ArrowDown from '../../public/icons/ArrowDown-footer.svg'
 import Image from "next/image";
-import windowDimensions from "../hooks/useWindowDimensions";
 
 export default function FooterNavbar({isFixed}) {
-    
+    const [width,setWidth] = useState(window.outerWidth)
     const links = [
         {title: 'اپلیکیشن‌ها',show: false},
         {title: 'فرصت‌های شغلی',show: false},
@@ -24,25 +23,35 @@ export default function FooterNavbar({isFixed}) {
         {title: 'شرایط مصرف اینترنت',show: false},
        
     ]
-    if (windowDimensions() >= 360) {
+    if (width >= 360) {
 
         links[0]['show'] = true
         links[1]['show'] = true
         links.push({title: 'ارسال فیلمنامه',show: false})
         links.push({title: 'دانلودها',show: false})
-    } if (windowDimensions() >= 500) {
+    } if (width >= 500) {
         links[2]['show'] = true
 
-    } if (windowDimensions() >= 800) {
+    } if (width >= 800) {
         links[3]['show'] = true
         links[4]['show'] = true
       
-    } if (windowDimensions() >= 1280) {
+    } if (width >= 1280) {
         links[5]['show'] = true
         links[6]['show'] = true
         links[7]['show'] = true
       
+    } if (width >= 1920) {
+        links[8]['show'] = true
+        links[9]['show'] = true
+        links[10]['show'] = true
+        links[11]['show'] = true
+        links[12]['show'] = true
+        
     }
+    useEffect(() => {
+        window.addEventListener('resize', () => setWidth(window.outerWidth))
+    },[width])
     
     const visibleLinks = []
     const hiddenLinks = []
@@ -53,7 +62,7 @@ export default function FooterNavbar({isFixed}) {
             hiddenLinks.push(item.title)
         }
     }
-    windowDimensions()
+    width
     const closed = useRef()
     const elementClosed = useRef()
     const [open, setOpen] = useState(false);
@@ -67,12 +76,9 @@ export default function FooterNavbar({isFixed}) {
                     })
                 }
                 <DropdownMenu
-                 items={hiddenLinks}
                  open={open}
                  setOpen={setOpen}
-                 isFixed={isFixed}
-                 closed={closed}
-                 elementClosed={elementClosed}
+                 width={width}
                  />
             </div>
             
