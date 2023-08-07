@@ -47,7 +47,7 @@ export default function HeaderSliderComponent() {
              <div className="bg-yellow-500 px-2 rounded-[4px] py-[3px] flex items-center text-center ml:px-3 des:px-[14px] des:py-[6px] ml:py-[5px]">
                 <p className="text-[15px] text-center des:text-[14px] large:text-[17px]">+۱۲</p>
               </div>
-              <p className="text-[15px] des:text-[14px] large:text-[17px]">۲۰۲۲</p>
+              <p className="text-[15px] des:text-[14px] large:text-[17px]"></p>
               <p className='text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]'>۱۲۰ دقیقه</p> 
               <div className=" h-4 flex flex-row items-center">
                 <img

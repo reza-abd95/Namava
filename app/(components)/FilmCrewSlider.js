@@ -12,11 +12,12 @@ import { Navigation } from 'swiper/modules';
 import Image from 'next/image';
 import FilmCrew from './FilmCrew';
 
-export default function FilmCrewSlider() {
+export default function FilmCrewSlider({data}) {
   const  windowWidth  = windowDimensions();
   const [slidesPer, setSlidePer] = useState(1.1);
   const [space, setSpace] = useState(15);
   const [centered, setCentered] = useState(true);
+
 
 
   useEffect(() => {
@@ -58,45 +59,18 @@ export default function FilmCrewSlider() {
         spaceBetween={space}
         navigation={true}
         modules={[Navigation]}
-        className="mySwiper flex justify-center items-center w-full h-auto mb-20 mt-5"
-      >
+        className="mySwiper flex justify-center items-center w-full h-auto mb-20 mt-5">
+          {data.map(item =>{
+          return(
 
             <SwiperSlide className="movie-slide"> 
-                <FilmCrew/>
+              <FilmCrew data={item}/>
             </SwiperSlide>
 
-            <SwiperSlide className="movie-slide"> 
-                <FilmCrew/>
-            </SwiperSlide>
+          )
+          })}
 
-            <SwiperSlide className="movie-slide"> 
-                <FilmCrew/>
-            </SwiperSlide>
 
-            <SwiperSlide className="movie-slide"> 
-                <FilmCrew/>
-            </SwiperSlide>
-
-            <SwiperSlide className="movie-slide"> 
-                <FilmCrew/>
-            </SwiperSlide>
-
-            <SwiperSlide className="movie-slide"> 
-                <FilmCrew/>
-            </SwiperSlide>
-
-            <SwiperSlide className="movie-slide"> 
-                <FilmCrew/>
-            </SwiperSlide>
-
-            <SwiperSlide className="movie-slide"> 
-                <FilmCrew/>
-            </SwiperSlide>
-
-            <SwiperSlide className="movie-slide"> 
-                <FilmCrew/>
-            </SwiperSlide>
-                             
         </Swiper>
   
         </div>

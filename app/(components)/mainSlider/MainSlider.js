@@ -15,7 +15,9 @@ import { EffectFade, Autoplay, Pagination, Navigation } from "swiper/modules";
 import HeaderSliderComponent from "./HeaderSliderComponent";
 
 
-export default function MainSlider() {
+export default function MainSlider({dataActor , dataMovie} ) {
+  console.log(dataActor)
+  console.log(dataMovie)
   const swiperRef = useRef(null);
 
   const goPrev = () => {

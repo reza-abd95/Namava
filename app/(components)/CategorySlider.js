@@ -1,6 +1,6 @@
 'use client'
 
-import React , { useState, useEffect } from 'react';
+import React , { useState, useEffect, Suspense } from 'react';
 import windowDimensions from '../hooks/useWindowDimensions';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,11 +11,12 @@ import '../styles.css';
 import { Navigation } from 'swiper/modules';
 
 export default function CategorySlider({data}) {
+  
+
 
   const  windowWidth  = windowDimensions();
   const [slidesPer, setSlidePer] = useState(1.1);
   const [centered, setCentered] = useState(true);
-  const [imager, setImage] = useState("/images/mehmooni.jpg");
 
 
   useEffect(() => {
@@ -23,31 +24,26 @@ export default function CategorySlider({data}) {
       case windowWidth > 1279:
         setSlidePer(3.15);
         setCentered(true);
-        setImage("/images/mehmooni.jpg");
         break;
       case windowWidth > 799:
         setSlidePer(2);
         setCentered(false);
-        setImage("/images/mehmooni.jpg");
         break;
       case windowWidth> 499:
         setSlidePer(2);
         setCentered(false);
-        setImage("/images/mehmooni-sm.jpg");
         break;
       default:
         setSlidePer(1.15);
         setCentered(true);
-        setImage("/images/mehmooni-sm.jpg");
     }
     
   }, [windowWidth]);
 
-  console.log("ho")
 
 
   return (
-    <div>
+    <div className=' mb-12'>
       
       <Swiper
         initialSlide = {1}
@@ -59,47 +55,22 @@ export default function CategorySlider({data}) {
         className="mySwiper flex justify-center items-center w-full"
 
       >
-          <SwiperSlide className=" w-full h-full text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 
-            <Image  className="block w-full h-full rounded"
-                    src={imager}
-                    width={1000}
-                    height={1000}
-                    alt='mehmooni' />
-          </SwiperSlide>
-          
-          <SwiperSlide className="w-full h-full text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 
-            <Image  className="block w-full h-full rounded"
-                    src={imager}
-                    width={1000}
-                    height={1000}
-                    alt='mehmooni' />
-          </SwiperSlide>
-          
-          <SwiperSlide className="w-full h-full text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 
-            <Image  className="block w-full h-full rounded"
-                    src={imager}
-                    width={1000}
-                    height={1000}
-                    alt='mehmooni' />
-          </SwiperSlide>
-          
-          <SwiperSlide className="w-full h-full text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 
-            <Image  className="block w-full h-full rounded"
-                    src={imager}
-                    width={1000}
-                    height={1000}
-                    alt='mehmooni' />
-          </SwiperSlide>
-          
-          <SwiperSlide className="w-full h-full text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 
-            <Image  className="block w-full h-full rounded"
-                    src={imager}
-                    width={1000}
-                    height={1000}
-                    alt='mehmooni' />
-          </SwiperSlide>
-          
+        {data.map(item =>{
+          return(
 
+            <SwiperSlide className=" w-full  text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 
+              <Image  className="block w-full  rounded"
+                      src={windowWidth < 500 ? item.imageMobileUrl : item.imageUrl}
+                      width={1000}
+                      height={400}
+                      alt={item.title}/>
+            </SwiperSlide>
+
+          )
+          })}
+
+
+        
         </Swiper>
   
       </div>
@@ -109,3 +80,13 @@ export default function CategorySlider({data}) {
   
 }
 
+
+
+
+{/* <SwiperSlide className=" w-full h-full text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 
+<Image  className="block w-full h-full rounded"
+        src="/images/mehmooni.jpg"
+        width={1000}
+        height={1000}
+        alt="mehmooni.jpg"/>
+</SwiperSlide> */}

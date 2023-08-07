@@ -8,13 +8,7 @@ export default function Home() {
 
         <div>
             <MainSlider/>
-            <MovieSlider/>
-            <MovieSlider/>
-            <MovieSlider/>
-            <MovieSlider/>
-            <MovieSlider/>
-            <MovieSlider/>
-            <MovieSlider/>
+
             
         </div>
   )
