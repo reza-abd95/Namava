@@ -1,29 +1,33 @@
 'use client'
 
 import Image from "next/image"
+import { useRouter } from 'next/navigation'
 
-export default function MovieForSlider() {
+export default function MovieForSlider(data) {
+  const router = useRouter()
+
     function clickHandler() {
-      console.log("miad")
+      router.replace(`/movies/${data.data.id}`)
     }
+    
     return (
       <div onClick={clickHandler} className=" cursor-pointer">              
         <div className='relative inline-block text-white'>
           <Image  className="block max-w-full h-auto rounded "
-                  src={"/images/GOTG.jpg"}
+                  src={data.data.imagePageUrl}
                   width={1000}
                   height={1000}
-                  alt='mehmooni' />
-          <div className='top-0 left-0 w-full h-full bg-slate-950 bg-opacity-50 absolute opacity-0 tab:hover:opacity-100 transition-all duration-500 delay-300	 '>
+                  alt={data.data.imagePageUrl} />
+          <div className='top-0 left-0 w-full h-full bg-gradient-to-b from-black/50 to-black  absolute opacity-0 tab:hover:opacity-100 transition-all duration-500 delay-300	 '>
             <div className=" w-full h-full flex flex-col justify-end items-start pr-4 pb-4 text-sm">
-              <div >فیلم-2023</div>
-              <div className=" flex justify-center align-middle items-center pt-2 "><Image src={"/images/heart.png"} width={25} height={15} alt="imdb"className=" pl-2"/>92%</div>
-              <div className=" flex justify-center align-middle items-center pt-2 "><Image src={"/images/imdb.png"} width={40} height={15}alt="imdb"className=" pl-2"/>7.5</div>
+              <div >فیلم - {data.data.year}</div>
+              <div className=" flex justify-center align-middle items-center pt-2 "><Image src={"/images/heart.png"} width={25} height={15} alt="imdb"className=" pl-2"/>{data.data.like}%</div>
+              <div className=" flex justify-center align-middle items-center pt-2 "><Image src={"/images/imdb.png"} width={40} height={15}alt="imdb"className=" pl-2"/>{data.data.imdb}</div>
               <div className=" flex justify-center align-middle items-center pt-2 "><Image src={"/images/sub.png"} width={25} height={15} alt="imdb" className=" pl-2"/> زیرنویس </div>
             </div>
           </div>
         </div>
-        <p className="text-right pt-3 text-xs">نگهبانان کهکشان 3 </p>
+        <p className="text-right pt-3 text-xs">{data.data.title}</p>
       </div>
     )
   }

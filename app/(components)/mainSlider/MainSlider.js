@@ -16,7 +16,9 @@ import HeaderSliderComponent from "./HeaderSliderComponent";
 import windowDimensions from "@/app/hooks/useWindowDimensions";
 
 
-export default function MainSlider() {
+export default function MainSlider({dataActor , dataMovie} ) {
+  console.log(dataActor)
+  console.log(dataMovie)
   const swiperRef = useRef(null);
 
   const goPrev = () => {

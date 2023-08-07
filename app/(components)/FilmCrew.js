@@ -2,17 +2,17 @@
 
 import Image from "next/image"
 
-export default function FilmCrew() {
+export default function FilmCrew(data) {
     return (
         <div>              
             <div>
                 <Image  className="block max-w-full h-auto rounded-full "
-                        src={"/images/benedict.jpg"}
+                        src={data.data.imageUrl}
                         width={1000}
                         height={1000}
-                        alt='mehmooni' />
+                        alt={data.data.name} />
             </div>
-            <p className=" pt-3 text-xs">بندیکت کامبربچ</p>
+            <p className=" pt-3 text-xs">{data.data.name}</p>
         </div>
     )
   }
