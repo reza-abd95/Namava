@@ -55,10 +55,10 @@ export default function CategorySlider({data}) {
         className="mySwiper flex justify-center items-center w-full"
 
       >
-        {data.map(item =>{
+        {data.map(item  =>{
           return(
 
-            <SwiperSlide className=" w-full  text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 
+            <SwiperSlide key={item.id} className=" w-full  text-center text-18 bg-white flex justify-center items-center rounded cursor-pointer"> 
               <Image  className="block w-full  rounded"
                       src={windowWidth < 500 ? item.imageMobileUrl : item.imageUrl}
                       width={1000}

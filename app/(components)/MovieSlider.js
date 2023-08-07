@@ -52,7 +52,7 @@ export default function MovieSlider({data}) {
           {data.map(item =>{
           return(
 
-            <SwiperSlide className="movie-slide"> 
+            <SwiperSlide key={item.id} className="movie-slide"> 
               <MovieForSlider data={item}/>
             </SwiperSlide>
 

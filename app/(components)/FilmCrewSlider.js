@@ -63,7 +63,7 @@ export default function FilmCrewSlider({data}) {
           {data.map(item =>{
           return(
 
-            <SwiperSlide className="movie-slide"> 
+            <SwiperSlide key={item.id} className="movie-slide"> 
               <FilmCrew data={item}/>
             </SwiperSlide>
 

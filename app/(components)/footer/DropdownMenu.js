@@ -8,7 +8,7 @@ export default function DropdownMenu({width,items,open,setOpen}) {
 
 
     return (
-        <div className={`DropdownMenu ${(width>=1290)? 'hidden': ''}`}>
+        <div className={`DropdownMenu ${(width>=1920)? 'hidden': ''}`}>
             <button
             onClick={() => {
                 setOpen(!open)
