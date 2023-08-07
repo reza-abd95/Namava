@@ -1,8 +1,33 @@
-import Image from "next/image";
-import Like from "@/public/icons/like-icon.svg";
+'use client'
+import {useState} from "react";
+import CommentLike from "@/app/(components)/CommentLike";
+import CommentDislike from "@/app/(components)/CommentDislike";
 
 
 export default  function UsersComments () {
+    const [showFirstSvg2, setShowFirstSvg2] = useState(true);
+    const [showFirstSvg3, setShowFirstSvg3] = useState(true);
+    const handleClickLike = () => {
+        if(showFirstSvg2===false){
+            setShowFirstSvg2(true)
+        }
+        else {
+            setShowFirstSvg2(false);
+            setShowFirstSvg3(true)
+        }
+    };
+
+
+
+    const handleClickDisLike = () => {
+        if(showFirstSvg3===false){
+            setShowFirstSvg3(true)
+        }
+        else {
+            setShowFirstSvg3(false);
+            setShowFirstSvg2(true)
+        }
+    };
     return (
             <div className="w-full px-[20px] pt-[20px] text-[16px] bg-[#222327] flex flex-row justify-start items-start  ml:px-[24px] tab:px-[32px] tab:pt-[18px] des:w-[1000px] rounded-b-[6px] des:px-[24px] des:pt-[30px]   ">
                 <div className="w-[17.5%] flex items-start justify-start mt-[1px] ml:w-[11%] tab:mb-[3px]  tab:w-[9%] des:w-[6.5%]">
@@ -21,10 +46,14 @@ export default  function UsersComments () {
                     </div>
                     <span className='text-[12px] font-iranyekanRegular text-white '>افتضاح</span>
                     <div className="flex flex-row justify-start items-center w-full gap-[35px] mt-[30px] pr-[5px] tab:mt-[25px] border-b border-[#37383E] pb-[30px] ">
-                        <span className="flex flex-row gap-4 font-iranyekanRegular text-[12px] text-[#AAAAAA] tab:justify-center tab:items-center">
-                            <Image className="w-[18px] h-[18px] transform -scale-x-100 cursor-pointer tab:w-[26px] tab:h-[26px] tab:mb-[4px]"  src={Like} alt="like"/> ۱</span>
-                        <span className="flex flex-row gap-4 font-iranyekanRegular text-[12px] text-[#AAAAAA] ">
-                            <Image className="w-[18px] h-[18px] transform -scale-y-100 cursor-pointer tab:w-[26px] tab:h-[26px]" src={Like} alt="dislike"/> ۲</span>
+                        <span onClick={handleClickLike} className="flex flex-row gap-4 font-iranyekanRegular text-[12px] text-[#AAAAAA] tab:justify-center tab:items-center">
+                            {/*<Image className="w-[18px] h-[18px] transform -scale-x-100 cursor-pointer tab:w-[26px] tab:h-[26px] tab:mb-[4px]"  src={CommentLike} alt="like"/>*/}
+                            <CommentLike showFirstSvg2={showFirstSvg2}/>
+                            </span>
+                        <span onClick={handleClickDisLike} className="flex flex-row gap-4 font-iranyekanRegular text-[12px] text-[#AAAAAA] ">
+                            {/*<Image className="w-[18px] h-[18px] transform -scale-y-100 cursor-pointer tab:w-[26px] tab:h-[26px]" src={CommentLike} alt="dislike"/>*/}
+                            <CommentDislike showFirstSvg3={showFirstSvg3} />
+                            </span>
                     </div>
                 </div>
             </div>

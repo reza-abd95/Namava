@@ -48,26 +48,24 @@ export default function Menu () {
                 <Image className="w-[32px] h-[27px] ml-[8px] tab:hidden " src={MenuIcon} alt="menu" onClick={openMenuMobile}/>
             </div>
             <div>
-                <div className={"absolute hidden w-screen h-screen bg-zinc-800 opacity-30 right-0" + " " + "top-0"} onClick={closeMenu_handller} ref={darkDivRef} ></div>
+                <div className={"absolute hidden w-screen h-screen bg-zinc-800 opacity-30 tab:hidden right-0" + " " + "top-0"} onClick={closeMenu_handller} ref={darkDivRef} ></div>
                 <div className={"w-[250px] hidden bg-[#222327] z-100 transition duration-[20s] ease-linear absolute h-screen tab:hidden right-0"+ " " + "top-0"} ref={MenuRef}>
                     <div className="w-full h-[80px]">
-                        <div className="w-[97px] ml:w-[80px] ml:mx[14px] mx-[24px] flex justify-center items-center h-full">
-                            <div className="flex items-center">
-                                <svg className="ml-[10px]" xmlns="http://www.w3.org/2000/svg" width={30} height={30} onClick={closeMenu_handller}>
+                        <div className="w-[145px] ml:w-[145px] ml:mx[14px] mx-[24px] flex items-center h-full">
+                                <svg className="w-[30px] h-[30px]" xmlns="http://www.w3.org/2000/svg" onClick={closeMenu_handller}>
                                     <path className="fill-white" d="M23.7 21.122H6.98a.98.98 0 1 0 0 1.961H23.7a.98.98 0 1 0 0-1.961zm0-7.562H6.98a.981.981 0 1 0 0 1.961H23.7a.981.981 0 1 0 0-1.961zM6.98 7.96H23.7a.981.981 0 1 0 0-1.961H6.98a.981.981 0 1 0 0 1.961z"></path>
                                 </svg>
-                                <Link href="/" >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width={47} height={30}>
+                                <Link href="/" className="pr-[10px]" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-[47px] h-[30px]">
                                         <path className="fill-white" d={pathNamvaLogo}></path>
                                     </svg>
                                 </Link>
-                            </div>
                         </div>
                     </div>
                     <div className="w-full px-[24px]">
                         <ul>
                             <li className={(pathName == "/") ? "mobile__menu-list fill-[#6eb8ff] text-[#6eb8ff]" : "mobile__menu-list text-white fill-white" } onClick={()=>{route.push("/");closeMenu_handller()}}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-[30px] h-[30px]">
                                     <path d="M14.73 16.013c1.226 0 2.223.997 2.223 2.223v4.922h-4.446v-4.922c0-1.226.997-2.223 2.223-2.223zm11.575-1.156l-8.641-8.641A4.12 4.12 0 0 0 14.73 5a4.12 4.12 0 0 0-2.934 1.215l-8.642 8.641c-.1.1-.155.232-.155.373s.055.274.155.373a.53.53 0 0 0 .747 0l1.979-1.979v8.153a2.44 2.44 0 0 0 2.436 2.436h12.826a2.44 2.44 0 0 0 2.436-2.436v-8.153l1.979 1.979a.54.54 0 0 0 .747 0c.1-.1.155-.232.155-.373s-.055-.274-.155-.373z">    
                                     </path>
                                 </svg>
@@ -75,9 +73,9 @@ export default function Menu () {
                             </li>
                             <li className={(pathName == "/movies") ? "mobile__menu-list fill-[#6eb8ff] text-[#6eb8ff]" : "mobile__menu-list text-white fill-white" } onMouseOver={ChangeFill} onMouseLeave={ChangeFilloff} onClick={()=>{route.push("/movies");closeMenu_handller()}}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none">
-                                    <g clip-path="url(#A)">
+                                    <g clipPath="url(#A)">
                                         <path className={movieFill} d="M16.032 11.86a3.43 3.43 0 0 0 0-6.86 3.43 3.43 0 0 0 0 6.86zm-7.402 0a3.43 3.43 0 0 0 0-6.86 3.43 3.43 0 0 0 0 6.86z"></path>
-                                        <g fill-rule="evenodd">
+                                        <g>
                                             <path className="fill-white" d="M18.3 24.45H6c-1.66 0-3-1.34-3-3v-5.47c0-1.66 1.34-3 3-3h12.3c1.66 0 3 1.34 3 3v5.47a3.01 3.01 0 0 1-3 3z"></path>
                                     <path className="fill-white" d="M19.678 19.58l4.97 2.87c.67.38 1.5-.1 1.5-.87v-5.74c0-.77-.83-1.25-1.5-.87l-4.97 2.87c-.67.39-.67 1.36 0 1.74z"></path></g></g>
                                     <clipPath id="A">

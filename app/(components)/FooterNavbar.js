@@ -23,6 +23,7 @@ export default function FooterNavbar({isFixed}) {
         {title: 'شرایط مصرف اینترنت',show: false},
        
     ]
+
     if (width >= 360) {
 
         links[0]['show'] = true
@@ -37,6 +38,7 @@ export default function FooterNavbar({isFixed}) {
         links[4]['show'] = true
       
     } if (width >= 1280) {
+
         links[5]['show'] = true
         links[6]['show'] = true
         links[7]['show'] = true

@@ -1,10 +1,11 @@
+
 import Image from "next/image";
 
 
 
 export default function MoviePicturs({images,isVisible,setIsVisible}) {
     const handleOnClick = (e) => {
-        console.log(e.target)
+
         setIsVisible({...isVisible,['visible']: true,['imageId']: Number(e.target['id'])})
     }
     return (
@@ -20,6 +21,7 @@ export default function MoviePicturs({images,isVisible,setIsVisible}) {
                 })
                 }
             </div>
+
         </div>
     )
 }
