@@ -4,6 +4,7 @@ import NotFoundSearch from "../(components)/NotFoundSearch";
 import SearchArea from "../(components)/SearchArea";
 
 export default function Search() {
+    
     return (
         <div className="min-h-[710px] pb-20">
             <div className=' pt-20'></div>
