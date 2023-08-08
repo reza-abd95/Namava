@@ -18,7 +18,7 @@ export default function Search() {
     },[])
     const result = []
     for (const movie of movies) {
-        if (movie.title.includes(searchTerm) || (movie.titleEn.includes(searchTerm))) {
+        if (movie.title.includes(searchTerm) || (movie.titleEn.toLowerCase().includes(searchTerm.toLowerCase()))) {
             result.push(movie)
         }
     }
