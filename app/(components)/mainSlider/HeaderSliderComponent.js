@@ -29,9 +29,9 @@ export default function HeaderSliderComponent({ data, actors }) {
         <div className="w-full h-full relative flex flex-col ">
           <div className="relative mb-[12px] ml:mb-[32%] min-[600px]:mb-[20%] min-[700px]:mb-[11%] tab:mb-[64px] min-[900px]:mb-2 min-[1050px]:mb-0">
             <Image
-              className="w-full h-full"
-              width={999}
-              height={468}
+              className="w-full h-full bg-[#121212]"
+              width={windowWidth > 499 ? 999: 1000 }
+              height={windowWidth > 499 ? 468: 1350}
               src={windowWidth > 499 ? data.imageUrl : data.imageMobileUrl}
               alt={data.title}
             />
