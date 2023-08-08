@@ -52,7 +52,7 @@ export default function MainSlider({ data, actors }) {
         className="mySwiper w-full h-auto flex items-center justify-center relative"
       >
         {data.map((item, key) => {
-          if (key<4) {
+          if (key<10) {
             return (
               <SwiperSlide key={item.id} className="w-full h-full">
                 <HeaderSliderComponent

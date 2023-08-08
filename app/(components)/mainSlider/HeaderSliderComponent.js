@@ -35,6 +35,7 @@ export default function HeaderSliderComponent({ data, actors }) {
               src={windowWidth > 499 ? data.imageUrl : data.imageMobileUrl}
               alt={data.title}
             />
+            <div className="absolute w-[50%] inset-0 bg-gradient-to-l from-[#121212] to-transparent"></div>
 
             <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent"></div>
           </div>
