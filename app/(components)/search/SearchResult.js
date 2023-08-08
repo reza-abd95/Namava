@@ -4,7 +4,7 @@ import MovieForSlider from "../MovieForSlider"
 export default function SearchResult({movies}) {
 
     return (
-        <div className=" text-white w-full mt-[48px] px-6 ml:px-7 des:px-10 flex flex-wrap  items-center">
+        <div className=" text-white w-full mt-[48px] px-6 ml:px-7 des:px-10 flex flex-wrap">
             {
                 movies.map((item,index) => {
                     return(
