@@ -40,9 +40,10 @@ export default function HeaderSliderComponent({ data, actors }) {
           </div>
           <div className="absolute flex flex-col justify-center items-center top-[26%] ml:block ml:top-[60px] tab:top-[85px]">
             <div className="w-[45%] mb-[44px] ml:w-[28%]  ml:mr-[20px] ml:mb[50px] tab:w-[20%] tab:mr-8 tab:mb-6 des:mr-11 des:w-[22%]">
-              <Link href={`/movies/${data.id}`}>
-                <MovieLogo  className="cursor-pointer" />
-              </Link>
+            <img onClick={clickhandler} className="h-full w-full cursor-pointer" 
+                src={data.logoUrl}
+                alt={data.title}
+                />
             </div>
             <div className="flex flex-col justify-center items-center px-[14px]  text-center ml:block ml:text-start ml:px-[20px] tab:px-8 des:px-11">
               
