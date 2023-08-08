@@ -15,7 +15,7 @@ export default function HeaderSliderComponent({ data, actors }) {
       const actor = actors.find(a => a.id === id);
       return actor ? actor.name : "";
     });
-    return actorNames?.join(", ");
+    return actorNames?.join("، ");
   };
  
   return (
@@ -36,7 +36,7 @@ export default function HeaderSliderComponent({ data, actors }) {
           <div className="absolute flex flex-col justify-center items-center top-[26%] ml:block ml:top-[60px] tab:top-[85px]">
             <div className="w-[45%] mb-[44px] ml:w-[28%]  ml:mr-[20px] ml:mb[50px] tab:w-[20%] tab:mr-8 tab:mb-6 des:mr-11 des:w-[22%]">
               <Link href={`/${data.id}`}>
-                <MovieLogo className="cursor-pointer" />
+                <MovieLogo  className="cursor-pointer" />
               </Link>
             </div>
             <div className="flex flex-col justify-center items-center px-[14px]  text-center ml:block ml:text-start ml:px-[20px] tab:px-8 des:px-11">
