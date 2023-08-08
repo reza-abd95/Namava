@@ -16,9 +16,19 @@ import HeaderSliderComponent from "./HeaderSliderComponent";
 import windowDimensions from "@/app/hooks/useWindowDimensions";
 
 
-export default function MainSlider({dataActor , dataMovie} ) {
-  console.log(dataActor)
-  console.log(dataMovie)
+export default function MainSlider({categoryId,movieData,subject} ) {
+    const [movieItem,setMovieItem] = useState([])
+    // console.log(movieData.filter(item => item.categoryId == categoryId))
+    useEffect(() => {
+        if(subject == "categoryPath"){
+           setMovieItem( movieData.filter(item => item.categoryId == categoryId));
+        }else if(subject == "homePath"){
+            console.log("khodddd")
+            // setMovieItem({name:'ali'})
+        }
+    },[]);
+
+
   const swiperRef = useRef(null);
 
   const goPrev = () => {
@@ -45,9 +55,7 @@ export default function MainSlider({dataActor , dataMovie} ) {
         "--swiper-pagination-bullet-inactive-color": "#5a5a5a",
       }}
         ref={swiperRef}
-        pagination={windowWidth > 799
-                ? false
-                : true}
+        pagination={windowWidth <= 799}
         autoplay={{
           delay: 7000,
           disableOnInteraction: false,
@@ -61,26 +69,17 @@ export default function MainSlider({dataActor , dataMovie} ) {
         modules={[Autoplay, EffectFade, Pagination, Navigation]}
         className="mySwiper w-full h-auto flex items-center justify-center relative"
       >
-      
+          {movieItem.map(item => {
+              return(
+                  <SwiperSlide className="w-full h-full">
+                      <HeaderSliderComponent
+                          key={item.id}
+                          movie={item}
+                          className='object-cover w-full h-full block' />
+                  </SwiperSlide>
+              )
+          })}
 
-        <SwiperSlide className="w-full h-full">
-          <HeaderSliderComponent className='object-cover w-full h-full block' />
-        </SwiperSlide>
-
-        <SwiperSlide className="w-full h-full">
-        <img
-              className='object-cover w-full h-full block'
-                  src="./images/extractd.jpg"
-                  alt="more"
-                />
-        </SwiperSlide>
-
-        <SwiperSlide className="w-full h-full">
-           <HeaderSliderComponent className='object-cover w-full h-full block' />        
-        </SwiperSlide>
-        
-        <SwiperSlide className="w-full h-full">
-        <HeaderSliderComponent className='object-cover w-full h-full block' />        </SwiperSlide>
         <div id="button" className=" min-[800px]:flex max-[799px]:hidden bottom-[6px] left-8 absolute z-20 min-[1050px]:bottom-[14%] des:left-10 large:left-14 large:bottom-[20%] ">
 
         <button

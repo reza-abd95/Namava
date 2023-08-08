@@ -8,7 +8,7 @@ import ArrowDown from '../../public/icons/ArrowDown-footer.svg'
 import Image from "next/image";
 
 export default function FooterNavbar({isFixed}) {
-    const [width,setWidth] = useState(window.outerWidth)
+    const [width,setWidth] = useState(window.innerWidth)
     const links = [
         {title: 'اپلیکیشن‌ها',show: false},
         {title: 'فرصت‌های شغلی',show: false},
@@ -52,7 +52,7 @@ export default function FooterNavbar({isFixed}) {
         
     }
     useEffect(() => {
-        window.addEventListener('resize', () => setWidth(window.outerWidth))
+        window.addEventListener('resize', () => setWidth(window.innerWidth))
     },[width])
     
     const visibleLinks = []
@@ -64,7 +64,6 @@ export default function FooterNavbar({isFixed}) {
             hiddenLinks.push(item.title)
         }
     }
-    width
     const closed = useRef()
     const elementClosed = useRef()
     const [open, setOpen] = useState(false);
