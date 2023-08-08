@@ -1,6 +1,7 @@
 import CategorySlider from './(components)/CategorySlider'
 import FilmCrewSlider from './(components)/FilmCrewSlider'
 import MovieSlider from './(components)/MovieSlider'
+import TitleOfCategorySlider from './(components)/TitleOfCategorySlider';
 import MainSlider from './(components)/mainSlider/MainSlider'
 import { getActorData, getHomeSliderData, getMoviesData } from './utils/getdata';
 
@@ -19,7 +20,7 @@ export default async function Home() {
         <div>
             <MainSlider/>
             <CategorySlider data={slider}/> 
-            <p className=" text-white text-right mr-14 text-lg "> فیلم ها</p>
+            <TitleOfCategorySlider/>
             <MovieSlider data={movie}/>
             <FilmCrewSlider data={actor}/>
             
