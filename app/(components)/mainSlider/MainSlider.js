@@ -14,7 +14,7 @@ import { EffectFade, Autoplay, Pagination, Navigation } from "swiper/modules";
 import HeaderSliderComponent from "./HeaderSliderComponent";
 import windowDimensions from "@/app/hooks/useWindowDimensions";
 
-export default function MainSlider({ data, actors }) {
+export default function MainSlider({ categoryId, movieData, subject, actors }) {
   const swiperRef = useRef(null);
 
   const goPrev = () => {
@@ -30,6 +30,15 @@ export default function MainSlider({ data, actors }) {
   };
 
   const windowWidth = windowDimensions();
+  const [movieItem, setMovieItem] = useState([]);
+
+  useEffect(() => {
+    if (subject == "categoryPath") {
+      setMovieItem(movieData.filter((item) => item.categoryId == categoryId));
+    } else if (subject == "homePath") {
+      setMovieItem(movieData.filter((item) => item.id < 11));
+    }
+  }, []);
 
   return (
     <>
@@ -51,19 +60,17 @@ export default function MainSlider({ data, actors }) {
         modules={[Autoplay, EffectFade, Pagination, Navigation]}
         className="mySwiper w-full h-auto flex items-center justify-center relative"
       >
-        {data.map((item, key) => {
-          if (key<10) {
-            return (
-              <SwiperSlide key={item.id} className="w-full h-full">
-                <HeaderSliderComponent
-                  key={item.id}
-                  data={item}
-                  actors={actors}
-                  className="object-cover w-full h-full block"
-                />
-              </SwiperSlide>
-            );
-          }
+        {movieItem.map((item) => {
+          return (
+            <SwiperSlide className="w-full h-full">
+              <HeaderSliderComponent
+                key={item.id}
+                data={item}
+                actors={actors}
+                className="object-cover w-full h-full block"
+              />
+            </SwiperSlide>
+          );
         })}
 
         <div

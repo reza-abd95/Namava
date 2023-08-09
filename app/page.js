@@ -19,7 +19,7 @@ export default async function Home() {
   
         <div>
           
-            <MainSlider data={mainSliders} actors={actors}/>
+            <MainSlider movieData={mainSliders} actors={actors} subject={'homePath'}/>
             <CategorySlider data={sliders} /> 
             <MovieSlider/>
             <FilmCrewSlider/>
