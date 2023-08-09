@@ -4,21 +4,17 @@ import MovieLogo from "./MovieLogo";
 import Image from "next/image";
 import windowDimensions from "@/app/hooks/useWindowDimensions";
 import { useRouter } from "next/navigation";
-import getColorByNumber from "@/app/hooks/useColor";
+import { useState,useEffect } from "react";
 
 
 export default function HeaderSliderComponent({ data, actors }) {
   const windowWidth = windowDimensions();
-  const getColor= getColorByNumber();
-  console.log(getColor);
   const router = useRouter();
   function clickhandler(){
     router.push(`movies/${data.id}`)
   }
   const getActorNames = () => {
     const ad=data.actors;
-console.log('kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk');
-console.log(actors);
     const actorNames = ad?.map(id => {
       const actor = actors.find(a => a.id === id);
       return actor ? actor.name : "";
@@ -26,16 +22,31 @@ console.log(actors);
     return actorNames?.join("، ");
   };
 
+    const [src, setSrc] = useState();
+ 
+  useEffect(() => {
+    switch (true) {
+      case windowWidth > 499:
+        setSrc(data.imageUrl);
+        break;
+         case windowWidth< 500:
+           setSrc(data.imageMobileUrl);
+           break;
+         default:
+           setSrc(null);
+    }
+    
+  }, [windowWidth]);
   return (
     <>
-      <div className="text-[#fff]">
+      <div className="text-[#fff] bg-[#121212]">
         <div className="w-full h-full relative flex flex-col ">
-          <div className="relative mb-[12px] ml:mb-[32%] min-[600px]:mb-[20%] min-[700px]:mb-[11%] tab:mb-[64px] min-[900px]:mb-2 min-[1050px]:mb-0">
+          <div className="relative mb-[12px] ml:h- ml:mb-[32%] min-[600px]:mb-[20%] min-[700px]:mb-[11%] tab:mb-[64px] min-[900px]:mb-2 min-[1050px]:mb-0">
             <Image
-              className="w-full h-full bg-[#121212]"
+              className="w-full h-full"
               width={windowWidth > 499 ? 999: 1000 }
               height={windowWidth > 499 ? 468: 1350}
-              src={windowWidth > 499 ? data.imageUrl : data.imageMobileUrl}
+              src={src}
               alt={data.title}
             />
             <div className="absolute w-[50%] inset-0 bg-gradient-to-l from-[#121212] to-transparent"></div>
@@ -56,8 +67,8 @@ console.log(actors);
                 </h2>
               
               <div className="max-[1279px]:hidden flex flex-row justify-between items-center w-[410px]">
-                <div age={data.age}>
-                  {getColor}
+                <div>
+                {data.age}
                 </div>
                 <p className="text-[15px] des:text-[14px] large:text-[17px]">
                   {data.year}
@@ -65,9 +76,9 @@ console.log(actors);
                 <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">
                   {data.movieTime} دقیقه
                 </p>
-                <div className=" h-4 flex flex-row items-center">
+                <div className=" h-4 flex flex-row justify-center items-center">
                   <img
-                    className="ml-1 h-3 ml:h-[14px]"
+                    className="ml-1 h-3 ml:h-[13px]"
                     src="../images/imdb.png"
                     alt="imdb"
                   />
@@ -90,7 +101,7 @@ console.log(actors);
                 </div>
                 <div className=" w-7 h-6 ml-2 p-0.5  flex flex-row items-center">
                   <Image
-                    className="ml-1 ml:w-5 ml:h-5"
+                    className="ml-1 ml:w-5 ml:h-[18px]"
                     width={10}
                     height={10}
                     src="../icons/subtitle.svg"
