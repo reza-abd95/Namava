@@ -3,12 +3,14 @@
 import MovieLogo from "./MovieLogo";
 import Image from "next/image";
 import windowDimensions from "@/app/hooks/useWindowDimensions";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
+import getColorByNumber from "@/app/hooks/useColor";
 
 
 export default function HeaderSliderComponent({ data, actors }) {
   const windowWidth = windowDimensions();
+  const getColor= getColorByNumber();
+  console.log(getColor);
   const router = useRouter();
   function clickhandler(){
     router.push(`movies/${data.id}`)
@@ -22,7 +24,7 @@ export default function HeaderSliderComponent({ data, actors }) {
     });
     return actorNames?.join("، ");
   };
- 
+
   return (
     <>
       <div className="text-[#fff]">
@@ -53,10 +55,8 @@ export default function HeaderSliderComponent({ data, actors }) {
                 </h2>
               
               <div className="max-[1279px]:hidden flex flex-row justify-between items-center w-[410px]">
-                <div className="bg-yellow-500 px-2 rounded-[4px] py-[3px] flex items-center text-center ml:px-3 des:px-[14px] des:py-[6px] ml:py-[5px]">
-                  <p className="text-[15px] text-center des:text-[14px] large:text-[17px]">
-                    {data.age}
-                  </p>
+                <div age={data.age}>
+                  {getColor}
                 </div>
                 <p className="text-[15px] des:text-[14px] large:text-[17px]">
                   {data.year}
