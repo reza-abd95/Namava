@@ -2,13 +2,23 @@
 
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Like from "./Like";
 import DisLike from "./DisLike";
 import './css.css'
 import WishlistButton from "./WishlistButton"
 import windowDimensions from "@/app/hooks/useWindowDimensions";
+//--------------Video Player---------------//
+import CloseButton from '../../../public/icons/ShowSliderCloseButton.svg'
+import CloseButtonMd from '../../../public/icons/ShowSliderCloseButton-md.svg'
+import CloseButtonLg from '../../../public/icons/ShowSliderCloseButton-lg.svg'
 import MovieLogoSingle from "./MovieLogoSingle";
+
+export default function MovieHeader() {
+  
+    //handling background change
+    const  windowWidth  = windowDimensions()
+
 
 export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl, movieName, movieyear, imdb, like, isDubbed, hasSub, description, director, actorsName}) {
     const ageColorHandler = (ageNumber) => {
@@ -41,6 +51,29 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
 
     const [showFirstSvg2, setShowFirstSvg2] = useState(true);
     const [showFirstSvg3, setShowFirstSvg3] = useState(true);
+//--------------------Videio Player---------------------//
+    const [width,setWidth] = useState(window.innerWidth)
+    const [isPlaying,setIsPlaying] = useState(false)
+    const videoRef = useRef(null)
+    const handleOnPlay = () => {
+        setIsPlaying(true)
+        videoRef.current.play()
+    }
+    const handleOnClose = () => {
+        setIsPlaying(false)
+        videoRef.current.pause()
+        videoRef.current.currentTime = 0
+      }
+    let dimention;
+    if (windowWidth < 500) {
+      dimention = 17
+    } else if (windowWidth < 800) {
+      dimention = 20
+    } else {
+      dimention = 30
+  }
+    
+//--------------------Videio Player---------------------//
     const handleClickLike = () => {
       if(showFirstSvg2===false){
           setShowFirstSvg2(true)
@@ -62,15 +95,26 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
       setShowFirstSvg2(true)
   }
     };
- 
-
-    //handling background change
-    const  windowWidth  = windowDimensions()
 
   return (
     <>
     
       <div className="text-[#fff]">
+{/*-------------------------------------------------------*/}
+        <div onClick={handleOnClose} className={`SlideShow__background ${isPlaying? '':'hidden'}`}>
+          <div className="flex items-center justify-center">
+              <div onClick={(e) => {e.stopPropagation()}} className="SlideShow__imageHolder relative rounded-none overflow-visible">
+                  <svg onClick={handleOnClose} className="absolute left-0 top-[-28px] ml:top-[-40px] tab:top-[-52px] cursor-pointer" xmlns="http://www.w3.org/2000/svg" width={`${dimention}`} height={`${dimention}`} viewBox="0 0 15 15"><path fill="currentColor" d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27Z"/></svg>
+                  <div>
+                      <video ref={videoRef} disablePictureInPicture controls >
+                        <source src="https://static.namava.ir/Content/Upload/Images/897468ed-8cb7-44dc-b482-a7cf831684f8.mp4" type="video/mp4"/>
+                      </video>
+                  </div>
+              </div>
+          </div>
+          
+        </div>
+{/*-------------------------------------------------------*/}
         <div className="w-full h-full relative flex flex-col ml:max-h-[534px] tab:max-h-none justify-center tab:justify-start items-center tab:items-stretch ">
           <div className="relative mb-[168px] ms:mb-[118px]  ml:mb-[298px]  tab:mb-[100px] des:mb-0  " >
             <Image
@@ -135,8 +179,9 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
             <p className={"text-[12px] text-center mt-4 ml:mb-2 max-w-[317px] tab:max-w-[525px] tab:text-start leading-loose ml:max-w-[452px]  tab:mb-2 tab:mt-3 des:text-[15px] large:text-[17px]" + " " + (isDubbed)?"":"hidden"}>
               دوبله اختصاصی نماوا
             </p> 
-            <div className=" my-[21px] max-w-[100px] tab:hidden flex items-center justify-center h-[42px] bg-[#414141] opacity-[80%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]">
-                <p className="text-[12px] px-4 cursor-pointer">پیش‌ نمایش</p>
+            <div onClick={handleOnPlay} className=" my-[21px] max-w-[100px] tab:hidden flex items-center justify-center h-[42px] bg-[#414141] opacity-[80%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]">
+                <p className="text-[12px] px-4 cursor-pointer" >پیش‌ نمایش</p>
+
               </div>
               <p className="max-[499px]:hidden tab:hidden mb-2 text-[12px] large:text-[14px]" >
                 ستارگان:
@@ -148,8 +193,9 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
               {`کارگردان: ${director}`}
             </p> 
              <div className="flex flex-row items-center mb-4 tab:mb-2 tab:mt-3 ">
-               <div className=" my-[21px] tab:my-0 max-[799px]:hidden flex items-center justify-center ml-4 h-[42px] bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]">
-                <p className="text-[12px] px-5 cursor-pointer">پیش‌ نمایش</p>
+               <div onClick={handleOnPlay} className=" my-[21px] tab:my-0 max-[799px]:hidden flex items-center justify-center ml-4 h-[42px] bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]">
+                <p className="text-[12px] px-5 cursor-pointer" >پیش‌ نمایش</p>
+
               </div>
               <div className="flex flex-col justify-center items-center text-center ml-11 tab:ml-4">
              
