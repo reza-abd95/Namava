@@ -20,7 +20,7 @@ export default async function Home() {
         <div>
             <MainSlider/>
             <CategorySlider data={slider}/> 
-            <TitleOfCategorySlider/>
+            <TitleOfCategorySlider title={"فیلم ها"} link={"/movies"}/>
             <MovieSlider data={movie}/>
             <FilmCrewSlider data={actor}/>
             
