@@ -3,6 +3,7 @@ import MovieSlider from "@/app/(components)/MovieSlider";
 import MainSlider from "@/app/(components)/mainSlider/MainSlider";
 import {getActorData, getCategoriesData, getMoviesData} from "@/app/utils/getdata";
 import Description from "@/app/(components)/Description";
+import TitleOfCategorySlider from "@/app/(components)/TitleOfCategorySlider";
 
 export default async function CategoryId({params}) {
 
@@ -14,11 +15,20 @@ export default async function CategoryId({params}) {
     const describe = categories.find(item => item.id == categoryId).description;
     const actorData= await getActorData();
     const actor = actorData.record;
-
+    const categoryName = categories.find((category)=>{
+        return category.id == categoryId
+    })
+    const categorymovie = movie.filter((movie)=>{
+        return movie.categoryId == categoryId
+      })
 
     return (
         <div>
+            
             <MainSlider categoryId={categoryId}  movieData={movie} actors={actor} subject={"categoryPath"}/>
+           
+            <TitleOfCategorySlider title={categoryName.name} link={"#"}/>
+            <MovieSlider data= {categorymovie}/>
             <Description describe={describe}/>
 
         </div>
