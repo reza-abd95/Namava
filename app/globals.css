@@ -85,8 +85,8 @@ h1, h2, h3, h4, span, a {
   }
   .AboutUs__container {
     @apply
-    ml:flex ml:justify-between ml:pb-6 ml:border-b-[1px] ml:border-[#37383e]
-    tab:items-center
+    ml:flex ml:justify-between ml:border-b-[1px] ml:border-[#37383e]
+    tab:items-center tab:pb-3
     des:py-6
   }
   .AboutUs__title {
@@ -96,7 +96,7 @@ h1, h2, h3, h4, span, a {
     @apply text-[#aaaaaa] leading-6 text-[11px] py-2 font-iranyekanRegular
   }
   .TrustUs {
-    @apply flex py-3
+    @apply flex pt-3
     ml:flex-col ml:pr-7
     tab:flex-row
     des:px-5
@@ -131,6 +131,9 @@ h1, h2, h3, h4, span, a {
   }
   .FooterNavbar__menu {
     @apply bg-[#222327] px-4 flex items-center justify-between h-full ml:justify-evenly
+  }
+  .FooterNavbar__backgroundOpen {
+    @apply fixed bottom-[40px] left-0 h-screen w-screen bg-[#000000cc] z-[-2]
   }
   .DropdownMenu {
     @apply h-full w-fit flex items-center text-[#cccccc] text-xs ml:justify-center

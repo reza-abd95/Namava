@@ -6,8 +6,9 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ArrowDown from '../../public/icons/ArrowDown-footer.svg'
 import Image from "next/image";
+
 export default function FooterNavbar({isFixed}) {
-    const [width,setWidth] = useState(window.outerWidth)
+    const [width,setWidth] = useState(window.innerWidth)
     const links = [
         {title: 'اپلیکیشن‌ها',show: false},
         {title: 'فرصت‌های شغلی',show: false},
@@ -22,32 +23,37 @@ export default function FooterNavbar({isFixed}) {
         {title: 'شرایط مصرف اینترنت',show: false},
        
     ]
-    useEffect(() => {
-        
-        window.addEventListener('resize',() => {setWidth(window.outerWidth)})
-    },[width])
-    let n = 1
+
     if (width >= 360) {
 
         links[0]['show'] = true
         links[1]['show'] = true
         links.push({title: 'ارسال فیلمنامه',show: false})
         links.push({title: 'دانلودها',show: false})
-        n = 3
     } if (width >= 500) {
         links[2]['show'] = true
-        n =4
+
     } if (width >= 800) {
         links[3]['show'] = true
         links[4]['show'] = true
-        n =6
+      
     } if (width >= 1280) {
 
         links[5]['show'] = true
         links[6]['show'] = true
         links[7]['show'] = true
       
+    } if (width >= 1920) {
+        links[8]['show'] = true
+        links[9]['show'] = true
+        links[10]['show'] = true
+        links[11]['show'] = true
+        links[12]['show'] = true
+        
     }
+    useEffect(() => {
+        window.addEventListener('resize', () => setWidth(window.innerWidth))
+    },[width])
     
     const visibleLinks = []
     const hiddenLinks = []
@@ -58,9 +64,6 @@ export default function FooterNavbar({isFixed}) {
             hiddenLinks.push(item.title)
         }
     }
-    setTimeout(() => {
-        return 'hidden'
-    }, 500)
     const closed = useRef()
     const elementClosed = useRef()
     const [open, setOpen] = useState(false);
@@ -69,17 +72,14 @@ export default function FooterNavbar({isFixed}) {
         <div ref={closed} className={`FooterNavbar`}>
             <div className="FooterNavbar__menu">
                 {
-                    visibleLinks.map(item => {
-                        return <Link href='#' className={`NavbarMenu__items`}>{item}</Link>
+                    visibleLinks.map((item,index) => {
+                        return <Link key={index+1} href='#' className={`NavbarMenu__items`}>{item}</Link>
                     })
                 }
                 <DropdownMenu
-                 items={hiddenLinks}
                  open={open}
                  setOpen={setOpen}
-                 isFixed={isFixed}
-                 closed={closed}
-                 elementClosed={elementClosed}
+                 width={width}
                  />
             </div>
             
@@ -88,23 +88,18 @@ export default function FooterNavbar({isFixed}) {
                  onClick={() => {
                     
                     setOpen(!open)
-                    // closed.current.classList.remove("oveflow-hidden")
-                    // closed.current.classList.add("overflow-visible")
-
-                        
-                    
-                    
                 }}
             className={`DropdownMenu__items DropdownMenu__menu-close`}>
                     <span>سایر لینک‌ها</span>
-                    <Image src={ArrowDown}/>
+                    <Image src={ArrowDown} alt="arrow"/>
                 </li>
                 {   
-                    hiddenLinks.map(item => {
-                        return <li><Link ref={elementClosed} href='#' className={`DropdownMenu__items ${open? 'py-3':''}`}>{item}</Link></li>
+                    hiddenLinks.map((item,index) => {
+                        return <li><Link key={index+1} ref={elementClosed} href='#' className={`DropdownMenu__items ${open? 'py-3':''}`}>{item}</Link></li>
                     })
                 }
             </ul>
+            <div onClick={() => setOpen(false)} className={`FooterNavbar__backgroundOpen ${open? '': 'hidden'}`}></div>
             
         </div>
     )

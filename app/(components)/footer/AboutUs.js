@@ -3,7 +3,7 @@ import EnamadIcon from '../../../public/icons/Enamad-icon.png'
 import SamandehiIcon from '../../../public/icons/Samandehi-icon.png'
 import Image from 'next/image'
 import Link from 'next/link'
-import TrustUs from './TrustUs'
+
 
 export default function AboutUs() {
 
@@ -15,8 +15,12 @@ export default function AboutUs() {
                     <p className='AboutUs__description'>سرزمین شاتل در سایت نماوا امکان پخش آنلاین فیلم‌ها و سریال‌های محبوبتان را در اختیار شما کاربران گرامی قرار می‌دهد. مشاهده پیش‌نمایش فیلم و سریال‌ها، جستجوی سریع مجموعه انتخابی، دانلود درون‌برنامه‌ای، حساب چند کاربره، تنظیمات کودک، پخش زنده رویدادهای ورزشی و فرهنگی و آرشیوی کامل از پرطرفدارترین فیلم‌ها و سریال‌ها از جمله قابلیت‌های نماوا، به‌روزترین سایت تماشای فیلم و سریال است. نماوا این امکان را برای کاربران خود فراهم کرده است تا در سریع‌ترین زمان ممکن و تنها با چند کلیک، سریال‌ها و فیلم‌های مورد علاقه خود را به صورت آنلاین و آفلاین مشاهده کنند.</p>
                 </div>
                 <div className='TrustUs'>
-                  <TrustUs image={EnamadIcon}/>
-                  <TrustUs image={SamandehiIcon}/>
+                    <Link href='#' className='TrustUs__container'>
+                        <Image className='TrustUs__image' src={EnamadIcon} alt='Enamad'/>
+                    </Link >
+                    <Link href='#' className='TrustUs__container'>
+                        <Image className='TrustUs__image' src={SamandehiIcon} alt='Samandehi'/>
+                    </Link >
                 </div>
 
             </div>
