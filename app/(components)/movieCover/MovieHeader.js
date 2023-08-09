@@ -14,13 +14,11 @@ import CloseButtonMd from '../../../public/icons/ShowSliderCloseButton-md.svg'
 import CloseButtonLg from '../../../public/icons/ShowSliderCloseButton-lg.svg'
 import MovieLogoSingle from "./MovieLogoSingle";
 
-export default function MovieHeader() {
-  
     //handling background change
-    const  windowWidth  = windowDimensions()
-
 
 export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl, movieName, movieyear, imdb, like, isDubbed, hasSub, description, director, actorsName}) {
+    const  windowWidth  = windowDimensions()
+
     const ageColorHandler = (ageNumber) => {
       switch (ageNumber) {
         case 12:
