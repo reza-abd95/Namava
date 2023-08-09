@@ -2,13 +2,13 @@
 
 
 
-export default function MovieLogo() {
+export default function MovieLogo({src,alt}) {
   return (
     
    <img 
-   className='h-full w-full'
-          src="/images/avatarlogo.png"
-          alt="avatar"
+   className='h-full w-full cursor-pointer'
+          src={src}
+          alt={alt}
         />
    
   )};
