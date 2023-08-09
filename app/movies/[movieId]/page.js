@@ -24,7 +24,7 @@ export default function MoiveId() {
       <div className="h-[400px]"></div>
       <MoviePicturs images={images}/>
       <AboutMovie/>
-
+ 
       <Comments/>
     </div>
   )
