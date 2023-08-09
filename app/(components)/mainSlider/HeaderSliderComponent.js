@@ -44,7 +44,7 @@ console.log(actors);
           </div>
           <div className="absolute flex flex-col justify-center items-center top-[26%] ml:block ml:top-[60px] tab:top-[85px]">
             <div className="w-[45%] mb-[44px] ml:w-[28%]  ml:mr-[20px] ml:mb[50px] tab:w-[20%] tab:mr-8 tab:mb-6 des:mr-11 des:w-[22%]">
-            <img onClick={clickhandler} className="h-full w-full cursor-pointer" 
+            <MovieLogo onClick={clickhandler}
                 src={data.logoUrl}
                 alt={data.title}
                 />
