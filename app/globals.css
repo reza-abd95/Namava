@@ -306,10 +306,10 @@ h1, h2, h3, h4, span, a {
     @apply w-full h-auto flex relative
   }
   .SlideShow__buttons {
-    @apply w-[10%] h-auto flex justify-center items-center des:w-[19%] cursor-pointer
+    @apply w-[11%] h-auto flex justify-center items-center des:w-[19%] cursor-pointer
   }
   .SlideShow__imageHolder {
-    @apply w-[80%] h-auto des:w-[62%] rounded-lg overflow-hidden
+    @apply w-[78%] h-auto des:w-[62%] rounded-lg overflow-hidden
   }
   .SlideShow__imageStyle {
     @apply rounded-lg
