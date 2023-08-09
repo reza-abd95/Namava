@@ -7,6 +7,8 @@ import MoviePicturs from "@/app/(components)/movie/MoviePictures";
 import MovieHeader from '@/app/(components)/movieCover/MovieHeader';
 
 import {getMoviesData , getCategoriesData , getActorData} from "@/app/utils/getdata";
+import MovieSlider from '@/app/(components)/MovieSlider';
+import FilmCrewSlider from '@/app/(components)/FilmCrewSlider';
 
 
 export default async function MoiveId({params}) {
@@ -23,7 +25,10 @@ export default async function MoiveId({params}) {
   })
   const otherCategoriesId = movieData.otherCategoriesId;
   const actorsId = movieData.actors;
-  
+  const categoryId = movieData.categoryId;
+  const categorymovie = moviesData.filter((movie)=>{
+    return movie.categoryId == categoryId
+  })
   // create Categories Name data in Array
 
   let otherCategorieName = []
@@ -38,7 +43,7 @@ export default async function MoiveId({params}) {
   }
 
   // create Categories Name data in Array
-
+  const actors = []
   let actorsName = []
   for (let index = 0; index < actorsId.length; index++) {
     const actorId = actorsId[index];
@@ -46,6 +51,7 @@ export default async function MoiveId({params}) {
       const actorData = actorsData[index2];
       if (actorId == actorData.id) {
         actorsName.push(actorData.name)
+        actors.push(actorData)
       }
     }
   }
@@ -78,7 +84,10 @@ export default async function MoiveId({params}) {
         langDubbing = {movieData.langDubbing}
         langSubtitle = {movieData.langSubtitle}
       />
-
+      <span>{`بر اساس فیلم ${movieData.title}`}</span>
+      <MovieSlider data= {categorymovie}/>
+      <div></div>
+      <FilmCrewSlider data={actors}/>
       <Comments movieId = {movieId}/>
     </div>
   )
