@@ -16,7 +16,8 @@ import CloseButtonLg from '../../../public/icons/ShowSliderCloseButton-lg.svg'
 
 export default function MovieHeader() {
   
-   
+    //handling background change
+    const  windowWidth  = windowDimensions()
     //handling button's icon
 
     const [showFirstSvg2, setShowFirstSvg2] = useState(true);
@@ -34,19 +35,13 @@ export default function MovieHeader() {
         videoRef.current.pause()
         videoRef.current.currentTime = 0
       }
-    useEffect(() => {
-      window.addEventListener('resize',() => {
-          setWidth(window.innerWidth)
-          
-      })
-    },[width])
-    console.log(width)
-    if (width < 500) {
-      var button = CloseButton
-    } else if (width < 800) {
-      var button = CloseButtonMd
+    let dimention;
+    if (windowWidth < 500) {
+      dimention = 17
+    } else if (windowWidth < 800) {
+      dimention = 20
     } else {
-      var button = CloseButtonLg
+      dimention = 30
   }
     
 //--------------------Videio Player---------------------//
@@ -71,19 +66,16 @@ export default function MovieHeader() {
       setShowFirstSvg2(true)
   }
     };
- 
-
-    //handling background change
-    const  windowWidth  = windowDimensions()
 
   return (
     <>
     
       <div className="text-[#fff]">
+{/*-------------------------------------------------------*/}
         <div onClick={handleOnClose} className={`SlideShow__background ${isPlaying? '':'hidden'}`}>
           <div className="flex items-center justify-center">
-              <div onClick={(e) => {e.stopPropagation()}} className="SlideShow__imageHolder relative rounded-none">
-                  <Image width={30} height={30} onClick={handleOnClose} className="SlideShow__closeButton left-0" src={button}/>
+              <div onClick={(e) => {e.stopPropagation()}} className="SlideShow__imageHolder relative rounded-none overflow-visible">
+                  <svg onClick={handleOnClose} className="absolute left-0 top-[-28px] ml:top-[-40px] tab:top-[-52px] cursor-pointer" xmlns="http://www.w3.org/2000/svg" width={`${dimention}`} height={`${dimention}`} viewBox="0 0 15 15"><path fill="currentColor" d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27Z"/></svg>
                   <div>
                       <video ref={videoRef} disablePictureInPicture controls >
                         <source src="https://static.namava.ir/Content/Upload/Images/897468ed-8cb7-44dc-b482-a7cf831684f8.mp4" type="video/mp4"/>
