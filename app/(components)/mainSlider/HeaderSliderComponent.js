@@ -37,6 +37,37 @@ export default function HeaderSliderComponent({ data, actors }) {
     }
     
   }, [windowWidth]);
+
+  const ageColorHandler = (ageNumber) => {
+    switch (ageNumber) {
+      case 12:
+        return "bg-yellow-400"
+      case 15:
+        return "bg-orange-400"
+      case 18:
+        return "bg-red-400"
+      default:
+        return "bg-white"
+    }
+  } 
+  const ageNumberFaHandler = (ageNumber) => {
+    switch (ageNumber) {
+      case 12:
+        return "+۱۲"
+      case 15:
+        return "+۱۵"
+      case 18:
+        return "+۱۸"
+      default:
+        return "+۷"
+    }
+  } 
+  const ageColor = ageColorHandler(data.age);
+  const ageFaNumber = ageNumberFaHandler(data.age);
+
+  
+ 
+
   return (
     <>
       <div className="text-[#fff] bg-[#121212]">
@@ -65,10 +96,9 @@ export default function HeaderSliderComponent({ data, actors }) {
                 <h2 onClick={clickhandler} className="mb-6 ml:mb-4 tab:text-[19px] tab:mb-3 des:text-[21px] large:text-[24px] cursor-pointer  my-2">
                   {data.title}
                 </h2>
-              
-              <div className="max-[1279px]:hidden flex flex-row justify-between items-center w-[410px]">
-                <div>
-                {data.age}
+                <div className="max-[1279px]:hidden flex flex-row justify-between items-center w-[410px]">
+                <div className={"px-2 rounded-[4px] py-[3px] flex items-center text-center ml:px-3 ml:py-[5px] tab:px-[14px] tab:py-[6px] des:py-[7px]" + " " + ageColor}>
+                <p className="text-[10.5px] ml:text-[12px] text-center des:text-[14px] large:text-[17px]">{ageFaNumber}</p>
                 </div>
                 <p className="text-[15px] des:text-[14px] large:text-[17px]">
                   {data.year}
@@ -141,7 +171,7 @@ export default function HeaderSliderComponent({ data, actors }) {
             </div>
           </div>
         </div>
-      </div>
+        </div>
     </>
   );
 }
