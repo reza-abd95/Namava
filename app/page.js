@@ -3,11 +3,14 @@ import FilmCrewSlider from './(components)/FilmCrewSlider'
 import MovieSlider from './(components)/MovieSlider'
 import TitleOfCategorySlider from './(components)/TitleOfCategorySlider';
 import MainSlider from './(components)/mainSlider/MainSlider'
-import { getActorData, getHomeSliderData, getMoviesData } from './utils/getdata';
+import MovieHeader from './(components)/movieCover/MovieHeader';
+import { getActorData, getHomeSliderData ,getMoviesData} from './utils/getdata';
 
 
 
 export default async function Home() {
+  const mainSlider= await getMoviesData();
+  const mainSliders = mainSlider.record;
   const sliderData = await getHomeSliderData();
   const slider = sliderData.record
   const movieData = await getMoviesData()
@@ -15,10 +18,10 @@ export default async function Home() {
   const actorData= await getActorData();
   const actor = actorData.record
   return (
-        
-
+  
         <div>
-            <MainSlider/>
+          
+            <MainSlider movieData={mainSliders} actors={actor} subject={'homePath'}/>
             <CategorySlider data={slider}/> 
             <TitleOfCategorySlider/>
             <MovieSlider data={movie}/>
