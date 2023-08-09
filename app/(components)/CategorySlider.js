@@ -47,6 +47,8 @@ export default function CategorySlider({data}) {
       
       <Swiper
         initialSlide = {1}
+        loop = {true}
+
         slidesPerView={slidesPer}
         centeredSlides={centered}
         spaceBetween={20}
