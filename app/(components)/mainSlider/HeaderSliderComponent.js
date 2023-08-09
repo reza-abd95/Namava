@@ -17,7 +17,8 @@ export default function HeaderSliderComponent({ data, actors }) {
   }
   const getActorNames = () => {
     const ad=data.actors;
-
+console.log('kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk');
+console.log(actors);
     const actorNames = ad?.map(id => {
       const actor = actors.find(a => a.id === id);
       return actor ? actor.name : "";
