@@ -4,7 +4,7 @@ import CommentLike from "@/app/(components)/CommentLike";
 import CommentDislike from "@/app/(components)/CommentDislike";
 
 
-export default  function UsersComments () {
+export default  function UsersComments ({id , user , date , like , dislike , comment}) {
     const [showFirstSvg2, setShowFirstSvg2] = useState(true);
     const [showFirstSvg3, setShowFirstSvg3] = useState(true);
     const handleClickLike = () => {
@@ -29,7 +29,7 @@ export default  function UsersComments () {
         }
     };
     return (
-            <div className="w-full px-[20px] pt-[20px] text-[16px] bg-[#222327] flex flex-row justify-start items-start  ml:px-[24px] tab:px-[32px] tab:pt-[18px] des:w-[1000px] rounded-b-[6px] des:px-[24px] des:pt-[30px]   ">
+            <div key={id} className="w-full px-[20px] pt-[20px] text-[16px] bg-[#222327] flex flex-row justify-start items-start  ml:px-[24px] tab:px-[32px] tab:pt-[18px] des:w-[1000px] rounded-b-[6px] des:px-[24px] des:pt-[30px]   ">
                 <div className="w-[17.5%] flex items-start justify-start mt-[1px] ml:w-[11%] tab:mb-[3px]  tab:w-[9%] des:w-[6.5%]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 40 40"
                          className="t-profile-0-1-1525 tab:w-[40px] tab:h-[40px] ">
@@ -41,18 +41,18 @@ export default  function UsersComments () {
                 </div>
                 <div className="w-full pb-[50px] flex flex-col items-start justify-center mt-[3px] ml:pb-[17px]  ">
                     <div className=' pb-[22px] tab:pb-[18px]'>
-                        <span className="text-[12px] font-iranyekanRegular text-[#AAAAAA] ">فرناز</span>
-                        <span className="text-[12px] font-iranyekanRegular text-[#AAAAAA]"> - سه‌شنبه ۱۰ مرداد ۱۴۰۲</span>
+                        <span className="text-[12px] font-iranyekanRegular text-[#AAAAAA] ">{user}</span>
+                        <span className="text-[12px] font-iranyekanRegular text-[#AAAAAA]">{date}</span>
                     </div>
-                    <span className='text-[12px] font-iranyekanRegular text-white '>افتضاح</span>
+                    <span className='text-[12px] font-iranyekanRegular text-white '>{comment}</span>
                     <div className="flex flex-row justify-start items-center w-full gap-[35px] mt-[30px] pr-[5px] tab:mt-[25px] border-b border-[#37383E] pb-[30px] ">
                         <span onClick={handleClickLike} className="flex flex-row gap-4 font-iranyekanRegular text-[12px] text-[#AAAAAA] tab:justify-center tab:items-center">
                             {/*<Image className="w-[18px] h-[18px] transform -scale-x-100 cursor-pointer tab:w-[26px] tab:h-[26px] tab:mb-[4px]"  src={CommentLike} alt="like"/>*/}
-                            <CommentLike showFirstSvg2={showFirstSvg2}/>
+                            <CommentLike like={like} showFirstSvg2={showFirstSvg2}/>
                             </span>
                         <span onClick={handleClickDisLike} className="flex flex-row gap-4 font-iranyekanRegular text-[12px] text-[#AAAAAA] ">
                             {/*<Image className="w-[18px] h-[18px] transform -scale-y-100 cursor-pointer tab:w-[26px] tab:h-[26px]" src={CommentLike} alt="dislike"/>*/}
-                            <CommentDislike showFirstSvg3={showFirstSvg3} />
+                            <CommentDislike dislike={dislike} showFirstSvg3={showFirstSvg3} />
                             </span>
                     </div>
                 </div>
