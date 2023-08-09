@@ -98,7 +98,7 @@ export default function HeaderSliderComponent({ data, actors }) {
                 </h2>
                 <div className="max-[1279px]:hidden flex flex-row justify-between items-center w-[410px]">
                 <div className={"px-2 rounded-[4px] py-[3px] flex items-center text-center ml:px-3 ml:py-[5px] tab:px-[14px] tab:py-[6px] des:py-[7px]" + " " + ageColor}>
-                <p className="text-[10.5px] ml:text-[12px] text-center des:text-[14px] large:text-[17px]">{ageFaNumber}</p>
+                <p className="text-[10.5px] text-[black] ml:text-[12px] text-center des:text-[14px] large:text-[17px]">{ageFaNumber}</p>
                 </div>
                 <p className="text-[15px] des:text-[14px] large:text-[17px]">
                   {data.year}
