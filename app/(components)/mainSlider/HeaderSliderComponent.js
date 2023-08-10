@@ -21,32 +21,6 @@ export default function HeaderSliderComponent({ data, actors }) {
     return actorNames?.join("، ");
   };
 
-  const [src, setSrc] = useState();
-
-  const [isFirstCaseCompleted, setIsFirstCaseCompleted] = useState(false);
-
-  useEffect(() => {
-    switch (true) {
-      case windowWidth > 499:
-        setSrc(data.imageUrl);
-        setIsFirstCaseCompleted(true);
-        break;
-      default:
-        setSrc("");
-        setIsFirstCaseCompleted(true);
-    }
-  }, [windowWidth]);
-
-  useEffect(() => {
-    if (!isFirstCaseCompleted) return;
-
-    switch (true) {
-      case windowWidth < 500:
-        setSrc(data.imageMobileUrl);
-        break;
-    }
-  }, [isFirstCaseCompleted, windowWidth]);
-
   const ageColorHandler = (ageNumber) => {
     switch (ageNumber) {
       case 12:
@@ -81,9 +55,9 @@ export default function HeaderSliderComponent({ data, actors }) {
           <div className="relative mb-[12px] ml:h- ml:mb-[32%] min-[600px]:mb-[20%] min-[700px]:mb-[11%] tab:mb-[64px] min-[900px]:mb-2 min-[1050px]:mb-0">
             <Image
               className="w-full h-full"
-              width={999}
-              height={468}
-              src={src}
+              width={windowWidth > 499 ? 1920: 1000 }
+              height={windowWidth > 499 ? 900: 1350}
+              src={windowWidth > 499 ? data.imageUrl : data.imageMobileUrl}
               alt={data.title}
             />
             <div className="absolute w-[50%] inset-0 bg-gradient-to-l from-[#121212] to-transparent"></div>
