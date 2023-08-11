@@ -2,14 +2,16 @@
 
 import MovieLogo from "./MovieLogo";
 import Image from "next/image";
-import windowDimensions from "@/app/hooks/useWindowDimensions";
 import { useRouter } from "next/navigation";
+import ageNumberFaHandler from "@/app/utils/ageNumberFaHandler";
+import ageColorHandler from "@/app/utils/ageColorHandler";
+import BackGroundImage from "./BackGroundImage";
 
 export default function HeaderSliderComponent({ data, actors }) {
-  const windowWidth = windowDimensions();
+  const {id,age,title,imageUrl,imageMobileUrl,logoUrl,year,movieTime,like,imdb,description} =data;
   const router = useRouter();
   function clickhandler() {
-    router.push(`movies/${data.id}`);
+    router.replace(`/movies/${id}`);
   }
   const getActorNames = () => {
     const ad = data.actors;
@@ -20,30 +22,6 @@ export default function HeaderSliderComponent({ data, actors }) {
     return actorNames?.join("، ");
   };
 
-  const ageColorHandler = (ageNumber) => {
-    switch (ageNumber) {
-      case 12:
-        return "bg-yellow-400";
-      case 15:
-        return "bg-orange-400";
-      case 18:
-        return "bg-red-400";
-      default:
-        return "bg-white";
-    }
-  };
-  const ageNumberFaHandler = (ageNumber) => {
-    switch (ageNumber) {
-      case 12:
-        return "+۱۲";
-      case 15:
-        return "+۱۵";
-      case 18:
-        return "+۱۸";
-      default:
-        return "+۷";
-    }
-  };
   const ageColor = ageColorHandler(data.age);
   const ageFaNumber = ageNumberFaHandler(data.age);
 
@@ -51,24 +29,13 @@ export default function HeaderSliderComponent({ data, actors }) {
     <>
       <div className="text-[#fff] bg-[#121212]">
         <div className="w-full h-full relative flex flex-col ">
-          <div className="relative mb-[12px] ml:h- ml:mb-[32%] min-[600px]:mb-[20%] min-[700px]:mb-[11%] tab:mb-[64px] min-[900px]:mb-2 min-[1050px]:mb-0">
-            <Image
-              className="w-full h-full"
-              width={windowWidth > 499 ? 1920: 1000 }
-              height={windowWidth > 499 ? 900: 1350}
-              src={windowWidth > 499 ? data.imageUrl : data.imageMobileUrl}
-              alt={data.title}
-            />
-            <div className="absolute w-[50%] inset-0 bg-gradient-to-l from-[#121212] to-transparent"></div>
-
-            <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent"></div>
-          </div>
+        <BackGroundImage imageUrl={imageUrl} imageMobileUrl={imageMobileUrl} title={title}/>
           <div className="absolute flex flex-col justify-center items-center top-[36%] ms:top-[55%] ml:block ml:top-[80px] tab:top-[90px] large:top-[20%]">
             <div className="w-[40%] mb-[44px] ml:w-[25%] ml:mr-[20px] ml:mb[50px] tab:mr-8 tab:mb-6 des:mr-11 large:w-[35%]">
               <MovieLogo
                 onClick={clickhandler}
-                src={data.logoUrl}
-                alt={data.title}
+                src={logoUrl}
+                alt={title}
               />
             </div>
             <div className="flex flex-col justify-center items-center px-[14px]  text-center ml:block ml:text-start ml:px-[20px] tab:px-8 des:px-11">
@@ -76,7 +43,7 @@ export default function HeaderSliderComponent({ data, actors }) {
                 onClick={clickhandler}
                 className="mb-6 ml:mb-4 tab:text-[19px] tab:mb-3 des:text-[21px] large:text-[24px] cursor-pointer  my-2"
               >
-                {data.title}
+                {title}
               </h2>
               <div className="max-[1279px]:hidden flex flex-row justify-between items-center mb-3 w-[410px]">
                 <div
@@ -91,10 +58,10 @@ export default function HeaderSliderComponent({ data, actors }) {
                   </p>
                 </div>
                 <p className="text-[15px] des:text-[14px] large:text-[17px]">
-                  {data.year}
+                  {year}
                 </p>
                 <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">
-                  {data.movieTime} دقیقه
+                  {movieTime} دقیقه
                 </p>
                 <div className=" h-4 flex flex-row justify-center items-center">
                   <img
@@ -103,7 +70,7 @@ export default function HeaderSliderComponent({ data, actors }) {
                     alt="imdb"
                   />
                   <p className="text-[10.5px] ml:text-[12px] des:text-[14px] font-bold large:text-[17px]">
-                    {data.imdb}
+                    {imdb}
                   </p>
                 </div>
 
@@ -116,7 +83,7 @@ export default function HeaderSliderComponent({ data, actors }) {
                     alt="like"
                   />
                   <p className="text-[15px] des:text-[14px] large:text-[17px]">
-                    {data.like}٪
+                    {like}٪
                   </p>
                 </div>
                 <div className=" w-7 h-6 ml-2 p-0.5  flex flex-row items-center">
@@ -137,7 +104,7 @@ export default function HeaderSliderComponent({ data, actors }) {
                 onClick={clickhandler}
                 className="text-[13px] w-[500px] max-[799px]:hidden  des:text-[15px] des:w-[550px] cursor-pointer large:text-[17px] large:w-[700px]"
               >
-                {data.description}
+                {description}
               </p>
 
               <p
