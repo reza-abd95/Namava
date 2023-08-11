@@ -1,6 +1,10 @@
 import React from 'react';
 import './css.css'
+
 export default function Like ({ showFirstSvg2})  {
+
+
+
   return (
     <div>
       {showFirstSvg2 ? (

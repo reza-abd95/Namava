@@ -1,10 +1,15 @@
+'use client'
+
 import './globals.css'
 import { Inter } from 'next/font/google'
 import HeaderSticky from "@/app/(components)/HeaderSticky";
 import Header from "@/app/(components)/Header";
 import Footer from "@/app/(components)/Footer";
 import FooterNavbar from './(components)/FooterNavbar'
+import { Provider } from 'react-redux';
+import store from './redux/store';
 const inter = Inter({ subsets: ['latin'] })
+
 
 export const metadata = {
   title: 'Namava',
@@ -20,10 +25,14 @@ export default function RootLayout({ children }) {
           <Header/>
           <HeaderSticky/>
         </nav>
-        
+
+        <Provider store={store}>
+
         <main>
-          {children}
+            {children}
         </main>
+        </Provider>
+
         <FooterNavbar /*isFixed={!isIntersecting}*//>
         <footer>
 

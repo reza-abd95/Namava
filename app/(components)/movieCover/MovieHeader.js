@@ -13,10 +13,14 @@ import CloseButton from '../../../public/icons/ShowSliderCloseButton.svg'
 import CloseButtonMd from '../../../public/icons/ShowSliderCloseButton-md.svg'
 import CloseButtonLg from '../../../public/icons/ShowSliderCloseButton-lg.svg'
 import MovieLogoSingle from "./MovieLogoSingle";
+import { useDispatch, useSelector } from "react-redux";
+import { addItemlike , removeItemlike} from "@/app/redux/bookmarkSlice";
 
     //handling background change
 
-export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl, movieName, movieyear, imdb, like, isDubbed, hasSub, description, director, actorsName}) {
+export default function MovieHeader({movieId ,image ,imageMobile, movieTime, age, logoUrl, movieName, movieyear, imdb, like, isDubbed, hasSub, description, director, actorsName}) {
+    const selector = useSelector(state => state.like)
+    const dispatch = useDispatch()
     const  windowWidth  = windowDimensions()
 
     const ageColorHandler = (ageNumber) => {
@@ -75,12 +79,21 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
     const handleClickLike = () => {
       if(showFirstSvg2===false){
           setShowFirstSvg2(true)
+
+          dispatch(addItemlike(Number(movieId)))
+          console.log(selector)
       }
       else {
         setShowFirstSvg2(false);
         setShowFirstSvg3(true)
+
+        dispatch(removeItemlike(Number(movieId)))
+        console.log(selector)
     }
     };
+
+
+  
     
    
 
@@ -197,7 +210,7 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
               </div>
               <div className="flex flex-col justify-center items-center text-center ml-11 tab:ml-4">
              
-              <WishlistButton/>
+              <WishlistButton movieId={movieId}/>
               <p className="text-[10px] text-center max-w-full text-[#9699A6] mt-1 tab:hidden">لیست من</p>
               </div>
                
@@ -232,7 +245,7 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
         <div className="max-[799px]-hidden flex items-center justify-center absolute top-[53px] right-[-36px] tooltip_text text-[15px] invisible opacity-0 rounded-[4px] h-[48px] w-[110px] left-1 bg-white text-black transition-opacity duration-1000">
             دوست نداشتم
         </div>
-                <DisLike  showFirstSvg3={showFirstSvg3}/>
+                <DisLike  showFirstSvg3={showFirstSvg3} />
               </div> 
               <p className="text-[10px] text-center max-w-full text-[#9699A6] mt-1 tab:hidden">دوست نداشتم</p>
               </div>

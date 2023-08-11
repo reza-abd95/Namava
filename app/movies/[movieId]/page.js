@@ -1,5 +1,4 @@
 
-
 import React from 'react'
 import Comments from "@/app/(components)/Comments";
 import AboutMovie from "@/app/(components)/movie/AboutMovie";
@@ -12,7 +11,7 @@ import FilmCrewSlider from '@/app/(components)/FilmCrewSlider';
 
 
 export default async function MoiveId({params}) {
-  
+
   const actorsRowData = await getActorData();
   const categoriesRowData = await getCategoriesData();
   const moviesRowData = await getMoviesData();
@@ -73,9 +72,10 @@ export default async function MoiveId({params}) {
         age = {movieData.age}
         logoUrl = {movieData.logoUrl}
         actorsName ={actorsName}
+        movieId = {movieId}
       />
       {/* <div className="h-[400px]"></div> */}
-      <MoviePicturs images={movieData.otherImages} movieName = {movieData.titleEn}/>
+      {/* <MoviePicturs images={movieData.otherImages} movieName = {movieData.titleEn}/> */}
       <AboutMovie 
         name= {movieData.title}
         nameEn = {movieData.titleEn}

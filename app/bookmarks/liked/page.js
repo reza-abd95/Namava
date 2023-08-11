@@ -24,7 +24,7 @@ export default function Liked() {
             <div className={" block"}>
               <EmptyBookmark/>
             </div>
-
+{/* 
             <div className={` text-white w-full px-6 ml:px-7 des:px-10 flex flex-wrap  items-center `}>
                
                 <div className=" w-1/3 ml:w-1/4 tab:w-1/5  des:w-[14.2%]  px-1 py-4 ml:px-2 des:3">
@@ -35,7 +35,7 @@ export default function Liked() {
                     <MovieForSlider/>
                 </div> 
                 
-            </div>
+            </div> */}
 
 
         </div>
