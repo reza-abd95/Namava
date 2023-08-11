@@ -5,7 +5,7 @@ export default function NotFound() {
         <div className="w-full h-full flex flex-col align-center items-center justify-center">
             <div className="w-full h-screen flex flex-col align-center items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="469" height="321" viewBox="0 0 469 321"
-                     className="w-[161px] h-[97px] mb-[8px] tab:w-[215px] tab:h-[152px] tab:mb-[18px] des:w-[161px] des:h-[97px] des:mb-[8px]">
+                     className="w-[161px] h-[97px] mb-[8px] tab:w-[215px] tab:h-[152px] tab:mb-[18px] des:w-[161px] des:h-[97px] des:mb-[8px] large:w-[12.5%] large:h-[180px] large:mb-[10px]">
                     <defs>
                         <path id="prefix__a"
                               d="M22.776.119C10.244.119.082 10.269.082 22.789v241.265c0 12.524 10.16 22.674 22.694 22.674h422.676c12.534 0 22.695-10.15 22.695-22.674V22.794c0-12.523-10.161-22.675-22.695-22.675H22.776zM5.046 264.054V22.792c0-9.783 7.939-17.713 17.73-17.713l422.676-.004c9.792 0 17.729 7.932 17.729 17.715v241.26c0 9.783-7.937 17.715-17.729 17.715H22.774c-9.79 0-17.727-7.93-17.727-17.711zm158.06 28.786l-23.795 23.712c-.97.968-.974 2.537-.006 3.508.97.969 2.542.969 3.511 0l23.795-23.71c.97-.969.973-2.538.006-3.51h-.003c-.484-.484-1.119-.727-1.754-.727-.634 0-1.27.243-1.754.727zm134.104.003c-.97.969-.966 2.538.004 3.506l23.794 23.71c.011.013.023.023.033.034.98.959 2.55.94 3.51-.037.959-.98.942-2.55-.038-3.506l-23.794-23.712c-.484-.482-1.12-.724-1.753-.724-.636 0-1.272.244-1.756.73z"></path>
@@ -31,10 +31,10 @@ export default function NotFound() {
                         </g>
                     </g>
                 </svg>
-                <p className="text-white text-[12px] mb-[8px] align-center font-iranyekanRegular ml:text-[14px] tab:mb-[32px] tab:text-[16px] des:mb-[8px]">صفحه ی مورد نظر شما یافت نشد.</p>
-                <p className=" w-[170px] text-[#666666] leading-snug text-[12px] text-center mx-[76px] mb-[24px] align-center  tab:w-[195px] tab:mx-[303px] tab:mb-[44px] tab:text-[14px] des:mb-[24px] ">برای دیدن هزاران فیلم و سریال، به صفحه اصلی نماوا بروید.</p>
+                <p className="text-white text-[12px] mb-[8px] align-center font-iranyekanRegular ml:text-[14px] tab:mb-[32px] tab:text-[16px] des:mb-[8px] large:text-[18px] large:mb-[16px]">صفحه ی مورد نظر شما یافت نشد.</p>
+                <p className=" w-[170px] text-[#666666] leading-snug text-[12px] text-center mx-[76px] mb-[24px] align-center  tab:w-[195px] tab:mx-[303px] tab:mb-[44px] tab:text-[14px] des:mb-[24px] large:text-[16px] large:w-full large:px-[850px] large:mb-[32px] ">برای دیدن هزاران فیلم و سریال، به صفحه اصلی نماوا بروید.</p>
                 <div className="bg-blue">
-                    <Link className="cursor-pointer" href="/"><button className="bg-[#1993FF] rounded-md w-[186px]  h-[42px] px-[20px] text-white text-[12px]  font-iranyekanRegular tab:w-[316px] des:w-[209px] ">بازگشت به صفحه ی اصلی</button></Link>
+                    <Link className="cursor-pointer" href="/"><button className="bg-[#1993FF] rounded-md w-[186px]  h-[42px] px-[20px] text-white text-[12px]  font-iranyekanRegular tab:w-[316px] des:w-[209px] large:w-[240px] large:text-[14px]  ">بازگشت به صفحه ی اصلی</button></Link>
                 </div>
             </div>
         </div>

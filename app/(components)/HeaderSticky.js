@@ -55,7 +55,7 @@ export default function HeaderSticky() {
     return (
         <>
             <div ref={header} className="header-fixed" >
-                <div className=" text-[12px]  flex justify-between items-center flex-row w-full h-[70px] px-[20px]  pt-1 tab:h-[60px] tab:px-[32px] tab:py-0 tab:pt-[4px] des:h-[80px] des:px-[43px]">
+                <div className=" text-[12px]  flex justify-between items-center flex-row w-full h-[70px] px-[20px] ml:h-[80px] ml:px-[24px]   tab:h-[60px] tab:px-[32px]  des:h-[80px] des:px-[43px] large:h-[100px] large:px-[57px]">
                     <div className="flex items-center justify-center flex-row">
                         <MenuSteacky />
                         <Logo/>
