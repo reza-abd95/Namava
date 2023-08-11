@@ -8,43 +8,19 @@ import DisLike from "./DisLike";
 import './css.css'
 import WishlistButton from "./WishlistButton"
 import windowDimensions from "@/app/hooks/useWindowDimensions";
+import BackGroundImage from "../mainSlider/BackGroundImage";
+import ageNumberFaHandler from "@/app/utils/ageNumberFaHandler";
+import ageColorHandler from "@/app/utils/ageColorHandler";
 //--------------Video Player---------------//
 import CloseButton from '../../../public/icons/ShowSliderCloseButton.svg'
 import CloseButtonMd from '../../../public/icons/ShowSliderCloseButton-md.svg'
 import CloseButtonLg from '../../../public/icons/ShowSliderCloseButton-lg.svg'
 import MovieLogo from "../mainSlider/MovieLogo";
-import BackGroundImage from "../mainSlider/BackGroundImage";
-
 
     //handling background change
 
 export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl, movieName, movieyear, imdb, like, isDubbed, hasSub, description, director, actorsName}) {
     const  windowWidth  = windowDimensions()
-
-    const ageColorHandler = (ageNumber) => {
-      switch (ageNumber) {
-        case 12:
-          return "bg-yellow-400"
-        case 15:
-          return "bg-orange-400"
-        case 18:
-          return "bg-red-400"
-        default:
-          return "bg-white"
-      }
-    } 
-    const ageNumberFaHandler = (ageNumber) => {
-      switch (ageNumber) {
-        case 12:
-          return "+۱۲"
-        case 15:
-          return "+۱۵"
-        case 18:
-          return "+۱۸"
-        default:
-          return "+۷"
-      }
-    } 
     const ageColor = ageColorHandler(age);
     const ageFaNumber = ageNumberFaHandler(age);
     //handling button's icon

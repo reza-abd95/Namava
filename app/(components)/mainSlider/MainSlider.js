@@ -66,7 +66,7 @@ export default function MainSlider({ categoryId, movieData, subject, actors }) {
               <HeaderSliderComponent
                 key={item.id}
                 data={item}
-                actors={actors}
+                actorsData={actors}
                 className="object-cover w-full h-full block"
               />
             </SwiperSlide>

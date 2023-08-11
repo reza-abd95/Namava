@@ -7,26 +7,28 @@ import ageNumberFaHandler from "@/app/utils/ageNumberFaHandler";
 import ageColorHandler from "@/app/utils/ageColorHandler";
 import BackGroundImage from "./BackGroundImage";
 
-export default function HeaderSliderComponent({ data, actors }) {
-  const {id,age,title,imageUrl,imageMobileUrl,logoUrl,year,movieTime,like,imdb,description} =data;
+
+export default function HeaderSliderComponent({ data, actorsData }) {
+  const {id,age,title,imageUrl,imageMobileUrl,logoUrl,year,movieTime,like,imdb,description,actors} =data;
   const router = useRouter();
   function clickhandler() {
     router.replace(`/movies/${id}`);
   }
   const getActorNames = () => {
-    const ad = data.actors;
+    const ad = actors;
     const actorNames = ad?.map((id) => {
-      const actor = actors.find((a) => a.id === id);
+      const actor = actorsData.find((a) => a.id === id);
       return actor ? actor.name : "";
     });
     return actorNames?.join("، ");
   };
 
-  const ageColor = ageColorHandler(data.age);
-  const ageFaNumber = ageNumberFaHandler(data.age);
+  const ageColor = ageColorHandler(age);
+  const ageFaNumber = ageNumberFaHandler(age);
 
   return (
     <>
+   
       <div className="text-[#fff] bg-[#121212]">
         <div className="w-full h-full relative flex flex-col ">
         <BackGroundImage imageUrl={imageUrl} imageMobileUrl={imageMobileUrl} title={title}/>
@@ -119,7 +121,7 @@ export default function HeaderSliderComponent({ data, actors }) {
                   <Image
                     width={22}
                     height={22}
-                    src="./icons/info-circle.svg"
+                    src="../icons/info-circle.svg"
                     alt="more"
                   />
                 </div>
