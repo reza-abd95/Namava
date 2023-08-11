@@ -1,20 +1,12 @@
+'use client'
 import EmptyBookmark from '@/app/(components)/EmptyBookmark';
 import MovieForSlider from '@/app/(components)/MovieForSlider'
 import React from 'react'
+import { useSelector } from 'react-redux';
+
 
 export default function Liked() {
-
-  
-  // let emptyDisplay = "";
-  // let cardDisplay ="";
-
-  // if (true){
-  //   emptyDisplay = "hidden" 
-  //   cardDisplay = "flex"
-  // }else{
-  //   emptyDisplay = "flex"
-  //   cardDisplay = "hidden" 
-  // }
+  const selector = useSelector(state => state.like)
 
   
   return (
@@ -22,6 +14,11 @@ export default function Liked() {
 
 
             <div className={" block"}>
+              {selector.map(item => {
+                return(
+                  <p className=' text-white text-sm'>{item}</p>
+                )
+              })}
               <EmptyBookmark/>
             </div>
 {/* 
