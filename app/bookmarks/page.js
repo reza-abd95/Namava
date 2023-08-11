@@ -7,18 +7,9 @@ import {useSelector } from 'react-redux/es/hooks/useSelector';
 
 
 export default function BookMark() {
-const selector = useSelector(state => state.like)
+const selector = useSelector(state => state.bookmark)
   
-    // let emptyDisplay = "";
-    // let cardDisplay ="";
-  
-    // if (true){
-    //   emptyDisplay = "hidden" 
-    //   cardDisplay = "flex"
-    // }else{
-    //   emptyDisplay = "flex"
-    //   cardDisplay = "hidden" 
-    // }
+
     console.log(selector)
     
     return (

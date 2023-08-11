@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Comments from "@/app/(components)/Comments";
 import AboutMovie from "@/app/(components)/movie/AboutMovie";
@@ -8,10 +7,10 @@ import MovieHeader from '@/app/(components)/movieCover/MovieHeader';
 import {getMoviesData , getCategoriesData , getActorData} from "@/app/utils/getdata";
 import MovieSlider from '@/app/(components)/MovieSlider';
 import FilmCrewSlider from '@/app/(components)/FilmCrewSlider';
+import Link from 'next/link';
 
 
 export default async function MoiveId({params}) {
-
   const actorsRowData = await getActorData();
   const categoriesRowData = await getCategoriesData();
   const moviesRowData = await getMoviesData();
@@ -74,6 +73,7 @@ export default async function MoiveId({params}) {
         actorsName ={actorsName}
         movieId = {movieId}
       />
+      <Link className=' text-white text-sm' href={"/bookmarks/liked"}> Bookmarks</Link>
       {/* <div className="h-[400px]"></div> */}
       {/* <MoviePicturs images={movieData.otherImages} movieName = {movieData.titleEn}/> */}
       <AboutMovie 

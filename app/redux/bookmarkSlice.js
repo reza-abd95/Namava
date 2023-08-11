@@ -3,16 +3,17 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const bookmarkSlice = createSlice({
     name:"bookmark",
-    initialState:[ 1 , 2 , 3],
+    initialState:[],
     reducers:{
-        addItem : (state , action)=>{
-         return [...state , action.payload]
-        },
-        removeItem : (state , action)=>{
-         return state.filter(item => (item !== action.payload))
-        }
-    }
+        toggle : (state , action)=>{
+            const index = state.findIndex(item => item == action.payload)
+            if (index == -1){
+                state.push(action.payload)
+            }else{
+                state.splice(index , 1)
+            }
+        }}
 })
 
-export const {addItem , removeItem}=bookmarkSlice.actions ;
+export const {toggle}=bookmarkSlice.actions ;
 export default bookmarkSlice.reducer ;

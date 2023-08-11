@@ -1,14 +1,15 @@
 "use client"
 
-import { addItem, removeItem } from '@/app/redux/bookmarkSlice';
+import { toggle} from '@/app/redux/bookmarkSlice';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function WishlistButton({movieId}) {
+  const selector = useSelector(state => state.bookmark)
+  
   const [isWishlist, setIsWishlist] = useState(true);
   const [userMessage, setUserMessage] = useState('');
-  const selector = useSelector(state => state.bookmark)
 
   const [hoverText, setHoverText] = useState('لیست من');
   const dispatch = useDispatch()
@@ -38,14 +39,8 @@ export default function WishlistButton({movieId}) {
 
     setHoverText(updatehoverText);
 
-    if(isWishlist){
-      dispatch(addItem(Number(movieId)))
-      console.log(selector)
-    }else{
-      dispatch(removeItem(Number(movieId)))
-      console.log(selector)
-
-    }
+    dispatch(toggle(+movieId))
+    console.log(selector)
   };
  
   return (

@@ -6,8 +6,8 @@ import { useSelector } from 'react-redux';
 
 
 export default function Liked() {
-  const selector = useSelector(state => state.like)
-
+  const selector = useSelector(state => state.bookmark)
+  console.log(selector)
   
   return (
         <div className="min-h-[710px] pb-20">
