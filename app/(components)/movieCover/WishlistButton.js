@@ -1,13 +1,15 @@
-'use client'
+"use client"
+
 import { addItem, removeItem } from '@/app/redux/bookmarkSlice';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 
 export default function WishlistButton({movieId}) {
   const [isWishlist, setIsWishlist] = useState(true);
   const [userMessage, setUserMessage] = useState('');
   const selector = useSelector(state => state.bookmark)
- 
+
   const [hoverText, setHoverText] = useState('لیست من');
   const dispatch = useDispatch()
 

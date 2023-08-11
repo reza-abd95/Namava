@@ -3,16 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const likeSlice = createSlice({
     name:"like",
-    initialState:[ 1 , 2 , 3],
+    initialState:[ 1 , 2 , 3 , 6 , 7 , 8],
     reducers:{
-        addItem : (state , action)=>{
+        addItemlike : (state , action)=>{
          return [...state , action.payload]
         },
-        removeItem : (state , action)=>{
+        removeItemlike : (state , action)=>{
          return state.filter(item => (item !== action.payload))
         }
     }
 })
 
-export const {addItem , removeItem}=likeSlice.actions ;
+export const {addItemlike , removeItemlike}=likeSlice.actions ;
 export default likeSlice.reducer ;
