@@ -7,7 +7,7 @@ import {useSelector } from 'react-redux/es/hooks/useSelector';
 
 
 export default function BookMark() {
-const selector = useSelector(state => state.like)
+const selector = useSelector(state => state.bookmark)
   
 
     console.log(selector)
@@ -19,6 +19,11 @@ const selector = useSelector(state => state.like)
               <div className={"block"}>
                 <EmptyBookmark/>
               </div>
+              {selector.map(item => {
+                return(
+                  <p className=' text-white text-sm'>{item}</p>
+                )
+              })}
   
               {/* <div className={` text-white w-full px-6 ml:px-7 des:px-10 flex flex-wrap  items-center `}>
                  
