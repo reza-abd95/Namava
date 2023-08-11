@@ -129,8 +129,9 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
               <div className="absolute w-[50%] inset-0 bg-gradient-to-l from-[#121212] to-transparent"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent"></div>
           </div>
-          <div className="absolute flex flex-col justify-center items-center top-[36%] ms:top-[40%] tab:justify-start tab:items-stretch ml:top-[120px] tab:top-[75px]">
-            <div className="max-[799px]:hidden tab:w-[20%] tab:mr-8 tab:mb-6 des:mr-11 des:w-[22%]"><MovieLogoSingle logoUrl={logoUrl} name={movieName}/></div>
+          <div className="absolute flex flex-col justify-center items-center top-[36%] ms:top-[55%] ml:block ml:top-[80px] tab:top-[90px] large:top-[20%]">
+            <div className="w-[40%] mb-[44px] ml:w-[25%] ml:mr-[20px] ml:mb[50px] tab:mr-8 tab:mb-6 des:mr-11 large:w-[35%]">
+              <MovieLogoSingle logoUrl={logoUrl} name={movieName}/></div>
            <div className="flex flex-col justify-center items-center px-[14px] tab:justify-start tab:items-stretch text-center ml:text-start ml:px-[20px] tab:px-8 des:px-11">
             <h2 className='text-[14px] ml:text-[16px] mb-2 ml:mb-0 tab:text-[19px] tab:mb-3 des:text-[21px] large:text-[24px]'>{movieName}</h2>
              <div className=" flex flex-row justify-between items-center w-full max-w-[90%] ml:max-w-[400px] my-2">
