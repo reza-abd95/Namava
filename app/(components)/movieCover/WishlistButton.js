@@ -38,7 +38,7 @@ export default function WishlistButton() {
       <div 
       className="text-[20px] relative tooltip flex  items-center justify-center cursor-pointer bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full"
        onClick={handleAddClick}>
-        <div className=" flex items-center justify-center absolute top-[53px] right-[-56px] tooltip_text text-[15px] invisible opacity-0 rounded-[4px] h-[48px] w-[150px] left-1 bg-white text-black transition-opacity duration-1000">
+        <div className="hidden tab:flex items-center justify-center absolute top-[53px] right-[-56px] tooltip_text text-[15px] invisible opacity-0 rounded-[4px] h-[48px] w-[150px] left-1 bg-white text-black transition-opacity duration-1000">
         {hoverText}
         </div>
         {isWishlist ?         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="white" d="M11.883 3.007L12 3a1 1 0 0 1 .993.883L13 4v7h7a1 1 0 0 1 .993.883L21 12a1 1 0 0 1-.883.993L20 13h-7v7a1 1 0 0 1-.883.993L12 21a1 1 0 0 1-.993-.883L11 20v-7H4a1 1 0 0 1-.993-.883L3 12a1 1 0 0 1 .883-.993L4 11h7V4a1 1 0 0 1 .883-.993L12 3l-.117.007Z"/></svg>
@@ -49,7 +49,7 @@ export default function WishlistButton() {
 
          }
       </div>
-      <div className='bg-white max-[799px]-hidden  fixed left-[42%] rounded-md top-[120px] w-[190px]'>{userMessage}</div>
+      <div className='bg-white px-3 fixed ms:left-1/4 ml:left-1/3  tab:left-[42%] left-[20%] rounded-md top-[120px] w-[204px]'>{userMessage}</div>
     </div>
   );
 }
