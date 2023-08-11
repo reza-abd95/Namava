@@ -4,7 +4,6 @@ import MovieLogo from "./MovieLogo";
 import Image from "next/image";
 import windowDimensions from "@/app/hooks/useWindowDimensions";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
 
 export default function HeaderSliderComponent({ data, actors }) {
   const windowWidth = windowDimensions();
@@ -64,8 +63,8 @@ export default function HeaderSliderComponent({ data, actors }) {
 
             <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent"></div>
           </div>
-          <div className="absolute flex flex-col justify-center items-center top-[26%] ml:block ml:top-[60px] tab:top-[85px]">
-            <div className="w-[45%] mb-[44px] ml:w-[28%]  ml:mr-[20px] ml:mb[50px] tab:w-[20%] tab:mr-8 tab:mb-6 des:mr-11 des:w-[22%]">
+          <div className="absolute flex flex-col justify-center items-center top-[36%] ms:top-[55%] ml:block ml:top-[80px] tab:top-[90px] large:top-[20%]">
+            <div className="w-[40%] mb-[44px] ml:w-[25%] ml:mr-[20px] ml:mb[50px] tab:mr-8 tab:mb-6 des:mr-11 large:w-[35%]">
               <MovieLogo
                 onClick={clickhandler}
                 src={data.logoUrl}
@@ -79,7 +78,7 @@ export default function HeaderSliderComponent({ data, actors }) {
               >
                 {data.title}
               </h2>
-              <div className="max-[1279px]:hidden flex flex-row justify-between items-center w-[410px]">
+              <div className="max-[1279px]:hidden flex flex-row justify-between items-center mb-3 w-[410px]">
                 <div
                   className={
                     "px-2 rounded-[4px] py-[3px] flex items-center text-center ml:px-3 ml:py-[5px] tab:px-[14px] tab:py-[6px] des:py-[7px]" +
@@ -143,13 +142,13 @@ export default function HeaderSliderComponent({ data, actors }) {
 
               <p
                 onClick={clickhandler}
-                className="text-[13px] leading-loose cursor-pointer ml:mb-[48px] tab:mb-9 tab:mt-3 des:text-[15px] large:text-[17px]"
+                className="text-[13px] leading-loose cursor-pointer ml:mb-[48px] tab:mb-9 tab:mt-3 des:text-[15px] des:mt-5 large:text-[17px]"
               >
-                به زودی با دوبله اختصاصی نماوا به زودی با دوبله اختصاصی نماوا
+               به زودی با دوبله اختصاصی نماوا
               </p>
 
               <div className="  flex flex-row items-center mt-5 mb-4 max-[799px]:hidden ">
-                <div className=" ml-2 p-0.5 cursor-pointer  hover:text-blue-500">
+                <div className=" ml-2 p-0.5 cursor-pointer">
                   <Image
                     width={22}
                     height={22}
@@ -160,7 +159,7 @@ export default function HeaderSliderComponent({ data, actors }) {
 
                 <p
                   onClick={clickhandler}
-                  className="text-[13px] des:text-[15px]"
+                  className="text-[13px] des:text-[15px] cursor-pointer  hover:text-blue-500"
                 >
                   توضیحات بیشتر
                 </p>
