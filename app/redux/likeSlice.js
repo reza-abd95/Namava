@@ -5,14 +5,16 @@ const likeSlice = createSlice({
     name:"like",
     initialState:[ 1 , 2 , 3 , 6 , 7 , 8],
     reducers:{
-        addItemlike : (state , action)=>{
-         return [...state , action.payload]
-        },
-        removeItemlike : (state , action)=>{
-         return state.filter(item => (item !== action.payload))
-        }
-    }
+        togglelike : (state , action)=>{
+            const index = state.findIndex(item => item == action.payload)
+            if (index == -1){
+                state.push(action.payload)
+            }else{
+                state.splice(index , 1)
+            }
+        }}
+    
 })
 
-export const {addItemlike , removeItemlike}=likeSlice.actions ;
+export const {togglelike}=likeSlice.actions ;
 export default likeSlice.reducer ;

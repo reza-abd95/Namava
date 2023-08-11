@@ -13,7 +13,7 @@ import CloseButton from '../../../public/icons/ShowSliderCloseButton.svg'
 import CloseButtonMd from '../../../public/icons/ShowSliderCloseButton-md.svg'
 import CloseButtonLg from '../../../public/icons/ShowSliderCloseButton-lg.svg'
 import MovieLogoSingle from "./MovieLogoSingle";
-import { addItemlike, removeItemlike } from "@/app/redux/likeSlice";
+import { togglelike } from "@/app/redux/likeSlice";
 import { useDispatch, useSelector } from "react-redux";
 
     //handling background change
@@ -51,8 +51,17 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
     const ageFaNumber = ageNumberFaHandler(age);
     //handling button's icon
 
-    const [showFirstSvg2, setShowFirstSvg2] = useState(true);
+    const [showFirstSvg2, setShowFirstSvg2] = useState();
     const [showFirstSvg3, setShowFirstSvg3] = useState(true);
+    useEffect(() => {
+      const index = selector.findIndex(item => item == movieId)
+      if (index == -1){
+        setShowFirstSvg2(true)
+      }else{
+        setShowFirstSvg2(false)
+
+      }
+    },[selector]);
 //--------------------Videio Player---------------------//
     const [width,setWidth] = useState(window.innerWidth)
     const [isPlaying,setIsPlaying] = useState(false)
@@ -77,16 +86,17 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
     
 //--------------------Videio Player---------------------//
     const handleClickLike = () => {
+
       if(showFirstSvg2===false){
           setShowFirstSvg2(true);
-          dispatch(addItemlike(Number(movieId)))
           console.log(selector)
+          dispatch(togglelike(+movieId))
 
       }
       else {
+        dispatch(togglelike(+movieId))
         setShowFirstSvg2(false);
         setShowFirstSvg3(true);
-        dispatch(removeItemlike(Number(movieId)))
         console.log(selector)
     }
     };
@@ -96,15 +106,17 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
     const handleClickDisLike = () => {
       if(showFirstSvg3===false){
         setShowFirstSvg3(true)
-        dispatch(removeItemlike(Number(movieId)))
-        console.log(selector)
-    }
-    else {
+
+      }
+      else {
+
       setShowFirstSvg3(false);
       setShowFirstSvg2(true)
-      console.log(selector)
+      }
+      if (showFirstSvg3===true && showFirstSvg2===false ){
+        dispatch(togglelike(+movieId))
 
-  }
+      }
     };
 
   return (

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 
 export default function Liked() {
-  const selector = useSelector(state => state.bookmark)
+  const selector = useSelector(state => state.like)
   console.log(selector)
   
   return (

@@ -7,7 +7,7 @@ import {useSelector } from 'react-redux/es/hooks/useSelector';
 
 
 export default function BookMark() {
-const selector = useSelector(state => state.bookmark)
+const selector = useSelector(state => state.like)
   
 
     console.log(selector)
