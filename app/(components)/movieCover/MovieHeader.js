@@ -12,7 +12,9 @@ import windowDimensions from "@/app/hooks/useWindowDimensions";
 import CloseButton from '../../../public/icons/ShowSliderCloseButton.svg'
 import CloseButtonMd from '../../../public/icons/ShowSliderCloseButton-md.svg'
 import CloseButtonLg from '../../../public/icons/ShowSliderCloseButton-lg.svg'
-import MovieLogoSingle from "./MovieLogoSingle";
+import MovieLogo from "../mainSlider/MovieLogo";
+import BackGroundImage from "../mainSlider/BackGroundImage";
+
 
     //handling background change
 
@@ -114,24 +116,10 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
         </div>
 {/*-------------------------------------------------------*/}
         <div className="w-full h-full relative flex flex-col ml:max-h-[534px] tab:max-h-none justify-center tab:justify-start items-center tab:items-stretch ">
-          <div className="relative mb-[168px] ms:mb-[118px]  ml:mb-[298px]  tab:mb-[100px] des:mb-0  " >
-            <Image
-              className="w-full h-full "
-              width={1000}
-              height={1000}
-              src={
-                windowWidth > 499
-                  ? image
-                  : imageMobile
-              }
-              alt={movieName}
-            />
-              <div className="absolute w-[50%] inset-0 bg-gradient-to-l from-[#121212] to-transparent"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent"></div>
-          </div>
+        <BackGroundImage imageUrl={image} imageMobileUrl={imageMobile} title={movieName}/>
           <div className="absolute flex flex-col justify-center items-center top-[36%] ms:top-[55%] ml:block ml:top-[80px] tab:top-[90px] large:top-[20%]">
             <div className="w-[40%] mb-[44px] ml:w-[25%] ml:mr-[20px] ml:mb[50px] tab:mr-8 tab:mb-6 des:mr-11 large:w-[35%]">
-              <MovieLogoSingle logoUrl={logoUrl} name={movieName}/></div>
+              <MovieLogo src={logoUrl} alt={movieName}/></div>
            <div className="flex flex-col justify-center items-center px-[14px] tab:justify-start tab:items-stretch text-center ml:text-start ml:px-[20px] tab:px-8 des:px-11">
             <h2 className='text-[14px] ml:text-[16px] mb-2 ml:mb-0 tab:text-[19px] tab:mb-3 des:text-[21px] large:text-[24px]'>{movieName}</h2>
              <div className=" flex flex-row justify-between items-center w-full max-w-[90%] ml:max-w-[400px] my-2">
@@ -140,7 +128,7 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
                 <p className="text-[10.5px] ml:text-[12px] text-center des:text-[14px] large:text-[17px]">{ageFaNumber}</p>
               </div>
               <p className={"text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]" + " " + (movieyear)?"":"hidden"}>{movieyear}</p>
-              <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">{` ${movieTime} دقیقه `}</p> 
+              <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]"> {movieTime} دقیقه </p> 
               <div className={"h-3 flex-row items-center" + " " + (imdb)?"flex":"hidden"}>
                 <img
                 className="ml-1 h-3 ml:h-[14px]"
@@ -189,7 +177,7 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
                   })}
             </p> 
             <p className="max-[499px]:hidden tab:hidden mb-2.5 text-[12px] large:text-[14px]" >
-              {`کارگردان: ${director}`}
+              کارگردان: {director}
             </p> 
              <div className="flex flex-row items-center mb-4 tab:mb-2 tab:mt-3 ">
                <div onClick={handleOnPlay} className=" my-[21px] tab:my-0 max-[799px]:hidden flex items-center justify-center ml-4 h-[42px] bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]">
@@ -247,7 +235,7 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
                 })}
             </p>  
             <p className="max-[799px]:hidden text-[10px] des:text-[12px] large:text-[14px]" >
-              {`کارگردان: ${director}`}
+              کارگردان: {director}
             </p> 
           </div>
           </div>
