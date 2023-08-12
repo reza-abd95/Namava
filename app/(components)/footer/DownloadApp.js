@@ -18,6 +18,8 @@ export default function DownloadApp() {
                   <Image src={(width > 1280)? NamavaIcon:NamavaSmalIcon} alt='Namava'/>
                </Link>
                <Link href='#' className='DA__title__text'>دانلود اپلیکیشن</Link>
+
+
             </div>
             <div className='AppStore__holder'>
                 <Link href='#' className='AppStore'>
