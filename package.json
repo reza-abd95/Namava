@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build babel src -d lib",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -22,5 +23,8 @@
     "sass": "^1.64.1",
     "swiper": "^10.0.4",
     "tailwindcss": "3.3.3"
+  },
+  "devDependencies": {
+    "jest": "^29.6.2"
   }
 }
