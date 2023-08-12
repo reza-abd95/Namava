@@ -60,11 +60,11 @@ export default function MenuSteacky () {
     return (
         <>
             <div>
-                <Image className="w-[32px] h-[27px] ml-[8px] tab:hidden " src={MenuIcon} alt="menu" onClick={openMenuMobile}/>
+                <Image className="w-[31px] h-[27px] ml-[8px] tab:hidden " src={MenuIcon} alt="menu" onClick={openMenuMobile}/>
             </div>
             <div>
-                <div className={"absolute hidden w-screen h-screen tab:hidden bg-zinc-800 opacity-30 right-0" + " " + "top-[100px]"} onClick={closeMenu_handller} ref={darkDivRef} ></div>
-                <div className={"w-[250px] hidden bg-[#222327] z-100 transition duration-[20s] ease-linear absolute h-screen tab:hidden right-0"+ " " + "top-[100px]"} ref={MenuRef}>
+                <div className={"absolute hidden w-screen h-screen tab:hidden bg-zinc-800 opacity-30 right-0" + " " + "top-[0]"} onClick={closeMenu_handller} ref={darkDivRef} ></div>
+                <div className={"w-[250px] hidden bg-[#222327] z-100 transition duration-[20s] ease-linear absolute h-screen tab:hidden right-0"+ " " + "top-[0]"} ref={MenuRef}>
                     <div className="w-full h-[80px]">
                         <div className="w-[97px] ml:w-[80px] ml:mx[14px] mx-[24px] flex justify-center items-center h-full">
                             <div className="w-full flex items-center">
