@@ -23,7 +23,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function MovieHeader({movieId , image ,imageMobile, movieTime, age, logoUrl, movieName, movieyear, imdb, like, isDubbed, hasSub, description, director, actorsName}) {
     const  windowWidth  = windowDimensions()
-
+    const selector = useSelector(state => state.like)
+    const dispatch = useDispatch()
     const ageColor = ageColorHandler(age);
     const ageFaNumber = ageNumberFaHandler(age);
     //handling button's icon
