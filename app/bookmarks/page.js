@@ -1,21 +1,16 @@
+'use client'
 import React from 'react'
 import MovieForSlider from '../(components)/MovieForSlider'
 import EmptyBookmark from '../(components)/EmptyBookmark';
+import {useSelector } from 'react-redux/es/hooks/useSelector';
+
+
 
 export default function BookMark() {
+const selector = useSelector(state => state.bookmark)
+  
 
-  
-    // let emptyDisplay = "";
-    // let cardDisplay ="";
-  
-    // if (true){
-    //   emptyDisplay = "hidden" 
-    //   cardDisplay = "flex"
-    // }else{
-    //   emptyDisplay = "flex"
-    //   cardDisplay = "hidden" 
-    // }
-  
+    console.log(selector)
     
     return (
           <div className="min-h-[710px] pb-20">
@@ -24,8 +19,13 @@ export default function BookMark() {
               <div className={"block"}>
                 <EmptyBookmark/>
               </div>
+              {selector.map(item => {
+                return(
+                  <p className=' text-white text-sm'>{item}</p>
+                )
+              })}
   
-              <div className={` text-white w-full px-6 ml:px-7 des:px-10 flex flex-wrap  items-center `}>
+              {/* <div className={` text-white w-full px-6 ml:px-7 des:px-10 flex flex-wrap  items-center `}>
                  
                   <div className=" w-1/3 ml:w-1/4 tab:w-1/5  des:w-[14.2%]  px-1 py-4 ml:px-2 des:3">
                       <MovieForSlider/>
@@ -35,7 +35,7 @@ export default function BookMark() {
                       <MovieForSlider/>
                   </div> 
                   
-              </div>
+              </div> */}
   
   
           </div>
