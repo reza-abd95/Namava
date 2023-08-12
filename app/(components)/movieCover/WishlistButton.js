@@ -1,11 +1,31 @@
-import React, { useState } from 'react';
+"use client"
+
+import { toggle} from '@/app/redux/bookmarkSlice';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 
-export default function WishlistButton() {
-  const [isWishlist, setIsWishlist] = useState(false);
+export default function WishlistButton({movieId}) {
+  const selector = useSelector(state => state.bookmark)
+  
+  const [isWishlist, setIsWishlist] = useState();
+
+  useEffect(() => {
+    const index = selector.findIndex(item => item == movieId)
+    if (index == -1){
+      setIsWishlist(true)
+    }else{
+      setIsWishlist(false)
+  
+    }
+  },[selector]);
+
+
   const [userMessage, setUserMessage] = useState('');
 
   const [hoverText, setHoverText] = useState('لیست من');
+  const dispatch = useDispatch()
+
   const handleAddClick = () => {
     setIsWishlist(!isWishlist);
     const updatedMessage = isWishlist
@@ -24,13 +44,14 @@ export default function WishlistButton() {
       ? 'حذف از لیست من'
       : 'افزوردن به لیست من';
     
-    setUserMessage(updatedMessage);
-    setTimeout(() => {
-      setUserMessage('');
-    }, 2000); 
+    // setUserMessage(updatedMessage);
+    // setTimeout(() => {
+    //   setUserMessage('');
+    // }, 2000); 
 
     setHoverText(updatehoverText);
 
+    dispatch(toggle(+movieId))
   };
  
   return (

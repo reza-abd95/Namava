@@ -1,9 +1,12 @@
 'use client'
 import Image from "next/image";
+import SlideShow from "./SlideShow";
+import { useState } from "react";
 
 
 
-export default function MoviePicturs({images,isVisible,setIsVisible , movieName}) {
+export default function MoviePicturs({images, movieName}) {
+    const [isVisible,setIsVisible] = useState({visible: false, imageId: null})
     const handleOnClick = (e) => {
 
         setIsVisible({...isVisible,['visible']: true,['imageId']: Number(e.target['id'])})
@@ -21,7 +24,7 @@ export default function MoviePicturs({images,isVisible,setIsVisible , movieName}
                 })
                 }
             </div>
-
+            <SlideShow isVisible={isVisible} setIsVisible={setIsVisible} images={images}/>
         </div>
     )
 }
