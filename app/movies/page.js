@@ -1,11 +1,14 @@
-import CategorySlider from '../(components)/CategorySlider'
-import FilmCrewSlider from '../(components)/FilmCrewSlider'
 import MovieSlider from '../(components)/MovieSlider'
 import TitleOfCategorySlider from '../(components)/TitleOfCategorySlider';
 import MainSlider from '../(components)/mainSlider/MainSlider'
 import { getActorData,getMoviesData} from '../utils/getdata';
 
-
+export async function generateMetadata() {
+  return {
+    title: "تماشای آنلاین فیلم | نماوا",
+    description : "سایت فیلم نماوا کاملترین فیلم های روز دنیا را با ترافیک نیم بها ارائه می دهد. علاوه بر تماشای آنلاین فیلم های جدید، دانلود فیلم ها نیز در اختیار شما قرار میگیرد. با خرید اشتراک نماوا میتوانید دانلود رایگان فیلم را تجربه کنید."
+  }
+}
 
 
 export default async function Movies() {
