@@ -25,8 +25,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <nav>
-          <Header />
-          <HeaderSticky />
+
+          {/*<Header/>*/}
+          <HeaderSticky/>
         </nav>
         <main>
           <Provider store={store}>
