@@ -30,7 +30,12 @@ export default async function Movies() {
   const comedyMovies = selectMovie(13);
   const horrorMovies = selectMovie(14);
   const dramaMovies = selectMovie(16);
-  const scifiMovies = selectMovie(17);
+  const scifiMovie = selectMovie(17);
+  const scifiMovies = scifiMovie;
+  for (let index = 0; index < 5; index++) {
+    const element = horrorMovies[index];
+    scifiMovies.push(element)
+  }
 
   //select best movies --> imdb > 7
 
@@ -54,7 +59,7 @@ export default async function Movies() {
   
         <div>
           
-            <MainSlider movieData={movie} actors={actor} subject={'homePath'}/>
+            <MainSlider movieData={movies} actors={actor} subject={'homePath'}/>
             <TitleOfCategorySlider title={"تازه های نماوا"} link={"/categories"}/>
             <MovieSlider data={newMovies}/>
             <TitleOfCategorySlider title={"دوبله شده"} link={"/categories"}/>

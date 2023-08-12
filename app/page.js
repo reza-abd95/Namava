@@ -5,7 +5,12 @@ import TitleOfCategorySlider from './(components)/TitleOfCategorySlider';
 import MainSlider from './(components)/mainSlider/MainSlider'
 import { getActorData, getHomeSliderData ,getMoviesData , getAgentsData , getSeriesMoviesSliderData} from './utils/getdata';
 
-
+export async function generateMetadata() {
+  return {
+    title: "تماشای آنلاین فیلم | نماوا",
+    description : "سایت فیلم نماوا کاملترین فیلم های روز دنیا را با ترافیک نیم بها ارائه می دهد. علاوه بر تماشای آنلاین فیلم های جدید، دانلود فیلم ها نیز در اختیار شما قرار میگیرد. با خرید اشتراک نماوا میتوانید دانلود رایگان فیلم را تجربه کنید."
+  }
+}
 
 export default async function Home() {
 
@@ -33,7 +38,12 @@ export default async function Home() {
     const comedyMovies = selectMovie(13);
     const horrorMovies = selectMovie(14);
     const dramaMovies = selectMovie(16);
-    const scifiMovies = selectMovie(17);
+    const scifiMovie = selectMovie(17);
+    const scifiMovies = scifiMovie;
+    for (let index = 0; index < 5; index++) {
+      const element = horrorMovies[index];
+      scifiMovies.push(element)
+    }
 
     //select new Year movies --> 2023
 
@@ -43,7 +53,7 @@ export default async function Home() {
     
     //select best movies --> imdb > 7
 
-    const bestMovies = movies.filter((movie)=>{
+    const bestMovies = movie.filter((movie)=>{
       return movie.imdb >= 7;
     })
 
@@ -53,8 +63,8 @@ export default async function Home() {
       return agent.job == "کارگردان";
     })
     //select new movies
-    const newMovieId = movies.length - 10;
-    const newMovies = movies.filter((movie)=>{
+    const newMovieId = movie.length - 10;
+    const newMovies = movie.filter((movie)=>{
       return movie.id >= newMovieId
     }) 
 
@@ -86,11 +96,11 @@ export default async function Home() {
             <FilmCrewSlider data={bsetDirector} title="کارگردانان بزرگ"/>
 
             <TitleOfCategorySlider title={"ترسناک"} link={"/categories/14"}/>
-            <MovieSlider data={actionMovies}/>
+            <MovieSlider data={horrorMovies}/>
             <TitleOfCategorySlider title={"درام"} link={"/categories/16"}/>
-            <MovieSlider data={comedyMovies}/>
+            <MovieSlider data={dramaMovies}/>
             <TitleOfCategorySlider title={"علمی تخیلی"} link={"/categories/17"}/>
-            <MovieSlider data={comedyMovies}/>
+            <MovieSlider data={scifiMovies}/>
             
         </div>
   )

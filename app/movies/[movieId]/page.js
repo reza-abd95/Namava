@@ -6,16 +6,30 @@ import AboutMovie from "@/app/(components)/movie/AboutMovie";
 import MoviePicturs from "@/app/(components)/movie/MoviePictures";
 import MovieHeader from '@/app/(components)/movieCover/MovieHeader';
 
-import {getMoviesData , getCategoriesData , getActorData} from "@/app/utils/getdata";
+import {getMoviesData , getCategoriesData , getActorData , getAgentsData} from "@/app/utils/getdata";
 import MovieSlider from '@/app/(components)/MovieSlider';
 import FilmCrewSlider from '@/app/(components)/FilmCrewSlider';
+import MovieCrewSlider from '@/app/(components)/MovieCrewSlider';
 
-
+export async function generateMetadata({params}) {
+  const moviesRowData = await getMoviesData();
+  const moviesData = moviesRowData.record;
+  const movieId = params.movieId;
+  const movie = moviesData.find((movie)=>{
+    return movie.id == movieId;
+  })
+  return {
+    title: movie.title,
+    description : movie.description
+  }
+}
 export default async function MoiveId({params}) {
   
   const actorsRowData = await getActorData();
   const categoriesRowData = await getCategoriesData();
   const moviesRowData = await getMoviesData();
+  const agentsRowData = await getAgentsData();
+  const agentsData = agentsRowData.record;
   const actorsData = actorsRowData.record;
   const categoriesData = categoriesRowData.record;
   const moviesData = moviesRowData.record;
@@ -25,6 +39,7 @@ export default async function MoiveId({params}) {
   })
   const otherCategoriesId = movieData.otherCategoriesId;
   const actorsId = movieData.actors;
+  const agentsId = movieData.agents;
   const categoryId = movieData.categoryId;
   const categorymovie = moviesData.filter((movie)=>{
     return movie.categoryId == categoryId
@@ -42,7 +57,7 @@ export default async function MoiveId({params}) {
     }
   }
 
-  // create Categories Name data in Array
+  // create Actors Name data in Array
   const actors = []
   let actorsName = []
   for (let index = 0; index < actorsId.length; index++) {
@@ -55,7 +70,22 @@ export default async function MoiveId({params}) {
       }
     }
   }
-  console.log("actors is : ", actorsName);
+  const actorsNewName = [];
+  for (let index = 0 ; index < 5 ; index++) {
+    const element = actorsName[index];
+    actorsNewName.push(element)
+  }
+  // create Agents data in Array
+  const agents = []
+  for (let index = 0; index < agentsId.length; index++) {
+    const agentId = agentsId[index];
+    for (let index2 = 0; index2 < agentsData.length; index2++) {
+      const agentData = agentsData[index2];
+      if (agentId == agentData.id) {
+        agents.push(agentData)
+      }
+    }
+  }
   return (
     <div>
       <MovieHeader 
@@ -72,9 +102,8 @@ export default async function MoiveId({params}) {
         hasSub = {movieData.hasSub}
         age = {movieData.age}
         logoUrl = {movieData.logoUrl}
-        actorsName ={actorsName}
+        actorsName ={actorsNewName}
       />
-      {/* <div className="h-[400px]"></div> */}
       <MoviePicturs images={movieData.otherImages} movieName = {movieData.titleEn}/>
       <AboutMovie 
         name= {movieData.title}
@@ -84,10 +113,9 @@ export default async function MoiveId({params}) {
         langDubbing = {movieData.langDubbing}
         langSubtitle = {movieData.langSubtitle}
       />
-      <span>{`بر اساس فیلم ${movieData.title}`}</span>
-      <MovieSlider data= {categorymovie}/>
-      <div></div>
-      <FilmCrewSlider data={actors}/>
+      <MovieSlider title={`بر اساس فیلم ${movieData.title}`} data= {categorymovie} link={`/categories/${movieData.categoryId}`}/>
+      <FilmCrewSlider title={`بازیگران فیلم ${movieData.title}`} data={actors}/>
+      <MovieCrewSlider title={`عوامل فیلم ${movieData.title}`} data={agents}/>
       <Comments movieId = {movieId}/>
     </div>
   )

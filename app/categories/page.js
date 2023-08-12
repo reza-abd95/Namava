@@ -2,6 +2,13 @@
 import Category from "@/app/categories/Category";
 import {getCategoriesData} from "@/app/utils/getdata";
 
+export async function generateMetadata() {
+    return {
+      title: "دسته بندی ها",
+      description : "فیلم ها در دسته بندی های مختلفی تولید می شوند که در این صفحه می توانید دسته بندی های مختلف را در انی صفحه مشاهده کنید"
+    }
+  }
+
 export default async function Categories() {
     const categories = await getCategoriesData();
     const category = categories.record;

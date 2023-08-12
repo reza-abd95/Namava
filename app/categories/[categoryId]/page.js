@@ -4,6 +4,18 @@ import MainSlider from "@/app/(components)/mainSlider/MainSlider";
 import {getActorData, getCategoriesData, getMoviesData} from "@/app/utils/getdata";
 import Description from "@/app/(components)/Description";
 import TitleOfCategorySlider from "@/app/(components)/TitleOfCategorySlider";
+export async function generateMetadata({params}) {
+    const categoryData = await getCategoriesData();
+    const categories = categoryData.record;
+    const catId = params.categoryId;
+    const category = categories.find((category)=>{
+      return category.id == catId ;
+    })
+    return {
+      title: category.name,
+      description : category.description
+    }
+  }
 
 export default async function CategoryId({params}) {
 
