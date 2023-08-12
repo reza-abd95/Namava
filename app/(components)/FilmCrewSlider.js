@@ -12,7 +12,7 @@ import { Navigation } from 'swiper/modules';
 import Image from 'next/image';
 import FilmCrew from './FilmCrew';
 
-export default function FilmCrewSlider({data}) {
+export default function FilmCrewSlider({data , title}) {
   const  windowWidth  = windowDimensions();
   const [slidesPer, setSlidePer] = useState(1.1);
   const [space, setSpace] = useState(15);
@@ -51,7 +51,7 @@ export default function FilmCrewSlider({data}) {
   return (
     
     <div>
-      <p className=" text-white text-right mr-14 text-lg "> ستارگان </p>
+      <p className=" text-white text-right mr-14 text-lg "> {title} </p>
       <Swiper
         loop = {true}
         initialSlide = {3}
