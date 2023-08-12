@@ -47,7 +47,7 @@ export default function SlideShow({images,isVisible,setIsVisible}) {
         setIsVisible({...isVisible,['visible']:false,['imageId']:null})}
         className={`SlideShow__background ${isVisible.visible? '':'hidden'}`}>
             <div className="SlideShow__container">
-            <Image className="SlideShow__closeButton" src={button}/>
+                <Image className="SlideShow__closeButton" src={button}/>
                 <div onClick={handleOnPrev} className="SlideShow__buttons">
                     <Image src={ArrowRight} alt="arrow"/>
                 </div>

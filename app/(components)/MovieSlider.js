@@ -11,11 +11,10 @@ import '../styles.css';
 import { Navigation } from 'swiper/modules';
 import MovieForSlider from './MovieForSlider';
 
-export default function MovieSlider() {
+export default function MovieSlider({data}) {
   const  windowWidth  = windowDimensions();
   const [slidesPer, setSlidePer] = useState(1.1);
   const [centered, setCentered] = useState(true);
-
 
   useEffect(() => {
     switch (true) {
@@ -41,9 +40,9 @@ export default function MovieSlider() {
   return (
     
     <div>
-      <p className=" text-white text-right mr-14 text-lg "> اکشن </p>
       <Swiper
         initialSlide = {3}
+        loop = {true}
         slidesPerView={slidesPer}
         centeredSlides={centered}
         spaceBetween={15}
@@ -51,43 +50,18 @@ export default function MovieSlider() {
         modules={[Navigation]}
         className="mySwiper flex justify-center items-center w-full h-auto mb-20 mt-5"
       >
-          <SwiperSlide className="movie-slide"> 
-            <MovieForSlider/>
-          </SwiperSlide>
+          {data.map(item =>{
+          return(
+
+            <SwiperSlide key={item.id} className="movie-slide"> 
+              <MovieForSlider data={item}/>
+            </SwiperSlide>
+
+          )
+          })}
+
+
           
-          <SwiperSlide className="movie-slide"> 
-            <MovieForSlider/>
-          </SwiperSlide>
-
-          <SwiperSlide className="movie-slide"> 
-            <MovieForSlider/>
-          </SwiperSlide>
-          
-          <SwiperSlide className="movie-slide"> 
-            <MovieForSlider/>
-          </SwiperSlide>
-
-          <SwiperSlide className="movie-slide"> 
-            <MovieForSlider/>
-          </SwiperSlide>
-
-          <SwiperSlide className="movie-slide"> 
-            <MovieForSlider/>
-          </SwiperSlide>
-          
-
-          <SwiperSlide className="movie-slide"> 
-            <MovieForSlider/>
-          </SwiperSlide>
-
-          <SwiperSlide className="movie-slide"> 
-            <MovieForSlider/>
-          </SwiperSlide>
-
-          <SwiperSlide className="movie-slide"> 
-            <MovieForSlider/>
-          </SwiperSlide>
-
 
           
           

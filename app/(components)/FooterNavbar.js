@@ -10,6 +10,7 @@ import windowDimensions from '../hooks/useWindowDimensions'
 
 export default function FooterNavbar() {
     const width = windowDimensions()
+
     const links = [
         {title: 'اپلیکیشن‌ها',show: false},
         {title: 'فرصت‌های شغلی',show: false},
@@ -52,7 +53,7 @@ export default function FooterNavbar() {
         links[12]['show'] = true
         
     }
-    
+
     
     const visibleLinks = []
     const hiddenLinks = []
@@ -63,6 +64,7 @@ export default function FooterNavbar() {
             hiddenLinks.push(item.title)
         }
     }
+
     const [open, setOpen] = useState(false);
     
     return (
