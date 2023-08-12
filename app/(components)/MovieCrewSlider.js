@@ -9,10 +9,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../styles.css';
 import { Navigation } from 'swiper/modules';
-import Image from 'next/image';
-import FilmCrew from './FilmCrew';
+import MovieCrew from './MovieCrew';
 
-export default function FilmCrewSlider({data , title}) {
+export default function MovieCrewSlider({data , title}) {
   const  windowWidth  = windowDimensions();
   const [slidesPer, setSlidePer] = useState(1.1);
   const [space, setSpace] = useState(15);
@@ -65,7 +64,7 @@ export default function FilmCrewSlider({data , title}) {
           return(
 
             <SwiperSlide key={item.id} className="movie-slide"> 
-              <FilmCrew data={item}/>
+              <MovieCrew data={item}/>
             </SwiperSlide>
 
           )

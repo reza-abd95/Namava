@@ -2,7 +2,7 @@
 
 
 import Image from "next/image";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, use } from "react";
 import Like from "./Like";
 import DisLike from "./DisLike";
 import './css.css'
@@ -10,22 +10,35 @@ import WishlistButton from "./WishlistButton"
 import windowDimensions from "@/app/hooks/useWindowDimensions";
 import ageNumberFaHandler from "@/app/utils/ageNumberFaHandler";
 import ageColorHandler from "@/app/utils/ageColorHandler";
+import MovieLogo from "../mainSlider/MovieLogo";
 //--------------Video Player---------------//
 import CloseButton from '../../../public/icons/ShowSliderCloseButton.svg'
 import CloseButtonMd from '../../../public/icons/ShowSliderCloseButton-md.svg'
 import CloseButtonLg from '../../../public/icons/ShowSliderCloseButton-lg.svg'
-import MovieLogo from "../mainSlider/MovieLogo";
+import { togglelike } from "@/app/redux/likeSlice";
+import { useDispatch, useSelector } from "react-redux";
+
 
     //handling background change
 
-export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl, movieName, movieyear, imdb, like, isDubbed, hasSub, description, director, actorsName}) {
+export default function MovieHeader({movieId , image ,imageMobile, movieTime, age, logoUrl, movieName, movieyear, imdb, like, isDubbed, hasSub, description, director, actorsName}) {
     const  windowWidth  = windowDimensions()
+
     const ageColor = ageColorHandler(age);
     const ageFaNumber = ageNumberFaHandler(age);
     //handling button's icon
 
-    const [showFirstSvg2, setShowFirstSvg2] = useState(true);
+    const [showFirstSvg2, setShowFirstSvg2] = useState();
     const [showFirstSvg3, setShowFirstSvg3] = useState(true);
+    useEffect(() => {
+      const index = selector.findIndex(item => item == movieId)
+      if (index == -1){
+        setShowFirstSvg2(true)
+      }else{
+        setShowFirstSvg2(false)
+
+      }
+    },[selector]);
 //--------------------Videio Player---------------------//
     const [width,setWidth] = useState(window.innerWidth)
     const [isPlaying,setIsPlaying] = useState(false)
@@ -50,12 +63,18 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
     
 //--------------------Videio Player---------------------//
     const handleClickLike = () => {
+
       if(showFirstSvg2===false){
-          setShowFirstSvg2(true)
+          setShowFirstSvg2(true);
+          console.log(selector)
+          dispatch(togglelike(+movieId))
+
       }
       else {
+        dispatch(togglelike(+movieId))
         setShowFirstSvg2(false);
-        setShowFirstSvg3(true)
+        setShowFirstSvg3(true);
+        console.log(selector)
     }
     };
     
@@ -64,11 +83,17 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
     const handleClickDisLike = () => {
       if(showFirstSvg3===false){
         setShowFirstSvg3(true)
-    }
-    else {
+
+      }
+      else {
+
       setShowFirstSvg3(false);
       setShowFirstSvg2(true)
-  }
+      }
+      if (showFirstSvg3===true && showFirstSvg2===false ){
+        dispatch(togglelike(+movieId))
+
+      }
     };
 
   return (
@@ -176,7 +201,7 @@ export default function MovieHeader({image ,imageMobile, movieTime, age, logoUrl
               </div>
               <div className="flex flex-col justify-center items-center text-center ml-12 tab:ml-4">
              
-              <WishlistButton/>
+              <WishlistButton movieId={movieId}/>
               <p className="text-[10px] text-center max-w-full text-[#9699A6] mt-1 tab:hidden">لیست من</p>
               </div>
                

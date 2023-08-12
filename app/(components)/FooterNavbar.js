@@ -69,21 +69,23 @@ export default function FooterNavbar() {
     
     return (
         <div className={`FooterNavbar`}>
-            <div className="FooterNavbar__menu">
-                {
-                    visibleLinks.map((item,index) => {
-                        return <Link key={index+1} href='#' className={`NavbarMenu__items`}>{item}</Link>
-                    })
-                }
-                <DropdownMenu
-                 open={open}
-                 setOpen={setOpen}
-                 width={width}
-                 />
-            </div>
-            
+
+            <ul className="FooterNavbar__menu">
+                    {
+                        visibleLinks.map((item,index) => {
+                            return <Link key={index+1} href='#' className={`NavbarMenu__items`}>{item}</Link>
+                        })
+                    }
+                    <DropdownMenu
+                     open={open}
+                     setOpen={setOpen}
+                     width={width}
+                     />
+            </ul>
             <ul className={`DropdownMenu__menu ${open? 'DropdownMenu__menu-open':''}`}>
                 <li
+                 key={20}
+
                  onClick={() => setOpen(!open)}
                  className={`DropdownMenu__items DropdownMenu__menu-close`}
                 >
@@ -92,7 +94,9 @@ export default function FooterNavbar() {
                 </li>
                 {   
                     hiddenLinks.map((item,index) => {
-                        return <li key={index+1}><Link href='#' className={`DropdownMenu__items ${open? 'py-3':''}`}>{item}</Link></li>
+
+                        return <li key={index+1}><Link href='#' className={`DropdownMenu__items`}>{item}</Link></li>
+
                     })
                 }
             </ul>

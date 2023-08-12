@@ -47,3 +47,23 @@ if (!res.ok) {
 
 return res.json()
 }
+
+export async function getAgentsData() {
+  const res = await fetch('https://api.jsonbin.io/v3/b/64d50f6eb89b1e2299ce9567')
+  
+  if (!res.ok) {
+    throw new Error('Failed to fetch agents')
+  }
+  
+  return res.json()
+}
+
+export async function getSeriesMoviesSliderData() {
+  const res = await fetch('https://api.jsonbin.io/v3/b/64d72c60b89b1e2299cf7211')
+    
+  if (!res.ok) {
+    throw new Error('Failed to fetch series movies slider')
+  }
+    
+  return res.json()
+}

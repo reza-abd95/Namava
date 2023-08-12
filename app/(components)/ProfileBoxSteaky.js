@@ -15,7 +15,7 @@ export default function ProfileBoxSteaky () {
     return (
         <div>
             <div>
-                <Image className="cursor-pointer w-[30px] h-[31px] rounded-full mt-[1px] mr-[8px] tab:h-[30px] tab:w-[31px] des:w-[40px] des:h-[40px]" src={Profile} alt="profile" onClick={mouseOverHandler} onMouseOver={mouseOverHandler}/>
+                <Image className="cursor-pointer w-[30px] h-[31px] rounded-full mt-[1px] mr-[8px] tab:h-[30px] tab:w-[31px] des:mt-0 des:w-[40px] des:h-[40px]" src={Profile} alt="profile" onClick={mouseOverHandler} onMouseOver={mouseOverHandler}/>
             </div>
             <div className={"w-[600px] h-[500px] transition ease-in-out justify-end items-start absolute top-[20px] left-[2%] z-100" + " " + profileState} onMouseLeave={closeProfile} onClick={closeProfile}>
                 <div className="w-[272px] rounded-lg mt-[45px] ml:mt-[50px] tab:mt-[44px] des:mt-[57px] overflow-hidden">
