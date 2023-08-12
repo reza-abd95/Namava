@@ -52,7 +52,11 @@ export default async function Home() {
     const bsetDirector = agents.filter((agent)=>{
       return agent.job == "کارگردان";
     })
-  
+    //select new movies
+    const newMovieId = movies.length - 10;
+    const newMovies = movies.filter((movie)=>{
+      return movie.id >= newMovieId
+    }) 
 
   return (
   
@@ -76,6 +80,8 @@ export default async function Home() {
 
             <TitleOfCategorySlider title={"کمدی"} link={"/categories/13"}/>
             <MovieSlider data={comedyMovies}/>
+            <TitleOfCategorySlider title={"تازه های نماوا"} link={"/categories"}/>
+            <MovieSlider data={newMovies}/>
 
             <FilmCrewSlider data={bsetDirector} title="کارگردانان بزرگ"/>
 
