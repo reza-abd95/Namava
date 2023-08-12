@@ -78,7 +78,7 @@ export default async function Home() {
             <MovieSlider data={movie}/>
             <TitleOfCategorySlider title={"۲۰۲۳"} link={"/movies"}/>
             <MovieSlider data={newYearMovies}/>
-            <TitleOfCategorySlider title={"برترین فیلم ها و سریال های IMDB"} link={"/movies"}/>
+            <TitleOfCategorySlider title={"برترین های IMDB"} link={"/movies"}/>
             <MovieSlider data={bestMovies}/>
 
             <FilmCrewSlider data={actor} title="ستارگان"/>

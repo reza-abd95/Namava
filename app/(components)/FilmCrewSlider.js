@@ -53,7 +53,6 @@ export default function FilmCrewSlider({data , title}) {
     <div>
       <p className=" text-white text-right mr-14 text-lg "> {title} </p>
       <Swiper
-        loop = {true}
         initialSlide = {3}
         slidesPerView={slidesPer}
         centeredSlides={centered}

@@ -42,7 +42,6 @@ export default function MovieSlider({data}) {
     <div>
       <Swiper
         initialSlide = {3}
-        loop = {true}
         slidesPerView={slidesPer}
         centeredSlides={centered}
         spaceBetween={15}
