@@ -7,8 +7,9 @@ import CloseButton from '../../../public/icons/ShowSliderCloseButton.svg'
 import CloseButtonMd from '../../../public/icons/ShowSliderCloseButton-md.svg'
 import CloseButtonLg from '../../../public/icons/ShowSliderCloseButton-lg.svg'
 import { useEffect, useState } from "react"
+import windowDimensions from "@/app/hooks/useWindowDimensions"
 export default function SlideShow({images,isVisible,setIsVisible}) {
-    const [width,setWidth] = useState(window.outerWidth)
+    const width = windowDimensions()
     const handleOnNext = (e) => {
         e.stopPropagation()
         if (isVisible.imageId === images.length) {
@@ -27,13 +28,6 @@ export default function SlideShow({images,isVisible,setIsVisible}) {
         }
         
     }
-
-    console.log(isVisible.imageId)
-    useEffect(() => {
-        window.addEventListener('resize',() => {
-            setWidth(window.outerWidth)
-        })
-    },[width])
     if (width < 500) {
         var button = CloseButton
     }else if (width < 800) {
