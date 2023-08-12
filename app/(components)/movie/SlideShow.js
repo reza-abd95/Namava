@@ -4,7 +4,7 @@ import Image from "next/image"
 import ArrowLeft from '../../../public/icons/ArrowLeft.svg'
 import ArrowRight from '../../../public/icons/ArrowRight.svg'
 import CloseButton from '../../../public/icons/ShowSliderCloseButton.svg'
-import CloseButtonMd from '../../../public/icons/ShowSlideCloseButton-md.svg'
+import CloseButtonMd from '../../../public/icons/ShowSliderCloseButton-md.svg'
 import CloseButtonLg from '../../../public/icons/ShowSliderCloseButton-lg.svg'
 import { useEffect, useState } from "react"
 export default function SlideShow({images,isVisible,setIsVisible}) {
