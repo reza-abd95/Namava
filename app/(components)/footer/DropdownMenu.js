@@ -8,7 +8,7 @@ export default function DropdownMenu({width,open,setOpen}) {
 
 
     return (
-        <div className={`DropdownMenu ${(width>=1920)? 'hidden': ''}`}>
+        <li key={20} className={`DropdownMenu ${(width>=1920)? 'hidden': ''}`}>
             <button
             onClick={() => setOpen(!open)}
             className='Dropdown__button'
@@ -16,6 +16,6 @@ export default function DropdownMenu({width,open,setOpen}) {
                 <h4 className={`Dropdown__button__text`}>سایر لینک‌ها</h4>
                 <Image src={ArrowUp} alt='arrow'/>
             </button>
-        </div>
+        </li>
     )
 }

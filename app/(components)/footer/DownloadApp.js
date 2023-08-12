@@ -8,18 +8,18 @@ import BazarIcon from '../../../public/icons/Bazar-icon.svg'
 import SibAppIcon from '../../../public/icons/SibApp-icon.svg'
 import PlayStoreIcon from '../../../public/icons/PlayStore-icon.svg'
 import { useState, useEffect } from 'react'
-import windowDimensions from "@/app/hooks/useWindowDimensions";
-
+import windowDimensions, {} from '../../hooks/useWindowDimensions'
 export default function DownloadApp() {
-    const windowWidth = windowDimensions()
-
+    const width = windowDimensions()
     return (
         <div className='DA__container'>
             <div className='DA__title'>
-               <div href='#' className='DA__title__logo'>
-                  <Image src={(windowWidth > 1280)? NamavaIcon:NamavaSmalIcon} alt='Namava'/>
-               </div>
-               <h3 href='#' className='DA__title__text'>دانلود اپلیکیشن</h3>
+               <Link href='#' className='DA__title__logo'>
+                  <Image src={(width > 1280)? NamavaIcon:NamavaSmalIcon} alt='Namava'/>
+               </Link>
+               <Link href='#' className='DA__title__text'>دانلود اپلیکیشن</Link>
+
+
             </div>
             <div className='AppStore__holder'>
                 <Link href='#' className='AppStore'>
