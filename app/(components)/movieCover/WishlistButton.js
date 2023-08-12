@@ -44,10 +44,10 @@ export default function WishlistButton({movieId}) {
       ? 'حذف از لیست من'
       : 'افزوردن به لیست من';
     
-    // setUserMessage(updatedMessage);
-    // setTimeout(() => {
-    //   setUserMessage('');
-    // }, 2000); 
+    setUserMessage(updatedMessage);
+    setTimeout(() => {
+      setUserMessage('');
+    }, 2000); 
 
     setHoverText(updatehoverText);
 

@@ -63,7 +63,7 @@ export default function MainSlider({ categoryId, movieData, subject, actors }) {
       >
         {movieItem.map((item) => {
           return (
-            <SwiperSlide key={item.id} className="w-full h-full">
+            <SwiperSlide key={item.id} className="w-full h-full bg-[#121212]">
               <HeaderSliderComponent
                 key={item.id}
                 data={item}
