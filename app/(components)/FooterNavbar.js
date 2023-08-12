@@ -69,6 +69,7 @@ export default function FooterNavbar() {
     
     return (
         <div className={`FooterNavbar`}>
+
             <ul className="FooterNavbar__menu">
                     {
                         visibleLinks.map((item,index) => {
@@ -84,6 +85,7 @@ export default function FooterNavbar() {
             <ul className={`DropdownMenu__menu ${open? 'DropdownMenu__menu-open':''}`}>
                 <li
                  key={20}
+
                  onClick={() => setOpen(!open)}
                  className={`DropdownMenu__items DropdownMenu__menu-close`}
                 >
@@ -92,7 +94,9 @@ export default function FooterNavbar() {
                 </li>
                 {   
                     hiddenLinks.map((item,index) => {
+
                         return <li key={index+1}><Link href='#' className={`DropdownMenu__items`}>{item}</Link></li>
+
                     })
                 }
             </ul>

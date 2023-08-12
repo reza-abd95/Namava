@@ -8,13 +8,16 @@ import DisLike from "./DisLike";
 import './css.css'
 import WishlistButton from "./WishlistButton"
 import windowDimensions from "@/app/hooks/useWindowDimensions";
+import ageNumberFaHandler from "@/app/utils/ageNumberFaHandler";
+import ageColorHandler from "@/app/utils/ageColorHandler";
+import MovieLogo from "../mainSlider/MovieLogo";
 //--------------Video Player---------------//
 import CloseButton from '../../../public/icons/ShowSliderCloseButton.svg'
 import CloseButtonMd from '../../../public/icons/ShowSliderCloseButton-md.svg'
 import CloseButtonLg from '../../../public/icons/ShowSliderCloseButton-lg.svg'
-import MovieLogoSingle from "./MovieLogoSingle";
 import { togglelike } from "@/app/redux/likeSlice";
 import { useDispatch, useSelector } from "react-redux";
+
 
     //handling background change
 
@@ -22,31 +25,6 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
     const  windowWidth  = windowDimensions()
     const selector = useSelector(state => state.like)
     const dispatch = useDispatch()
-
-    const ageColorHandler = (ageNumber) => {
-      switch (ageNumber) {
-        case 12:
-          return "bg-yellow-400"
-        case 15:
-          return "bg-orange-400"
-        case 18:
-          return "bg-red-400"
-        default:
-          return "bg-white"
-      }
-    } 
-    const ageNumberFaHandler = (ageNumber) => {
-      switch (ageNumber) {
-        case 12:
-          return "+۱۲"
-        case 15:
-          return "+۱۵"
-        case 18:
-          return "+۱۸"
-        default:
-          return "+۷"
-      }
-    } 
     const ageColor = ageColorHandler(age);
     const ageFaNumber = ageNumberFaHandler(age);
     //handling button's icon
@@ -122,7 +100,7 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
   return (
     <>
     
-      <div className="text-[#fff]">
+      <div className="text-[#fff]  bg-[#121212] ">
 {/*-------------------------------------------------------*/}
         <div onClick={handleOnClose} className={`SlideShow__background ${isPlaying? '':'hidden'}`}>
           <div className="flex items-center justify-center">
@@ -138,12 +116,12 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
           
         </div>
 {/*-------------------------------------------------------*/}
-        <div className="w-full h-full relative flex flex-col ml:max-h-[534px] tab:max-h-none justify-center tab:justify-start items-center tab:items-stretch ">
-          <div className="relative mb-[168px] ms:mb-[118px]  ml:mb-[298px]  tab:mb-[100px] des:mb-0  " >
+        <div className="w-full h-full relative flex flex-col ml:max-h-[534px] tab:max-h-none mb-8 justify-center tab:justify-start items-center tab:items-stretch ">
+        <div className="relative mb-[168px]  ml:mb-[240px] tab:mb-[160px] min-[900px]:mb-[90px] des:mb-0" >
             <Image
               className="w-full h-full "
-              width={1000}
-              height={1000}
+              width={windowWidth > 499 ? 1920: 1000 }
+              height={windowWidth > 499 ? 900: 1350}
               src={
                 windowWidth > 499
                   ? image
@@ -151,23 +129,25 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
               }
               alt={movieName}
             />
-            
+              <div className="absolute w-[50%] inset-0 bg-gradient-to-l from-[#121212] to-transparent"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent"></div>
           </div>
-          <div className="absolute flex flex-col justify-center items-center top-[36%] ms:top-[40%] tab:justify-start tab:items-stretch ml:top-[120px] tab:top-[75px]">
-            <div className="max-[799px]:hidden tab:w-[20%] tab:mr-8 tab:mb-6 des:mr-11 des:w-[22%]"><MovieLogoSingle logoUrl={logoUrl} name={movieName}/></div>
+          <div className="absolute flex flex-col justify-center items-center top-[36%] ms:top-[55%] ml:block ml:top-[80px] tab:top-[90px] large:top-[20%]">
+            <div className="max-[799px]:hidden w-[40%] mb-[44px] ml:w-[25%] ml:mr-[20px] ml:mb[50px] tab:mr-8 tab:mb-6 des:mr-11 large:w-[35%]">
+              <MovieLogo className='min-[799px]:hidden' src={logoUrl} alt={movieName}/>
+              </div>
            <div className="flex flex-col justify-center items-center px-[14px] tab:justify-start tab:items-stretch text-center ml:text-start ml:px-[20px] tab:px-8 des:px-11">
             <h2 className='text-[14px] ml:text-[16px] mb-2 ml:mb-0 tab:text-[19px] tab:mb-3 des:text-[21px] large:text-[24px]'>{movieName}</h2>
-             <div className=" flex flex-row justify-between items-center w-full max-w-[90%] ml:max-w-[400px] my-2">
+             <div className=" flex flex-row justify-between items-center w-full max-w-[90%] ml:max-w-[400px] mt-1 mb-3">
                
                 <div className={"px-2 rounded-[4px] py-[3px] flex items-center text-center ml:px-3 ml:py-[5px] tab:px-[14px] tab:py-[6px] des:py-[7px]" + " " + ageColor}>
-                <p className="text-[10.5px] ml:text-[12px] text-center des:text-[14px] large:text-[17px]">{ageFaNumber}</p>
+                <p className="text-[10.5px] ml:text-[12px] text-center des:text-[14px] large:text-[17px] text-black">{ageFaNumber}</p>
               </div>
-              <p className={"text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]" + " " + (movieyear)?"":"hidden"}>{movieyear}</p>
-              <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">{` ${movieTime} دقیقه `}</p> 
-              <div className={"h-3 flex-row items-center" + " " + (imdb)?"flex":"hidden"}>
+              <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">{movieyear}</p>
+              <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]"> {movieTime} دقیقه </p> 
+              <div className={"h-4 flex-row justify-center items-center" + " " + (imdb)?"flex":"hidden"}>
                 <img
-                className="ml-1 h-3 ml:h-[14px]"
+                className="ml-1 h-2 mt-[2px] ml:h-[14px]"
                   src="../images/imdb.png"
                   alt="imdb"
                 /> 
@@ -199,11 +179,11 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
              <p className="text-[12px] text-center  ml:leading-5 max-w-[317px] ml:max-w-[452px] tab:text-start tab:max-w-[525px] des:max-w-none des:text-[15px] des:w-[550px] large:text-[17px] large:w-[700px]">
               {description}
             </p>  
-            <p className={"text-[12px] text-center mt-4 ml:mb-2 max-w-[317px] tab:max-w-[525px] tab:text-start leading-loose ml:max-w-[452px]  tab:mb-2 tab:mt-3 des:text-[15px] large:text-[17px]" + " " + (isDubbed)?"":"hidden"}>
+            <p className="text-[12px] text-center mt-4 ml:mb-2 max-w-[317px] tab:max-w-[525px] tab:text-start leading-loose ml:max-w-[452px]  tab:mb-2 tab:mt-3 des:text-[15px] large:text-[17px]" >
               دوبله اختصاصی نماوا
             </p> 
-            <div onClick={handleOnPlay} className=" my-[21px] max-w-[100px] tab:hidden flex items-center justify-center h-[42px] bg-[#414141] opacity-[80%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]">
-                <p className="text-[12px] px-4 cursor-pointer" >پیش‌ نمایش</p>
+            <div onClick={handleOnPlay} className=" my-[21px] cursor-pointer max-w-[100px] tab:hidden flex items-center justify-center h-[42px] bg-[#414141] opacity-[80%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]">
+                <p className="text-[12px] px-4" >پیش‌ نمایش</p>
 
               </div>
               <p className="max-[499px]:hidden tab:hidden mb-2 text-[12px] large:text-[14px]" >
@@ -212,15 +192,15 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
                     return actorName + " , "
                   })}
             </p> 
-            <p className="max-[499px]:hidden tab:hidden mb-2.5 text-[12px] large:text-[14px]" >
-              {`کارگردان: ${director}`}
+            <p className="max-[499px]:hidden tab:hidden mb-4 text-[12px] large:text-[14px]" >
+              کارگردان: {director}
             </p> 
              <div className="flex flex-row items-center mb-4 tab:mb-2 tab:mt-3 ">
-               <div onClick={handleOnPlay} className=" my-[21px] tab:my-0 max-[799px]:hidden flex items-center justify-center ml-4 h-[42px] bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]">
-                <p className="text-[12px] px-5 cursor-pointer" >پیش‌ نمایش</p>
+               <div onClick={handleOnPlay} className=" my-[21px] cursor-pointer tab:my-0 max-[799px]:hidden flex items-center justify-center ml-4 h-[42px] bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]">
+                <p className="text-[12px] px-5" >پیش‌ نمایش</p>
 
               </div>
-              <div className="flex flex-col justify-center items-center text-center ml-11 tab:ml-4">
+              <div className="flex flex-col justify-center items-center text-center ml-12 tab:ml-4">
              
               <WishlistButton movieId={movieId}/>
               <p className="text-[10px] text-center max-w-full text-[#9699A6] mt-1 tab:hidden">لیست من</p>
@@ -228,7 +208,7 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
                
 
              
-              <div className="flex flex-col justify-center items-center text-center ml-11 tab:ml-4">
+              <div className="flex flex-col justify-center items-center text-center ml-9 tab:ml-4">
 
             
                <div
@@ -271,7 +251,7 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
                 })}
             </p>  
             <p className="max-[799px]:hidden text-[10px] des:text-[12px] large:text-[14px]" >
-              {`کارگردان: ${director}`}
+              کارگردان: {director}
             </p> 
           </div>
           </div>

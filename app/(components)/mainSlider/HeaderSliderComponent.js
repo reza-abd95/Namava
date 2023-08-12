@@ -2,100 +2,42 @@
 
 import MovieLogo from "./MovieLogo";
 import Image from "next/image";
-import windowDimensions from "@/app/hooks/useWindowDimensions";
 import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import ageNumberFaHandler from "@/app/utils/ageNumberFaHandler";
+import ageColorHandler from "@/app/utils/ageColorHandler";
+import BackGroundImage from "./BackGroundImage";
 
-export default function HeaderSliderComponent({ data, actors }) {
-  const windowWidth = windowDimensions();
+
+export default function HeaderSliderComponent({ data, actorsData }) {
+  const {id,age,title,imageUrl,imageMobileUrl,logoUrl,year,movieTime,like,imdb,description,actors} =data;
   const router = useRouter();
   function clickhandler() {
-    router.push(`movies/${data.id}`);
+    router.replace(`/movies/${id}`);
   }
   const getActorNames = () => {
-    const ad = data.actors;
+    const ad = actors;
     const actorNames = ad?.map((id) => {
-      const actor = actors.find((a) => a.id === id);
+      const actor = actorsData.find((a) => a.id === id);
       return actor ? actor.name : "";
     });
     return actorNames?.join("، ");
   };
 
-  const [src, setSrc] = useState();
-
-  const [isFirstCaseCompleted, setIsFirstCaseCompleted] = useState(false);
-
-  useEffect(() => {
-    switch (true) {
-      case windowWidth > 499:
-        setSrc(data.imageUrl);
-        setIsFirstCaseCompleted(true);
-        break;
-      default:
-        setSrc("");
-        setIsFirstCaseCompleted(true);
-    }
-  }, [windowWidth]);
-
-  useEffect(() => {
-    if (!isFirstCaseCompleted) return;
-
-    switch (true) {
-      case windowWidth < 500:
-        setSrc(data.imageMobileUrl);
-        break;
-    }
-  }, [isFirstCaseCompleted, windowWidth]);
-
-  const ageColorHandler = (ageNumber) => {
-    switch (ageNumber) {
-      case 12:
-        return "bg-yellow-400";
-      case 15:
-        return "bg-orange-400";
-      case 18:
-        return "bg-red-400";
-      default:
-        return "bg-white";
-    }
-  };
-  const ageNumberFaHandler = (ageNumber) => {
-    switch (ageNumber) {
-      case 12:
-        return "+۱۲";
-      case 15:
-        return "+۱۵";
-      case 18:
-        return "+۱۸";
-      default:
-        return "+۷";
-    }
-  };
-  const ageColor = ageColorHandler(data.age);
-  const ageFaNumber = ageNumberFaHandler(data.age);
+  const ageColor = ageColorHandler(age);
+  const ageFaNumber = ageNumberFaHandler(age);
 
   return (
     <>
+   
       <div className="text-[#fff] bg-[#121212]">
         <div className="w-full h-full relative flex flex-col ">
-          <div className="relative mb-[12px] ml:h- ml:mb-[32%] min-[600px]:mb-[20%] min-[700px]:mb-[11%] tab:mb-[64px] min-[900px]:mb-2 min-[1050px]:mb-0">
-            <Image
-              className="w-full h-full"
-              width={999}
-              height={468}
-              src={src}
-              alt={data.title}
-            />
-            <div className="absolute w-[50%] inset-0 bg-gradient-to-l from-[#121212] to-transparent"></div>
-
-            <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent"></div>
-          </div>
-          <div className="absolute flex flex-col justify-center items-center top-[26%] ml:block ml:top-[60px] tab:top-[85px]">
-            <div className="w-[45%] mb-[44px] ml:w-[28%]  ml:mr-[20px] ml:mb[50px] tab:w-[20%] tab:mr-8 tab:mb-6 des:mr-11 des:w-[22%]">
+        <BackGroundImage imageUrl={imageUrl} imageMobileUrl={imageMobileUrl} title={title}/>
+          <div className="absolute flex flex-col justify-center items-center top-[36%] ms:top-[55%] ml:block ml:top-[80px] tab:top-[90px] large:top-[20%]">
+            <div className="w-[40%] mb-[44px] ml:w-[25%] ml:mr-[20px] ml:mb[50px] tab:mr-8 tab:mb-6 des:mr-11 large:w-[35%]">
               <MovieLogo
                 onClick={clickhandler}
-                src={data.logoUrl}
-                alt={data.title}
+                src={logoUrl}
+                alt={title}
               />
             </div>
             <div className="flex flex-col justify-center items-center px-[14px]  text-center ml:block ml:text-start ml:px-[20px] tab:px-8 des:px-11">
@@ -103,9 +45,9 @@ export default function HeaderSliderComponent({ data, actors }) {
                 onClick={clickhandler}
                 className="mb-6 ml:mb-4 tab:text-[19px] tab:mb-3 des:text-[21px] large:text-[24px] cursor-pointer  my-2"
               >
-                {data.title}
+                {title}
               </h2>
-              <div className="max-[1279px]:hidden flex flex-row justify-between items-center w-[410px]">
+              <div className="max-[1279px]:hidden flex flex-row justify-between items-center mb-3 w-[410px]">
                 <div
                   className={
                     "px-2 rounded-[4px] py-[3px] flex items-center text-center ml:px-3 ml:py-[5px] tab:px-[14px] tab:py-[6px] des:py-[7px]" +
@@ -118,10 +60,10 @@ export default function HeaderSliderComponent({ data, actors }) {
                   </p>
                 </div>
                 <p className="text-[15px] des:text-[14px] large:text-[17px]">
-                  {data.year}
+                  {year}
                 </p>
                 <p className="text-[10.5px] ml:text-[12px] des:text-[14px] large:text-[17px]">
-                  {data.movieTime} دقیقه
+                  {movieTime} دقیقه
                 </p>
                 <div className=" h-4 flex flex-row justify-center items-center">
                   <img
@@ -130,7 +72,7 @@ export default function HeaderSliderComponent({ data, actors }) {
                     alt="imdb"
                   />
                   <p className="text-[10.5px] ml:text-[12px] des:text-[14px] font-bold large:text-[17px]">
-                    {data.imdb}
+                    {imdb}
                   </p>
                 </div>
 
@@ -143,7 +85,7 @@ export default function HeaderSliderComponent({ data, actors }) {
                     alt="like"
                   />
                   <p className="text-[15px] des:text-[14px] large:text-[17px]">
-                    {data.like}٪
+                    {like}٪
                   </p>
                 </div>
                 <div className=" w-7 h-6 ml-2 p-0.5  flex flex-row items-center">
@@ -164,29 +106,29 @@ export default function HeaderSliderComponent({ data, actors }) {
                 onClick={clickhandler}
                 className="text-[13px] w-[500px] max-[799px]:hidden  des:text-[15px] des:w-[550px] cursor-pointer large:text-[17px] large:w-[700px]"
               >
-                {data.description}
+                {description}
               </p>
 
               <p
                 onClick={clickhandler}
-                className="text-[13px] leading-loose cursor-pointer ml:mb-[48px] tab:mb-9 tab:mt-3 des:text-[15px] large:text-[17px]"
+                className="text-[13px] leading-loose cursor-pointer ml:mb-[48px] tab:mb-9 tab:mt-3 des:text-[15px] des:mt-5 large:text-[17px]"
               >
-                به زودی با دوبله اختصاصی نماوا به زودی با دوبله اختصاصی نماوا
+               به زودی با دوبله اختصاصی نماوا
               </p>
 
               <div className="  flex flex-row items-center mt-5 mb-4 max-[799px]:hidden ">
-                <div className=" ml-2 p-0.5 cursor-pointer  hover:text-blue-500">
+                <div className=" ml-2 p-0.5 cursor-pointer">
                   <Image
                     width={22}
                     height={22}
-                    src="./icons/info-circle.svg"
+                    src="../icons/info-circle.svg"
                     alt="more"
                   />
                 </div>
 
                 <p
                   onClick={clickhandler}
-                  className="text-[13px] des:text-[15px]"
+                  className="text-[13px] des:text-[15px] cursor-pointer  hover:text-blue-500"
                 >
                   توضیحات بیشتر
                 </p>

@@ -36,7 +36,7 @@ export default function MainSlider({ categoryId, movieData, subject, actors }) {
     if (subject == "categoryPath") {
       setMovieItem(movieData.filter((item) => item.categoryId == categoryId));
     } else if (subject == "homePath") {
-      setMovieItem(movieData.filter((item) => item.id < 11));
+      setMovieItem(movieData.filter((item) => item.id < 12));
     }
   }, []);
 
@@ -59,7 +59,7 @@ export default function MainSlider({ categoryId, movieData, subject, actors }) {
         spaceBetween={30}
         effect={"fade"}
         modules={[Autoplay, EffectFade, Pagination, Navigation]}
-        className="mySwiper w-full h-auto flex items-center justify-center relative"
+        className="mySwiper w-full h-auto flex items-center justify-center relative mb-5 tab:mb-8 min-w-[1050px]:mb-0"
       >
         {movieItem.map((item) => {
           return (
@@ -67,7 +67,7 @@ export default function MainSlider({ categoryId, movieData, subject, actors }) {
               <HeaderSliderComponent
                 key={item.id}
                 data={item}
-                actors={actors}
+                actorsData={actors}
                 className="object-cover w-full h-full block"
               />
             </SwiperSlide>
