@@ -74,8 +74,7 @@ export default async function MoiveId({params}) {
         movieId = {movieId}
       />
       <Link className=' text-white text-sm' href={"/bookmarks/liked"}> Bookmarks</Link>
-      {/* <div className="h-[400px]"></div> */}
-      {/* <MoviePicturs images={movieData.otherImages} movieName = {movieData.titleEn}/> */}
+      <MoviePicturs images={movieData.otherImages} movieName = {movieData.titleEn}/>
       <AboutMovie 
         name= {movieData.title}
         nameEn = {movieData.titleEn}
