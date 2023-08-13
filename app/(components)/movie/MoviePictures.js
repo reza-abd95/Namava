@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 
-export default function MoviePicturs({images, movieName}) {
+export default function MoviePictures({images, movieName}) {
     const [isVisible,setIsVisible] = useState({visible: false, imageId: null})
     const handleOnClick = (e) => {
 
