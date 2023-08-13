@@ -10,7 +10,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 
 // import required modules
-import { EffectFade, Autoplay, Pagination, Navigation } from "swiper/modules";
+import { EffectFade, Autoplay, Pagination, Navigation} from "swiper/modules";
 import HeaderSliderComponent from "./HeaderSliderComponent";
 import windowDimensions from "@/app/hooks/useWindowDimensions";
 
@@ -49,12 +49,13 @@ export default function MainSlider({ categoryId, movieData, subject, actors }) {
         }}
         ref={swiperRef}
         pagination={windowWidth > 799 ? false : true}
+        speed={2000}
         autoplay={{
-          delay: 7000,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         loop={true}
-        autoHeight = {true}
+        autoHeight={true}
         navigation={false}
         spaceBetween={30}
         effect={"fade"}
@@ -76,7 +77,7 @@ export default function MainSlider({ categoryId, movieData, subject, actors }) {
 
         <div
           id="button"
-          className=" min-[800px]:flex max-[799px]:hidden bottom-[6px] left-8 absolute z-20 min-[1050px]:bottom-[14%] des:left-10 large:left-14 large:bottom-[20%] "
+          className=" hidden tab:flex bottom-[6px] left-8 absolute z-20 min-[1050px]:bottom-[14%] des:left-10 large:left-14 large:bottom-[20%] "
         >
           <button
             className="opacity-70 w-10 h-10 large:w-[60px] large:h-[60px] rounded-full border-none bg-[#414141] "
