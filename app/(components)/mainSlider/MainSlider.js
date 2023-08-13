@@ -43,7 +43,7 @@ export default function MainSlider({ categoryId, movieData, subject, actors }) {
     if (subject == "categoryPath") {
       setMovieItem(movieData.filter((item) => item.categoryId == categoryId));
     } else if (subject == "homePath") {
-      setMovieItem(movieData.filter((item) => item.id < 12));
+      setMovieItem(movieData.filter((item) => item.id >= 27 && item.id <= 33));
     }
   }, []);
 
