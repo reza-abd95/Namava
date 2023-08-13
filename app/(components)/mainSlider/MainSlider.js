@@ -54,7 +54,7 @@ export default function MainSlider({ categoryId, movieData, subject, actors }) {
           disableOnInteraction: false,
         }}
         loop={true}
-        autoHeight = {true}
+        autoHeight={true}
         navigation={false}
         spaceBetween={30}
         effect={"fade"}

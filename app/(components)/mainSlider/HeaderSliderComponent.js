@@ -28,12 +28,12 @@ export default function HeaderSliderComponent({ data, actorsData }) {
     router.replace(`/movies/${id}`);
   }
   const getActorNames = () => {
-    const ad = actors;
+    const ad = actors.slice(0,5);
     const actorNames = ad?.map((id) => {
       const actor = actorsData.find((a) => a.id === id);
-      return actor ? actor.name : "";
+     return actor ? actor.name : "";
     });
-    return actorNames?.join("، ");
+     return actorNames?.join("، ");
   };
 
   const ageColor = ageColorHandler(age);
@@ -53,12 +53,10 @@ export default function HeaderSliderComponent({ data, actorsData }) {
               <MovieLogo onClick={clickhandler} src={logoUrl} alt={title} />
             </div>
             <div className="flex flex-col justify-center items-center px-[14px]  text-center ml:block ml:text-start ml:px-[20px] tab:px-8 des:px-11">
-             <Link href={`/movies/${id}`}>
-              <h2
-                className="mb-6 ml:mb-4 tab:text-[19px] tab:mb-3 des:text-[21px] large:text-[24px] cursor-pointer  my-2"
-              >
-                {title}
-              </h2>
+              <Link href={`/movies/${id}`}>
+                <h2 className="mb-6 ml:mb-4 tab:text-[19px] tab:mb-3 des:text-[21px] large:text-[24px] cursor-pointer  my-2">
+                  {title}
+                </h2>
               </Link>
               <div className="hidden des:flex flex-row justify-between items-center mb-3 w-[410px]">
                 <div
@@ -111,26 +109,21 @@ export default function HeaderSliderComponent({ data, actorsData }) {
                 </div>
               </div>
               <Link href={`/movies/${id}`}>
-              <p
-                className="text-[12px] leading-[25px] w-[500px] hidden tab:block des:text-[14px] des:w-[550px] cursor-pointer large:text-[17px] large:w-[700px]"
-              >
-                {description}
-              </p>
+                <p className="text-[12px] leading-[25px] w-[500px] hidden tab:block des:text-[14px] des:w-[550px] cursor-pointer large:text-[17px] large:w-[700px]">
+                  {description}
+                </p>
               </Link>
               <Link href={`/movies/${id}`}>
-              <p
-                className="text-[12px] leading-loose cursor-pointer ml:mb-[48px] tab:mb-9 tab:mt-3 des:text-[14px] des:mt-5 large:text-[17px]"
-              >
-                به زودی با دوبله اختصاصی نماوا
-              </p>
-             </Link>
-             <Link href={`/movies/${id}`}>
-              <div
-                className=" w-[138px] tab:flex flex-row items-center mt-5 mb-4 hidden text-[12px] cursor-pointer  hover:text-blue-500 "
-              >
-                <p className="mt-2 ml-2 font-thin text-[35px]">🛈</p>
-                توضیحات بیشتر
-              </div></Link>
+                <p className="text-[12px] leading-loose cursor-pointer ml:mb-[48px] tab:mb-9 tab:mt-3 des:text-[14px] des:mt-5 large:text-[17px]">
+                  به زودی با دوبله اختصاصی نماوا
+                </p>
+              </Link>
+              <Link href={`/movies/${id}`}>
+                <div className=" w-[138px] tab:flex flex-row items-center mt-5 mb-4 hidden text-[12px] cursor-pointer  hover:text-blue-500 ">
+                  <p className="mt-2 ml-2 font-thin text-[35px]">🛈</p>
+                  توضیحات بیشتر
+                </div>
+              </Link>
               <p className="hidden ml:block text-[12px] large:text-[14px]">
                 ستارگان: {getActorNames()}
               </p>
