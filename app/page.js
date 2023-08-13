@@ -60,7 +60,7 @@ export default async function Home() {
     // select best director
 
     const bsetDirector = agents.filter((agent)=>{
-      return agent.job == "کارگردان";
+      return agent.job === "کارگردان" && agent.id !== 15;
     })
     //select new movies
     const newMovieId = movie.length - 10;
