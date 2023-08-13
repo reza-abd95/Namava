@@ -7,6 +7,7 @@ import ageNumberFaHandler from "@/app/utils/ageNumberFaHandler";
 import ageColorHandler from "@/app/utils/ageColorHandler";
 import BackGroundImage from "./BackGroundImage";
 import Link from "next/link";
+import { useCallback } from "react";
 
 export default function HeaderSliderComponent({ data, actorsData }) {
   const {
@@ -24,9 +25,9 @@ export default function HeaderSliderComponent({ data, actorsData }) {
     actors,
   } = data;
   const router = useRouter();
-  function clickHandler() {
+  const clickHandler = useCallback(() => {
     router.replace(`/movies/${id}`);
-  }
+  })
   const getActorNames = () => {
     const ad = actors.slice(0,5);
     const actorNames = ad?.map((id) => {
@@ -49,7 +50,7 @@ export default function HeaderSliderComponent({ data, actorsData }) {
             title={title}
           />
           <div className="absolute flex flex-col justify-center items-center top-[36%] ms:top-[55%] ml:block ml:top-[80px] tab:top-[90px] large:top-[20%]">
-            <div className="w-[40%] mb-[44px] ml:w-[25%] ml:mr-[20px] ml:mb[50px] tab:mr-8 tab:mb-6 des:mr-11 large:w-[35%]">
+            <div className="w-[40%] ml:w-[25%] mb-[10px] ml:mr-[20px] ml:mb[50px] tab:mr-8 tab:mb-6 des:mr-11 des:mb-[44px] large:w-[35%]">
               <MovieLogo onClick={clickHandler} src={logoUrl} alt={title} />
             </div>
             <div className="flex flex-col justify-center items-center px-[14px]  text-center ml:block ml:text-start ml:px-[20px] tab:px-8 des:px-11">
@@ -109,17 +110,17 @@ export default function HeaderSliderComponent({ data, actorsData }) {
                 </div>
               </div>
               <Link href={`/movies/${id}`}>
-                <p className="text-[12px] leading-[25px] w-[500px] hidden tab:block des:text-[14px] des:w-[550px] cursor-pointer large:text-[17px] large:w-[700px]">
+                <p className="text-[12px] leading-[25px] w-[530px] hidden tab:block des:text-[14px] des:w-[550px] cursor-pointer large:text-[17px] large:w-[700px]">
                   {description}
                 </p>
               </Link>
               <Link href={`/movies/${id}`}>
-                <p className="text-[12px] leading-loose cursor-pointer ml:mb-[48px] tab:mb-9 tab:mt-3 des:text-[14px] des:mt-5 large:text-[17px]">
+                <p className="text-[12px] leading-loose cursor-pointer ml:mb-[48px] tab:mb-5 tab:mt-3 des:text-[14px] des:mt-5 large:text-[17px]">
                   به زودی با دوبله اختصاصی نماوا
                 </p>
               </Link>
               <Link href={`/movies/${id}`}>
-                <div className=" w-[138px] tab:flex flex-row items-center mt-5 mb-4 hidden text-[12px] cursor-pointer  hover:text-blue-500 ">
+                <div className=" w-[138px] tab:flex flex-row items-center mt-2 mb-2 hidden text-[12px] cursor-pointer  hover:text-blue-500 ">
                   <p className="mt-2 ml-2 font-thin text-[35px]">🛈</p>
                   توضیحات بیشتر
                 </div>
