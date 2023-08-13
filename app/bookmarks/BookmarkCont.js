@@ -33,8 +33,8 @@ export default function BookmarkCont({movies}) {
         <div className={` text-white w-full px-6 ml:px-7 des:px-10 ${displayList} flex-wrap`}>
 
             {list.map(movie => 
-                    <div className=" w-1/3 ml:w-1/4 tab:w-1/5  des:w-[14.2%]  px-1 py-4 ml:px-2 des:3">
-                        <MovieForSlider key={movie.id} data={movie}/>
+                    <div key={movie.id} className=" w-1/3 ml:w-1/4 tab:w-1/5  des:w-[14.2%]  px-1 py-4 ml:px-2 des:3">
+                        <MovieForSlider  data={movie}/>
                     </div>
             )}
         
