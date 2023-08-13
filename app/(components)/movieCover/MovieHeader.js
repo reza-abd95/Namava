@@ -133,8 +133,8 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
             <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent"></div>
           </div>
           <div className="absolute flex flex-col justify-center items-center top-[36%] ms:top-[55%] ml:block ml:top-[80px] tab:top-[90px] large:top-[20%]">
-            <div className="max-[799px]:hidden w-[40%] mb-[44px] ml:w-[25%] ml:mr-[20px] ml:mb[50px] tab:mr-8 tab:mb-6 des:mr-11 large:w-[35%]">
-              <MovieLogo className='min-[799px]:hidden' src={logoUrl} alt={movieName}/>
+            <div className="hidden tab:flex w-[40%] mb-[44px] ml:w-[25%] ml:mr-[20px] ml:mb[50px] tab:mr-8 tab:mb-6 des:mr-11 large:w-[35%]">
+              <MovieLogo className='hidden tab:flex' src={logoUrl} alt={movieName}/>
               </div>
            <div className="flex flex-col justify-center items-center px-[14px] tab:justify-start tab:items-stretch text-center ml:text-start ml:px-[20px] tab:px-8 des:px-11">
             <h2 className='text-[14px] ml:text-[16px] mb-2 ml:mb-0 tab:text-[19px] tab:mb-3 des:text-[21px] large:text-[24px]'>{movieName}</h2>
@@ -186,17 +186,17 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
                 <p className="text-[12px] px-4" >پیش‌ نمایش</p>
 
               </div>
-              <p className="max-[499px]:hidden tab:hidden mb-2 text-[12px] large:text-[14px]" >
+              <p className="hidden ml:flex tab:hidden mb-2 text-[12px] large:text-[14px]" >
                 ستارگان:
                   {actorsName.map((actorName)=>{
                     return actorName + " , "
                   })}
             </p> 
-            <p className="max-[499px]:hidden tab:hidden mb-4 text-[12px] large:text-[14px]" >
+            <p className="hidden ml:flex  tab:hidden mb-4 text-[12px] large:text-[14px]" >
               کارگردان: {director}
             </p> 
              <div className="flex flex-row items-center mb-4 tab:mb-2 tab:mt-3 ">
-               <div onClick={handleOnPlay} className=" my-[21px] cursor-pointer tab:my-0 max-[799px]:hidden flex items-center justify-center ml-4 h-[42px] bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]">
+               <div onClick={handleOnPlay} className=" my-[21px] cursor-pointer tab:my-0 hidden tab-flex items-center justify-center ml-4 h-[42px] bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]">
                 <p className="text-[12px] px-5" >پیش‌ نمایش</p>
 
               </div>
@@ -216,7 +216,7 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
                 className="text-[20px] relative tooltip flex  items-center justify-center cursor-pointer bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full"
                 >
               
-        <div className="max-[799px]-hidden  flex items-center justify-center absolute top-[53px] right-[-36px] tooltip_text text-[15px] invisible opacity-0 rounded-[4px] h-[48px] w-[110px] left-1 bg-white text-black transition-opacity duration-1000">
+        <div className="hidden  tab:flex items-center justify-center absolute top-[53px] right-[-36px] tooltip_text text-[15px] invisible opacity-0 rounded-[4px] h-[48px] w-[110px] left-1 bg-white text-black transition-opacity duration-1000">
             دوست داشتم
         </div>
     
@@ -234,7 +234,7 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
                 className="text-[20px] relative tooltip flex  items-center justify-center cursor-pointer bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] w-[42px] h-[42px] rounded-full"
                 >
               
-        <div className="max-[799px]-hidden flex items-center justify-center absolute top-[53px] right-[-36px] tooltip_text text-[15px] invisible opacity-0 rounded-[4px] h-[48px] w-[110px] left-1 bg-white text-black transition-opacity duration-1000">
+        <div className="hidden  tab:flex items-center justify-center absolute top-[53px] right-[-36px] tooltip_text text-[15px] invisible opacity-0 rounded-[4px] h-[48px] w-[110px] left-1 bg-white text-black transition-opacity duration-1000">
             دوست نداشتم
         </div>
                 <DisLike  showFirstSvg3={showFirstSvg3}/>
@@ -244,13 +244,13 @@ export default function MovieHeader({movieId , image ,imageMobile, movieTime, ag
                            
               
             </div> 
-             <p className="max-[799px]:hidden text-[10px] des:text-[12px] leading-8 large:text-[14px]" >
+             <p className="hidden tab:flex text-[10px] des:text-[12px] leading-8 large:text-[14px]" >
               ستارگان:
                 {actorsName.map((actorName)=>{
                   return actorName + " , "
                 })}
             </p>  
-            <p className="max-[799px]:hidden text-[10px] des:text-[12px] large:text-[14px]" >
+            <p className="hidden tab:flex text-[10px] des:text-[12px] large:text-[14px]" >
               کارگردان: {director}
             </p> 
           </div>
