@@ -212,7 +212,7 @@ h1, h2, h3, h4, span, a {
 }
 .sticky-before {
   position: fixed;
-  top: -80px;
+  top: -120px;
   background-color: rgba(18,18,18,1);
 }
 .sticky-header {
