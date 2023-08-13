@@ -5,8 +5,8 @@ import "../globals.css";
 import Logo from "@/app/(components)/Logo";
 import HeaderNav from "@/app/(components)/HeaderNav";
 import SearchBox from "@/app/(components)/SearchBox";
-import MenuSteacky from "./MenuSteacky";
-import ProfileBoxSteaky from "./ProfileBoxSteaky";
+import MenuSticky from "./MenuSticky";
+import ProfileBoxSticky from "./ProfileBoxSticky";
 import {useEffect, useRef, useState} from "react";
 
 
@@ -57,13 +57,13 @@ export default function HeaderSticky() {
             <div ref={header} className="header-fixed" >
                 <div className=" text-[12px]  flex justify-between items-center flex-row w-full h-[70px] px-[20px] ml:h-[80px] ml:px-[24px]   tab:h-[60px] tab:px-[32px]  des:h-[80px] des:px-[43px] large:h-[100px] large:px-[57px]">
                     <div className="flex items-center justify-center flex-row">
-                        <MenuSteacky />
+                        <MenuSticky />
                         <Logo/>
                         <HeaderNav/>
                     </div>
                     <div className="flex">
                         <SearchBox/>
-                        <ProfileBoxSteaky />
+                        <ProfileBoxSticky />
                     </div>
                 </div>
             </div>

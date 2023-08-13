@@ -3,7 +3,6 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import HeaderSticky from "@/app/(components)/HeaderSticky";
-import Header from "@/app/(components)/Header";
 import Footer from "@/app/(components)/Footer";
 import FooterNavbar from "./(components)/FooterNavbar";
 import { Provider } from "react-redux";
@@ -26,7 +25,6 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <nav>
 
-          {/*<Header/>*/}
           <HeaderSticky/>
         </nav>
         <main>
