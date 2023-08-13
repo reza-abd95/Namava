@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect ,Suspense} from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -16,7 +16,13 @@ import windowDimensions from "@/app/hooks/useWindowDimensions";
 
 export default function MainSlider({ categoryId, movieData, subject, actors }) {
   const swiperRef = useRef(null);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    if (movieData.length > 0) {
+      setLoading(false);
+    }
+  }, [movieData]);
   const goPrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slidePrev();
@@ -42,6 +48,11 @@ export default function MainSlider({ categoryId, movieData, subject, actors }) {
 
   return (
     <>
+     {loading ? (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Skeleton />
+          </Suspense>
+        ):( 
       <Swiper
         style={{
           "--swiper-pagination-color": "#fff",
@@ -101,7 +112,16 @@ export default function MainSlider({ categoryId, movieData, subject, actors }) {
             />
           </button>
         </div>
-      </Swiper>
+      </Swiper>)}
     </>
+  );
+}
+function Skeleton() {
+  return (
+    <div className="block w-full rounded bg-red-600">
+      <div className="animate-pulse">
+        <div className="h-48 w-full rounded bg-red-600"></div>
+      </div>
+    </div>
   );
 }
