@@ -1,9 +1,5 @@
-import TwitterIcon from '../../../public/icons/Twitter-icon.svg'
-import TelegramIcon from '../../../public/icons/Telegram-icon.svg'
-import InstagramIcon from '../../../public/icons/Instagram-icon.svg'
-import Link from 'next/link'
-import Image from 'next/image'
 
+import Link from 'next/link'
 export default function ContactUs() {
 
     return (
