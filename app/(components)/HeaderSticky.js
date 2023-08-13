@@ -14,18 +14,16 @@ import { document } from "postcss";
 
 export default function HeaderSticky() {
     const header = useRef(null)
-    const [state,setState] = useState('fixed')
     const [scrollUp,setScrollUp] = useState(null)
-    const INSIDE = (window.scrollY < 80)? true: false
-    const [isInside,setIsInside] = useState(INSIDE)
-    const prevScrollRef = useRef(window.scrollY)
+    const [isInside,setIsInside] = useState(null)
+    const prevScrollRef = useRef(null)
     const handleScroll = () => {
         const currentScroll = window.scrollY
         const isScrolled = currentScroll > prevScrollRef.current
         prevScrollRef.current = currentScroll
         if ( currentScroll === 0 ) {
           setIsInside(true)
-        }
+        } 
         else if (isScrolled) {
             if (currentScroll > 80) {
                 setScrollUp(false)
@@ -38,8 +36,10 @@ export default function HeaderSticky() {
             setScrollUp(true)
         }
     }
-    console.log('out', scrollUp, isInside)
       useEffect(() => {
+        prevScrollRef.current = window.scrollY
+        const INSIDE = (window.scrollY < 80)? true: false
+        setIsInside(INSIDE)
         window.addEventListener('scroll', handleScroll)
       },[])
     if (header.current) {
@@ -48,16 +48,18 @@ export default function HeaderSticky() {
       if (isInside) {
         header.current.classList.remove('sticky-header')
         header.current.classList.remove('sticky-before')
+      } else {
+
+        if (!scrollUp) {
+          header.current.classList.add('sticky-before')
+          header.current.classList.remove('sticky-header')
+        }
+        else {
+          header.current.classList.add('sticky-header')
+        }
       }
-      else if ((!isInside && !scrollUp)) {
-        header.current.classList.add('sticky-before')
-        header.current.classList.remove('sticky-header')
-      }
-      else if (!isInside && scrollUp) {
-        header.current.classList.add('sticky-header')
-      }
+      
     }
-      console.log('hhhhh')
     return (
         <>
             <div ref={header} className='header-fixed' >
