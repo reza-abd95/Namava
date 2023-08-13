@@ -64,7 +64,7 @@ export default async function Movies() {
             <MovieSlider data={newMovies}/>
             <TitleOfCategorySlider title={"دوبله شده"} link={"/categories"}/>
             <MovieSlider data={dubbedMovies}/>
-            <TitleOfCategorySlider title={"اکشن"} link={"/categires/12"}/>
+            <TitleOfCategorySlider title={"اکشن"} link={"/categories/12"}/>
             <MovieSlider data={actionMovies}/>
             <TitleOfCategorySlider title={"کمدی"} link={"/categories/13"}/>
             <MovieSlider data={comedyMovies}/>
