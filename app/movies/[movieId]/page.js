@@ -101,6 +101,7 @@ export default async function MoiveId({params}) {
         age = {movieData.age}
         logoUrl = {movieData.logoUrl}
         actorsName ={actorsNewName}
+        movieId={movieId}
       />
 
       <MoviePicturs images={movieData.otherImages} movieName = {movieData.titleEn}/>

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const likeSlice = createSlice({
     name:"like",
-    initialState:[ 1 , 2 , 3 , 6 , 7 , 8],
+    initialState:[],
     reducers:{
         togglelike : (state , action)=>{
             const index = state.findIndex(item => item == action.payload)
