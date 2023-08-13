@@ -10,7 +10,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 
 // import required modules
-import { EffectFade, Autoplay, Pagination, Navigation } from "swiper/modules";
+import { EffectFade, Autoplay, Pagination, Navigation} from "swiper/modules";
 import HeaderSliderComponent from "./HeaderSliderComponent";
 import windowDimensions from "@/app/hooks/useWindowDimensions";
 
@@ -49,8 +49,9 @@ export default function MainSlider({ categoryId, movieData, subject, actors }) {
         }}
         ref={swiperRef}
         pagination={windowWidth > 799 ? false : true}
+        speed={2000}
         autoplay={{
-          delay: 7000,
+          delay: 5000,
           disableOnInteraction: false,
         }}
         loop={true}
