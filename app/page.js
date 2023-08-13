@@ -74,10 +74,10 @@ export default async function Home() {
           
             <MainSlider movieData={movie} actors={actor} subject={'homePath'}/>
             <CategorySlider data={slider}/> 
-            <TitleOfCategorySlider title={"فیلم ها"} link={"/movies"}/>
-            <MovieSlider data={movie}/>
+
             <TitleOfCategorySlider title={"۲۰۲۳"} link={"/movies"}/>
             <MovieSlider data={newYearMovies}/>
+
             <TitleOfCategorySlider title={"برترین های IMDB"} link={"/movies"}/>
             <MovieSlider data={bestMovies}/>
 
@@ -99,8 +99,7 @@ export default async function Home() {
             <MovieSlider data={horrorMovies}/>
             <TitleOfCategorySlider title={"درام"} link={"/categories/16"}/>
             <MovieSlider data={dramaMovies}/>
-            <TitleOfCategorySlider title={"علمی تخیلی"} link={"/categories/17"}/>
-            <MovieSlider data={scifiMovies}/>
+
             
         </div>
   )

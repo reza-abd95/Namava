@@ -65,7 +65,8 @@ export default function CategorySlider({data}) {
                       src={windowWidth < 500 ? item.imageMobileUrl : item.imageUrl}
                       width={1000}
                       height={400}
-                      alt={item.title}/>
+                      alt={item.title}
+                      />
             </SwiperSlide>
 
           )
