@@ -79,8 +79,8 @@ export default function MenuSticky () {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full px-[24px]">
-                        <ul>
+                    <div className="w-full h-full px-[20px]">
+                        <ul >
                             <li className={(pathName == "/") ? "mobile__menu-list fill-[#6eb8ff] text-[#6eb8ff]" : "mobile__menu-list text-white fill-white" } onClick={()=>{route.push("/");closeMenuHandler()}}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30">
                                     <path d="M14.73 16.013c1.226 0 2.223.997 2.223 2.223v4.922h-4.446v-4.922c0-1.226.997-2.223 2.223-2.223zm11.575-1.156l-8.641-8.641A4.12 4.12 0 0 0 14.73 5a4.12 4.12 0 0 0-2.934 1.215l-8.642 8.641c-.1.1-.155.232-.155.373s.055.274.155.373a.53.53 0 0 0 .747 0l1.979-1.979v8.153a2.44 2.44 0 0 0 2.436 2.436h12.826a2.44 2.44 0 0 0 2.436-2.436v-8.153l1.979 1.979a.54.54 0 0 0 .747 0c.1-.1.155-.232.155-.373s-.055-.274-.155-.373z">    
@@ -88,7 +88,7 @@ export default function MenuSticky () {
                                 </svg>
                                 <p>خانه</p>
                             </li>
-                            <li className={(pathName == "/movies") ? "mobile__menu-list fill-[#6eb8ff] text-[#6eb8ff]" : "mobile__menu-list text-white fill-white" } onMouseOver={ChangeFill} onMouseLeave={ChangeFillOff} onClick={()=>{route.push("/movies");closeMenuHandler()}}>
+                            <li className={(pathName == "/movies") ? " mobile__menu-list fill-[#6eb8ff] text-[#6eb8ff]" : "mobile__menu-list text-white fill-white" } onMouseOver={ChangeFill} onMouseLeave={ChangeFillOff} onClick={()=>{route.push("/movies");closeMenuHandler()}}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none">
                                     <g clipPath="url(#A)">
                                         <path className={movieFill} d="M16.032 11.86a3.43 3.43 0 0 0 0-6.86 3.43 3.43 0 0 0 0 6.86zm-7.402 0a3.43 3.43 0 0 0 0-6.86 3.43 3.43 0 0 0 0 6.86z"></path>
