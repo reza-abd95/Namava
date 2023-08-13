@@ -1,14 +1,13 @@
 import React from 'react'
 import Comments from "@/app/(components)/Comments";
 import AboutMovie from "@/app/(components)/movie/AboutMovie";
-import MoviePicturs from "@/app/(components)/movie/MoviePictures";
+import MoviePictures from "@/app/(components)/movie/MoviePictures";
 import MovieHeader from '@/app/(components)/movieCover/MovieHeader';
 
 import {getMoviesData , getCategoriesData , getActorData , getAgentsData} from "@/app/utils/getdata";
 import MovieSlider from '@/app/(components)/MovieSlider';
 import FilmCrewSlider from '@/app/(components)/FilmCrewSlider';
 import MovieCrewSlider from '@/app/(components)/MovieCrewSlider';
-import Link from 'next/link';
 
 export async function generateMetadata({params}) {
   const moviesRowData = await getMoviesData();
@@ -22,7 +21,7 @@ export async function generateMetadata({params}) {
     description : movie.description
   }
 }
-export default async function MoiveId({params}) {
+export default async function MovieId({params}) {
   const actorsRowData = await getActorData();
   const categoriesRowData = await getCategoriesData();
   const moviesRowData = await getMoviesData();
@@ -39,18 +38,18 @@ export default async function MoiveId({params}) {
   const actorsId = movieData.actors;
   const agentsId = movieData.agents;
   const categoryId = movieData.categoryId;
-  const categorymovie = moviesData.filter((movie)=>{
+  const categoryMovie = moviesData.filter((movie)=>{
     return movie.categoryId == categoryId
   })
   // create Categories Name data in Array
 
-  let otherCategorieName = []
+  let otherCategoryName = []
   for (let index = 0; index < otherCategoriesId.length; index++) {
     const catId = otherCategoriesId[index];
     for (let index2 = 0; index2 < categoriesData.length; index2++) {
       const catData = categoriesData[index2];
       if (catId == catData.id) {
-        otherCategorieName.push(catData.name)
+        otherCategoryName.push(catData.name)
       }
     }
   }
@@ -104,16 +103,16 @@ export default async function MoiveId({params}) {
         movieId={movieId}
       />
 
-      <MoviePicturs images={movieData.otherImages} movieName = {movieData.titleEn}/>
+      <MoviePictures images={movieData.otherImages} movieName = {movieData.titleEn}/>
       <AboutMovie 
         name= {movieData.title}
         nameEn = {movieData.titleEn}
         story = {movieData.story}
-        otherCategorieName = {otherCategorieName}
+        otherCategorieName = {otherCategoryName}
         langDubbing = {movieData.langDubbing}
         langSubtitle = {movieData.langSubtitle}
       />
-      <MovieSlider title={`بر اساس فیلم ${movieData.title}`} data= {categorymovie} link={`/categories/${movieData.categoryId}`}/>
+      <MovieSlider title={`بر اساس فیلم ${movieData.title}`} data= {categoryMovie} link={`/categories/${movieData.categoryId}`}/>
       <FilmCrewSlider title={`بازیگران فیلم ${movieData.title}`} data={actors}/>
       <MovieCrewSlider title={`عوامل فیلم ${movieData.title}`} data={agents}/>
       <Comments movieId = {movieId}/>
