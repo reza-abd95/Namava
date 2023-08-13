@@ -5,7 +5,7 @@ import { useState } from "react";
 
 
 
-export default function MoviePicturs({images, movieName}) {
+export default function MoviePictures({images, movieName}) {
     const [isVisible,setIsVisible] = useState({visible: false, imageId: null})
     const handleOnClick = (e) => {
 
@@ -21,6 +21,7 @@ export default function MoviePicturs({images, movieName}) {
                 {
                 images.map((image,index) => {
                     return <div key={index+1} className="MoviePictures__pictureHolder"> <Image width={200} height={150} onClick={handleOnClick} alt={`${movieName}-${index}`} id={index+1} className="MoviePictures__pictureStyle" src={"https://static.namava.ir/Content/Upload/Images/" + image}/> </div>
+
                 })
                 }
             </div>

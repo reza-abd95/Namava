@@ -6,9 +6,11 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ArrowDown from '../../public/icons/ArrowDown-footer.svg'
 import Image from "next/image";
+import windowDimensions from '../hooks/useWindowDimensions'
 
-export default function FooterNavbar({isFixed}) {
-    const [width,setWidth] = useState(window.innerWidth)
+export default function FooterNavbar() {
+    const width = windowDimensions()
+
     const links = [
         {title: 'اپلیکیشن‌ها',show: false},
         {title: 'فرصت‌های شغلی',show: false},
@@ -51,9 +53,7 @@ export default function FooterNavbar({isFixed}) {
         links[12]['show'] = true
         
     }
-    useEffect(() => {
-        window.addEventListener('resize', () => setWidth(window.innerWidth))
-    },[width])
+
     
     const visibleLinks = []
     const hiddenLinks = []
@@ -64,38 +64,39 @@ export default function FooterNavbar({isFixed}) {
             hiddenLinks.push(item.title)
         }
     }
-    const closed = useRef()
-    const elementClosed = useRef()
+
     const [open, setOpen] = useState(false);
     
     return (
-        <div ref={closed} className={`FooterNavbar`}>
-            <div className="FooterNavbar__menu">
-                {
-                    visibleLinks.map((item,index) => {
-                        return <Link key={index+1} href='#' className={`NavbarMenu__items`}>{item}</Link>
-                    })
-                }
-                <DropdownMenu
-                 open={open}
-                 setOpen={setOpen}
-                 width={width}
-                 />
-            </div>
-            
+        <div className={`FooterNavbar`}>
+
+            <ul className="FooterNavbar__menu">
+                    {
+                        visibleLinks.map((item,index) => {
+                            return <Link key={index+1} href='#' className={`NavbarMenu__items`}>{item}</Link>
+                        })
+                    }
+                    <DropdownMenu
+                     open={open}
+                     setOpen={setOpen}
+                     width={width}
+                     />
+            </ul>
             <ul className={`DropdownMenu__menu ${open? 'DropdownMenu__menu-open':''}`}>
                 <li
-                 onClick={() => {
-                    
-                    setOpen(!open)
-                }}
-            className={`DropdownMenu__items DropdownMenu__menu-close`}>
+                 key={20}
+
+                 onClick={() => setOpen(!open)}
+                 className={`DropdownMenu__items DropdownMenu__menu-close`}
+                >
                     <span>سایر لینک‌ها</span>
                     <Image src={ArrowDown} alt="arrow"/>
                 </li>
                 {   
                     hiddenLinks.map((item,index) => {
-                        return <li><Link key={index+1} ref={elementClosed} href='#' className={`DropdownMenu__items ${open? 'py-3':''}`}>{item}</Link></li>
+
+                        return <li key={index+1}><Link href='#' className={`DropdownMenu__items`}>{item}</Link></li>
+
                     })
                 }
             </ul>

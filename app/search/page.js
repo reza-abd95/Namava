@@ -2,6 +2,7 @@
 
 
 
+import { useSelector } from "react-redux";
 import SearchArea from "../(components)/SearchArea";
 import SearchResult from "../(components)/search/SearchResult";
 import SearchResultContainer from "../(components)/search/SearchResultContainer";
@@ -9,6 +10,7 @@ import { useState,useEffect } from "react";
 export default function Search() {
     const [searchTerm,setSearchTerm] = useState('')
     const [movies,setMovies] = useState([])
+
     useEffect(() => {
         fetch('https://api.jsonbin.io/v3/b/64cb6bcfb89b1e2299ca80fe')
         .then(data => data.json())

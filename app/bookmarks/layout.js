@@ -5,7 +5,6 @@ import '../globals.css'
 
 export default function UsersLayout({children}) {
     const currentRoute = usePathname();
-    console.log(currentRoute)
 
     return (
         <div className=" w-full">

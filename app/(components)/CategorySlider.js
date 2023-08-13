@@ -48,7 +48,7 @@ export default function CategorySlider({data}) {
       <Swiper
         initialSlide = {1}
         loop = {true}
-
+        autoHeight = {true}
         slidesPerView={slidesPer}
         centeredSlides={centered}
         spaceBetween={20}
@@ -65,7 +65,8 @@ export default function CategorySlider({data}) {
                       src={windowWidth < 500 ? item.imageMobileUrl : item.imageUrl}
                       width={1000}
                       height={400}
-                      alt={item.title}/>
+                      alt={item.title}
+                      />
             </SwiperSlide>
 
           )
