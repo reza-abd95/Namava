@@ -10,7 +10,6 @@ export default function BookmarkCont({movies}) {
     const selector = useSelector(state => state.bookmark)
     const list = movies.filter(movie => selector.includes(movie.id))
 
-    console.log(Object.keys(selector).length)
     useEffect(() => {
         if(Object.keys(selector).length > 0){
             setDisplayEmpty("hidden")

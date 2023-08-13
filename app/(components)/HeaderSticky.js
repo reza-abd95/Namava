@@ -1,56 +1,68 @@
 'use client'
 
 import "../globals.css";
-// import Menu from "@/app/(components)/Menu";
 import Logo from "@/app/(components)/Logo";
 import HeaderNav from "@/app/(components)/HeaderNav";
 import SearchBox from "@/app/(components)/SearchBox";
 import MenuSticky from "./MenuSticky";
 import ProfileBoxSticky from "./ProfileBoxSticky";
-import {useEffect, useRef, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 
 
 export default function HeaderSticky() {
     const header = useRef(null);
-    const [style,setStyle] = useState('fixed');
-    const prevScrollRef = useRef(0);
+    const [scrollUp,setScrollUp] = useState(null)
+    const [isInside,setIsInside] = useState(null)
+    const prevScrollRef = useRef(null)
 
-
-    const handleScroll = () => {
+    const handleScroll = useCallback(() => {
         const currentScroll = window.scrollY
         const isScrolled = currentScroll > prevScrollRef.current
         prevScrollRef.current = currentScroll
         if ( currentScroll === 0 ) {
-            setStyle('fixed')
+            setIsInside(true)
         }
         else if (isScrolled) {
             if (currentScroll > 80) {
-                setStyle('floating')
+                setScrollUp(false)
+                setIsInside(false)
             } else {
-                setStyle('fixed')
+                setScrollUp(false)
+            }
+        } else {
+            setScrollUp(true)
+        }
+    })
+
+    useEffect(() => {
+        prevScrollRef.current = window.scrollY;
+        const INSIDE = (window.scrollY < 80);
+        setIsInside(INSIDE)
+        window.addEventListener('scroll', handleScroll);
+    },[])
+
+
+
+
+            if (header.current) {
+
+
+                if (isInside) {
+                    header.current.classList.remove('sticky-header')
+                    header.current.classList.remove('sticky-before')
+                } else {
+
+                    if (!scrollUp) {
+                        header.current.classList.add('sticky-before')
+                        header.current.classList.remove('sticky-header')
+                    }
+                    else {
+                        header.current.classList.add('sticky-header')
+                    }
+                }
+
             }
 
-        } else {
-            setStyle('sticky')
-        }
-    }
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
-    },[]);
-    if (header.current) {
-
-
-        if (style==='fixed') {
-            header.current.classList.remove('sticky-header')
-            header.current.classList.remove('sticky-before')
-        }else if (style=== 'floating') {
-            header.current.classList.add('sticky-before')
-            header.current.classList.remove('sticky-header')
-        }
-        else {
-            header.current.classList.add('sticky-header')
-        }
-    }
 
     return (
         <>

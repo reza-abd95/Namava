@@ -1,12 +1,12 @@
 'use client'
-import {useState} from "react";
+import {useCallback, useState} from "react";
 
 
 export default function  CommentsInput () {
     const [message, setMessage] = useState("");
-    const handleChange = (event) => {
-        setMessage(event.target.value);
-    }
+    let handleChange = useCallback((event) => {
+            setMessage(event.target.value)
+    })
     return(
             <div className=" w-full h-[200px] tab:h-[225px] mt-[200px] pt-[32px] pb-[19px] px-[20px] text-[16px]  bg-[#222327] flex flex-col justify-center items-center  ml:px-[24px] tab:pt-[40px] tab:px-[32px] des:w-[1000px] des:rounded-t-[6px] des:px-[24px]  ">
                 <div className="mb-[48px] px-[20px] text-white des:text-[18px] des:pl-[62px]">نظرات کاربران</div>

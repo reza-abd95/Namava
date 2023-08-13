@@ -2,17 +2,17 @@
 
 import Image from "next/image";
 import Profile from "@/public/icons/profile-icon.png";
-import { useState } from "react";
+import {useCallback, useState} from "react";
 import Link from "next/link";
 
 export default function ProfileBoxSticky () {
     const [profileState , setProfileState] = useState("hidden");
-    const mouseOverHandler = () => {
+    const mouseOverHandler = useCallback( () => {
         setProfileState("flex")
-    }
-    const closeProfile = () => {
+    })
+    const closeProfile = useCallback(() => {
         setProfileState("hidden")
-    }
+    })
     return (
         <div>
             <div>
