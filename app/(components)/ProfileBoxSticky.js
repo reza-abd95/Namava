@@ -23,10 +23,11 @@ export default function ProfileBoxSticky () {
                     <div className="triangle-up absolute top-[24px] ml:top-[28px] des:top-[36px] des:left-[3.5%] tab:top-[23px] tab:left-[3.5%]  ml:left-[2%] left-[3%]"></div>
                     <div className="w-full h-[93px] p-[16px] bg-[#D95c5c] flex flex-col justify-center items-stretch">
                         <div className="w-full h-[20px] mb-[10px] text-[14px] text-white flex justify-center items-center text-center">اشتراک فعال ندارید</div>
-                        <button className="shadow-lg shadow-[#1616163e] rounded-md bg-slate-50 cursor-pointer border-[0px] w-full px-[20px] h-[30px] text-center hover:bg-[#1993ff] text-black hover:text-white flex justify-center items-center text-[13px]">خرید اشتراک</button>
+                        <Link href="/"><button className="shadow-lg shadow-[#1616163e] rounded-md bg-slate-50 cursor-pointer border-[0px] w-full px-[20px] h-[30px] text-center hover:bg-[#1993ff] text-black hover:text-white flex justify-center items-center text-[13px]">خرید اشتراک</button></Link>
                     </div>
                     <div className="w-full pt-[12px] pr-[12px] pl-[12px] bg-slate-50">
-                        <div className="w-full h-[30px] mb-[10px] pb-[10px] border-b-[1px] border-b-[#00000078] flex justify-center items-center text-zinc-900 hover:text-[#1993ff] fill-white hover:fill-[#1993ff]">
+                        <Link href="/">
+                            <div className="w-full h-[30px] mb-[10px] pb-[10px] border-b-[1px] border-b-[#00000078] flex justify-center items-center text-zinc-900 hover:text-[#1993ff] fill-white hover:fill-[#1993ff]">
                             <div className="flex justify-center items-center">
                                 <img src={"https://static.namava.ir/Content/Upload/Images/e9b409a9-88d8-4ee5-a81e-6cddc50782b0.png"} className="cursor-pointer rounded-full" width={30} height={30} alt="profile2" />
                                 <p className=" cursor-pointer text-[12px] w-[132px] mr-[8px]">بزرگسال</p>
@@ -36,6 +37,7 @@ export default function ProfileBoxSticky () {
                                 <p className=" cursor-pointer text-[12px] w-[45px] mr-[4px]">تنظیمات</p>
                             </div>
                         </div>
+                        </Link>
                         {/*<div className="w-full h-[30px] flex justify-center items-center mb-[10px] pb-[10px] border-b-[1px] border-b-[#0000001f] text-zinc-900 hover:text-[#1993ff] fill-white hover:fill-[#1993ff]">*/}
                         {/*    <img src={"https://static.namava.ir/Content/Upload/Images/bc44135c-bd14-44e9-9970-a33bacee3613.png"} alt="kidProfile" width={"30px"} height={"30px"} className="rounded-full" />*/}
                         {/*    <p className="w-[202px] mr-[8px] text-[12px]">کودک</p>*/}
