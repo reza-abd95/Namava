@@ -24,7 +24,7 @@ export default function HeaderSliderComponent({ data, actorsData }) {
     actors,
   } = data;
   const router = useRouter();
-  function clickhandler() {
+  function clickHandler() {
     router.replace(`/movies/${id}`);
   }
   const getActorNames = () => {
@@ -50,7 +50,7 @@ export default function HeaderSliderComponent({ data, actorsData }) {
           />
           <div className="absolute flex flex-col justify-center items-center top-[36%] ms:top-[55%] ml:block ml:top-[80px] tab:top-[90px] large:top-[20%]">
             <div className="w-[40%] mb-[44px] ml:w-[25%] ml:mr-[20px] ml:mb[50px] tab:mr-8 tab:mb-6 des:mr-11 large:w-[35%]">
-              <MovieLogo onClick={clickhandler} src={logoUrl} alt={title} />
+              <MovieLogo onClick={clickHandler} src={logoUrl} alt={title} />
             </div>
             <div className="flex flex-col justify-center items-center px-[14px]  text-center ml:block ml:text-start ml:px-[20px] tab:px-8 des:px-11">
               <Link href={`/movies/${id}`}>
