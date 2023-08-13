@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useRef, useState, useEffect, Suspense } from "react";
+import React, {useRef, useState, useEffect, Suspense, useCallback} from "react";
 import Like from "./Like";
 import DisLike from "./DisLike";
 import "./css.css";
@@ -58,19 +58,19 @@ export default function MovieHeader({
       setShowFirstSvg2(false);
     }
   }, [selector]);
-  //--------------------Videio Player---------------------//
+  //--------------------Video Player---------------------//
   const [width, setWidth] = useState(window.innerWidth);
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef(null);
-  const handleOnPlay = () => {
+  const handleOnPlay = useCallback( () => {
     setIsPlaying(true);
     videoRef.current.play();
-  };
-  const handleOnClose = () => {
+  })
+  const handleOnClose = useCallback( () => {
     setIsPlaying(false);
     videoRef.current.pause();
     videoRef.current.currentTime = 0;
-  };
+  })
   let dimention;
   if (windowWidth < 500) {
     dimention = 17;
@@ -80,8 +80,8 @@ export default function MovieHeader({
     dimention = 30;
   }
 
-  //--------------------Videio Player---------------------//
-  const handleClickLike = () => {
+  //--------------------Video Player---------------------//
+  const handleClickLike = useCallback( () => {
     if (showFirstSvg2 === false) {
       setShowFirstSvg2(true);
       console.log(selector);
@@ -92,9 +92,9 @@ export default function MovieHeader({
       setShowFirstSvg3(true);
       console.log(selector);
     }
-  };
+  })
 
-  const handleClickDisLike = () => {
+  const handleClickDisLike = useCallback( () => {
     if (showFirstSvg3 === false) {
       setShowFirstSvg3(true);
     } else {
@@ -104,7 +104,7 @@ export default function MovieHeader({
     if (showFirstSvg3 === true && showFirstSvg2 === false) {
       dispatch(togglelike(+movieId));
     }
-  };
+  })
 
   return (
 <>

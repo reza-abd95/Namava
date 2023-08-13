@@ -184,7 +184,7 @@ h1, h2, h3, h4, span, a {
 
 @layer components{
     .mobile__menu-list {
-        @apply w-full h-[40px] flex items-center hover:text-[#6eb8ff] cursor-pointer
+        @apply w-full h-[55px] flex items-center hover:text-[#6eb8ff] cursor-pointer
     }
     .mobile__menu-list p{
         @apply pr-[15px]
