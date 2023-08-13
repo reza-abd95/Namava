@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function TitleOfCategorySlider({title , link}) {
   return (
-  <div className="group text-white w-60 ">
+  <div className="group text-white w-80 ">
     <Link href={link} className=" flex items-center" >
 
       <div className="hover-item cursor-pointer">

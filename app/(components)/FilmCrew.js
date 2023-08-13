@@ -10,7 +10,9 @@ export default function FilmCrew({data}) {
                         src={data.imageUrl}
                         width={1000}
                         height={1000}
-                        alt={data.name} />
+                        alt={data.name}
+                        loading="lazy"
+                        />
             </div>
             <p className=" pt-3 text-xs">{data.name}</p>
         </div>
