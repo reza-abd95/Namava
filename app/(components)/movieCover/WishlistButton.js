@@ -1,7 +1,7 @@
 "use client"
 
 import { toggle} from '@/app/redux/bookmarkSlice';
-import React, { useEffect, useState } from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 
@@ -26,33 +26,33 @@ export default function WishlistButton({movieId}) {
   const [hoverText, setHoverText] = useState('لیست من');
   const dispatch = useDispatch()
 
-  const handleAddClick = () => {
-    setIsWishlist(!isWishlist);
-    const updatedMessage = isWishlist
-      ? (<div className='flex h-12 items-center justify-around flow-row transition-opacity '>
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="green" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>       
- به لیست من اضافه شد
+  const handleAddClick = useCallback( () => {
+      setIsWishlist(!isWishlist);
+      const updatedMessage = isWishlist
+          ? (<div className='flex h-12 items-center justify-around flow-row transition-opacity '>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="green" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  به لیست من اضافه شد
 
-        </div>
-        )
-      : (<div className='flex h-12 items-center justify-around flow-row transition-opacity'>
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="green" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>      
- از لیست من حذف شد
-        </div>
-        );
+              </div>
+          )
+          : (<div className='flex h-12 items-center justify-around flow-row transition-opacity'>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="green" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                  از لیست من حذف شد
+              </div>
+          );
       const updatehoverText = isWishlist
-      ? 'حذف از لیست من'
-      : 'افزوردن به لیست من';
-    
-    setUserMessage(updatedMessage);
-    setTimeout(() => {
-      setUserMessage('');
-    }, 2000); 
+          ? 'حذف از لیست من'
+          : 'افزوردن به لیست من';
 
-    setHoverText(updatehoverText);
+      setUserMessage(updatedMessage);
+      setTimeout(() => {
+          setUserMessage('');
+      }, 2000);
 
-    dispatch(toggle(+movieId))
-  };
+      setHoverText(updatehoverText);
+
+      dispatch(toggle(+movieId))
+  })
  
   return (
     <div className='text-black relative'>
