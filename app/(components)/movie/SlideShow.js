@@ -22,7 +22,7 @@ export default function SlideShow({images,isVisible,setIsVisible}) {
     const handleOnPrev = (e) => {
         e.stopPropagation()
         if (isVisible.imageId === 1) {
-            setIsVisible({...isVisible,['imageId']: 6})
+            setIsVisible({...isVisible,['imageId']: images.length})
         } else{
             setIsVisible({...isVisible,['imageId']: isVisible.imageId-1})
         }
