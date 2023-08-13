@@ -19,11 +19,13 @@ html{
 }
 @font-face {
   font-family: iranyekanBold;
-  src: url("../public/fonts/iranyekanwebbold.woff") format("opentype");
+  src: url("../public/fonts/iranyekanwebbold.woff") format("woff");
+  font-display: fallback;
 }
 @font-face {
   font-family: iranyekanRegular;
-  src: url("../public/fonts/iranyekanwebregular.woff") format("opentype");
+  src: url("../public/fonts/iranyekanwebregular.woff") format("woff");
+  font-display: fallback;
 }
 
 p, div {
