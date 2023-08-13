@@ -13,6 +13,7 @@ import "swiper/css/navigation";
 import { EffectFade, Autoplay, Pagination, Navigation} from "swiper/modules";
 import HeaderSliderComponent from "./HeaderSliderComponent";
 import windowDimensions from "@/app/hooks/useWindowDimensions";
+import MainSliderLoading from "./MainSliderLoading";
 
 export default function MainSlider({ categoryId, movieData, subject, actors }) {
   const swiperRef = useRef(null);
@@ -49,8 +50,8 @@ export default function MainSlider({ categoryId, movieData, subject, actors }) {
   return (
     <>
      {loading ? (
-          <Suspense fallback={<div>Loading...</div>}>
-            <Skeleton />
+          <Suspense>
+            <MainSliderLoading/>
           </Suspense>
         ):( 
       <Swiper
@@ -114,14 +115,5 @@ export default function MainSlider({ categoryId, movieData, subject, actors }) {
         </div>
       </Swiper>)}
     </>
-  );
-}
-function Skeleton() {
-  return (
-    <div className="block w-full rounded bg-red-600">
-      <div className="animate-pulse">
-        <div className="h-48 w-full rounded bg-red-600"></div>
-      </div>
-    </div>
   );
 }
