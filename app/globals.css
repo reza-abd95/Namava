@@ -258,7 +258,7 @@ h1, h2, h3, h4, span, a {
     des:w-1/6 des:px-2
   }
   .MoviePictures__pictureStyle {
-    @apply h-full w-full rounded-md cursor-pointer aspect-[4/3]
+    @apply h-full w-full rounded-md cursor-pointer
 
   }
   .AboutMovie__container {
