@@ -10,7 +10,7 @@ export default function BackGroundImage({imageUrl,imageMobileUrl,title}){
           height={windowWidth > 499 ? 900: 1350}
           src={windowWidth > 499 ? imageUrl : imageMobileUrl}
           alt={title}
-          loading="lazy"
+
         />
         <div className="absolute w-[50%] inset-0 bg-gradient-to-l from-[#121212] to-transparent"></div>
 
