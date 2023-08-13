@@ -41,12 +41,12 @@ export default function SlideShow({images,isVisible,setIsVisible}) {
         setIsVisible({...isVisible,['visible']:false,['imageId']:null})}
         className={`SlideShow__background ${isVisible.visible? '':'hidden'}`}>
             <div className="SlideShow__container">
-                <Image className="SlideShow__closeButton" src={button}/>
+                <Image className="SlideShow__closeButton" src={button} alt="button"/>
                 <div onClick={handleOnPrev} className="SlideShow__buttons">
                     <Image src={ArrowRight} alt="arrow"/>
                 </div>
                 <div className="SlideShow__imageHolder">
-                    <Image className="SlideShow__imageStyle" src={(images[index]? images[index]: images[1])} alt="movieImages"/>
+                    <Image width={1000} height={750} className="SlideShow__imageStyle" src={(images[index]? "https://static.namava.ir/Content/Upload/Images/" + images[index]: "https://static.namava.ir/Content/Upload/Images/" + images[1])} alt="movieImages"/>
                 </div>
                 <div onClick={handleOnNext} className="SlideShow__buttons">
                     <Image src={ArrowLeft} alt="arrow"/>
