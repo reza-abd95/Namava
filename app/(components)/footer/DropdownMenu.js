@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import Link from 'next/link'
 import ArrowUp from '../../../public/icons/ArrowUp-footer.svg'
 
 export default function DropdownMenu({width,open,setOpen}) {

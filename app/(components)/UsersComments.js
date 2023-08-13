@@ -1,5 +1,5 @@
 'use client'
-import {useState} from "react";
+import {useCallback, useState} from "react";
 import CommentLike from "@/app/(components)/CommentLike";
 import CommentDislike from "@/app/(components)/CommentDislike";
 
@@ -7,7 +7,7 @@ import CommentDislike from "@/app/(components)/CommentDislike";
 export default  function UsersComments ({id , user , date , like , dislike , comment}) {
     const [showFirstSvg2, setShowFirstSvg2] = useState(true);
     const [showFirstSvg3, setShowFirstSvg3] = useState(true);
-    const handleClickLike = () => {
+    const handleClickLike = useCallback(() => {
         if(showFirstSvg2===false){
             setShowFirstSvg2(true)
         }
@@ -15,11 +15,11 @@ export default  function UsersComments ({id , user , date , like , dislike , com
             setShowFirstSvg2(false);
             setShowFirstSvg3(true)
         }
-    };
+    })
 
 
 
-    const handleClickDisLike = () => {
+    const handleClickDisLike = useCallback(() => {
         if(showFirstSvg3===false){
             setShowFirstSvg3(true)
         }
@@ -27,7 +27,7 @@ export default  function UsersComments ({id , user , date , like , dislike , com
             setShowFirstSvg3(false);
             setShowFirstSvg2(true)
         }
-    };
+    })
     return (
             <div key={id} className="w-full px-[20px] pt-[20px] text-[16px] bg-[#222327] flex flex-row justify-start items-start  ml:px-[24px] tab:px-[32px] tab:pt-[18px] des:w-[1000px] rounded-b-[6px] des:px-[24px] des:pt-[30px]   ">
                 <div className="w-[17.5%] flex items-start justify-start mt-[1px] ml:w-[11%] tab:mb-[3px]  tab:w-[9%] des:w-[6.5%]">
