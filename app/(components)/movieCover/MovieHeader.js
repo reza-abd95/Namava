@@ -272,7 +272,7 @@ export default function MovieHeader({
             <div className="flex flex-row items-center mb-4 tab:mb-2 tab:mt-3 ">
               <div
                 onClick={handleOnPlay}
-                className=" my-[21px] cursor-pointer tab:my-0 hidden tab-flex items-center justify-center ml-4 h-[42px] bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]"
+                className=" my-[21px] cursor-pointer tab:my-0 hidden tab:flex items-center justify-center ml-4 h-[42px] bg-[#414141] opacity-[70%] hover:opacity-[100%] hover:bg-[#6e6e6e] rounded-[4px]"
               >
                 <p className="text-[12px] px-5">پیش‌ نمایش</p>
               </div>
